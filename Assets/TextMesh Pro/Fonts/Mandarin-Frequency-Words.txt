@@ -4843,3 +4843,7 @@
 ㄤ
 ㄥ
 ㄦ
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+1234567890１２３４５６７８９０
+-_[](){}［］（）｛｝「」【】『』
+，。：；！？、・,.:;!?⋯％%＃#/／＼\＼\＠@～~＆&
