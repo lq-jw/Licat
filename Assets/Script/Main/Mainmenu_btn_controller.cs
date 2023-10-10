@@ -7,7 +7,11 @@ public class Mainmenu_btn_controller : MonoBehaviour
     public int index;
     [SerializeField] bool keyDown;
     [SerializeField] int maxIndex;
-
+    public void ChangeSelect(int select = 0)
+    {
+        index = select;
+        Debug.Log("change" + select);
+    }
     private void Update()
     {
         if (Input.GetAxis("Vertical") != 0)

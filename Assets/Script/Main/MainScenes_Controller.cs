@@ -60,6 +60,11 @@ public class MainScenes_Controller : MonoBehaviour
         Application.Quit();
     }
 
+    private void GoBack()
+    {
+        SetScenes(0);
+    }
+
     public void BtnOnClick(int index)
     {
         Debug.Log(menuIndex + " " + index);
@@ -79,7 +84,7 @@ public class MainScenes_Controller : MonoBehaviour
                         GameStart();
                         break;
                     case 2:
-                        
+
                         break;
                     case 3:
                         SetScenes(1);
@@ -88,7 +93,7 @@ public class MainScenes_Controller : MonoBehaviour
                         //SceneManager.LoadScene("gameScene");
                         break;
                     case 5:
-                        
+
                         break;
                     case 6:
                         GameQuit();
@@ -98,10 +103,12 @@ public class MainScenes_Controller : MonoBehaviour
                 }
                 break;
             case 1:
-            switch (btnIndex)
+                switch (btnIndex)
                 {
                     case 0:
-                        SetScenes(0);
+                        break;
+                    case 1:
+                        GoBack();
                         break;
                     default:
                         break;
