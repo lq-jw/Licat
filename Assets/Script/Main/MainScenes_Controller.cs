@@ -79,15 +79,18 @@ public class MainScenes_Controller : MonoBehaviour
                         GameStart();
                         break;
                     case 2:
-                        SetScenes(1);
+                        
                         break;
                     case 3:
-                        //SceneManager.LoadScene("gameScene");
+                        SetScenes(1);
                         break;
                     case 4:
                         //SceneManager.LoadScene("gameScene");
                         break;
                     case 5:
+                        
+                        break;
+                    case 6:
                         GameQuit();
                         break;
                     default:
@@ -95,6 +98,14 @@ public class MainScenes_Controller : MonoBehaviour
                 }
                 break;
             case 1:
+            switch (btnIndex)
+                {
+                    case 0:
+                        SetScenes(0);
+                        break;
+                    default:
+                        break;
+                }
                 break;
             default:
                 break;
