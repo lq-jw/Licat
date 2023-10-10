@@ -1580,6 +1580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1283453719}
+  mainScenes_controller: {fileID: 0}
   btn_animator: {fileID: 827215462}
   thisIndex: 1
   Main_menu: {fileID: 1283453717}
@@ -1658,6 +1659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1283453719}
+  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 847139221}
   thisIndex: 2
   Main_menu: {fileID: 1283453717}
@@ -1736,6 +1738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1283453719}
+  mainScenes_controller: {fileID: 0}
   btn_animator: {fileID: 877136620}
   thisIndex: 4
   Main_menu: {fileID: 1283453717}
@@ -1814,6 +1817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1283453719}
+  mainScenes_controller: {fileID: 0}
   btn_animator: {fileID: 952500195}
   thisIndex: 5
   Main_menu: {fileID: 1283453717}
@@ -2368,6 +2372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1283453719}
+  mainScenes_controller: {fileID: 0}
   btn_animator: {fileID: 1454935574}
   thisIndex: 3
   Main_menu: {fileID: 1283453717}
@@ -2611,6 +2616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1283453719}
+  mainScenes_controller: {fileID: 0}
   btn_animator: {fileID: 1747963046}
   thisIndex: 0
   Main_menu: {fileID: 1283453717}
@@ -3385,6 +3391,7 @@ MonoBehaviour:
   Main_menu: {fileID: 1283453717}
   Open: {fileID: 1155915677}
   Set_menu: {fileID: 1401643786}
+  menuIndex: 0
 --- !u!4 &2103240190
 Transform:
   m_ObjectHideFlags: 0
