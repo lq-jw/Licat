@@ -8,51 +8,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu_btn : MonoBehaviour
 {
+    // 不知道這裡到底要怎麼決定public private好
     [SerializeField] Mainmenu_btn_controller mainmenu_btn_controller;
     [SerializeField] MainScenes_Controller mainScenes_controller;
     [SerializeField] Animator btn_animator;
-    [SerializeField] int thisIndex;
+    [SerializeField] private int thisIndex;
     public GameObject Main_menu;
     public GameObject Set_menu;
 
     private void Update()
     {
-        if (mainmenu_btn_controller.index == thisIndex)
+        if (mainmenu_btn_controller.GetSelect() == thisIndex)
         {
-            Debug.Log("select" + thisIndex);
+            // Debug.Log("select" + thisIndex);
             btn_animator.SetBool("btn_hover", true);
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
-                // Debug.Log("123");
                 mainScenes_controller.BtnOnClick(thisIndex);
-                //         switch (thisIndex)
-                //         {
-                //             case 0:
-                //                 SceneManager.LoadScene("gameScene");
-                //                 break;
-                //             case 1:
-                //                 SceneManager.LoadScene("gameScene");
-                //                 break;
-                //             case 2:
-
-                //                 Main_menu.SetActive(false);
-                //                 Set_menu.SetActive(true);
-
-
-                //                 break;
-                //             case 3:
-                //                 //SceneManager.LoadScene("gameScene");
-                //                 break;
-                //             case 4:
-                //                 //SceneManager.LoadScene("gameScene");
-                //                 break;
-                //             case 5:
-                //                 Debug.Log("Quit Game");
-                //                 Application.Quit();
-                //                 break;
-                //             default:
-                //                 break;
-                //         }
             }
         }
         else

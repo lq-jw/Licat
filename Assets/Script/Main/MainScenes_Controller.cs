@@ -1,3 +1,5 @@
+// menu 畫面控制區
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +10,9 @@ public class MainScenes_Controller : MonoBehaviour
     public GameObject Main_menu;
     public GameObject Open;
     public GameObject Set_menu;
+    [SerializeField] private GameObject Achievement_menu, Credit_menu;
 
-    [SerializeField] int menuIndex;
+    [SerializeField] private string now_menu;
 
     void Start()
     {
@@ -23,27 +26,35 @@ public class MainScenes_Controller : MonoBehaviour
         {
             Open.SetActive(false);
             Main_menu.SetActive(true);
-            menuIndex = 0;
+            now_menu = "main";
         }
     }
 
-    private void CloseScenes()
+    private void CloseScenes()      // 如果有新的scene，要在這裡更新
     {
         Open.SetActive(false);
         Main_menu.SetActive(false);
         Set_menu.SetActive(false);
+        Achievement_menu.SetActive(false);
+        Credit_menu.SetActive(false);
     }
-    private void SetScenes(int index)
+    private void SetScenes(string set)
     {
-        menuIndex = index;
+        now_menu = set;
         CloseScenes();
-        switch (menuIndex)
+        switch (now_menu)
         {
-            case 0:
+            case "main":
                 Main_menu.SetActive(true);
                 break;
-            case 1:
+            case "set":
                 Set_menu.SetActive(true);
+                break;
+            case "achievement":
+                Achievement_menu.SetActive(true);
+                break;
+            case "credit":
+                Credit_menu.SetActive(true);
                 break;
         }
     }
@@ -62,57 +73,98 @@ public class MainScenes_Controller : MonoBehaviour
 
     private void GoBack()
     {
-        SetScenes(0);
+        SetScenes("main");
     }
 
     public void BtnOnClick(int index)
     {
-        Debug.Log(menuIndex + " " + index);
+        Debug.Log(now_menu + " " + index);
         BtnEvent(index);
     }
     private void BtnEvent(int btnIndex)
     {
-        switch (menuIndex)
+        switch (now_menu)
+        {
+            case "main":
+                MainMenuBtnEvent(btnIndex);
+                break;
+            case "set":
+                SetMenuBtnEvent(btnIndex);
+                break;
+            case "achievement":
+                AchievementMenuBtnEvent(btnIndex);
+                break;
+            case "credit":
+                CreditMenuBtnEvent(btnIndex);
+                break;
+            default:
+                break;
+        }
+    }
+    
+    private void MainMenuBtnEvent(int btnIndex)
+    {
+        switch (btnIndex)
         {
             case 0:
-                switch (btnIndex)
-                {
-                    case 0:
-                        SceneManager.LoadScene("gameScene");
-                        break;
-                    case 1:
-                        GameStart();
-                        break;
-                    case 2:
-
-                        break;
-                    case 3:
-                        SetScenes(1);
-                        break;
-                    case 4:
-                        //SceneManager.LoadScene("gameScene");
-                        break;
-                    case 5:
-
-                        break;
-                    case 6:
-                        GameQuit();
-                        break;
-                    default:
-                        break;
-                }
+                SceneManager.LoadScene("gameScene");
                 break;
             case 1:
-                switch (btnIndex)
-                {
-                    case 0:
-                        break;
-                    case 1:
-                        GoBack();
-                        break;
-                    default:
-                        break;
-                }
+                GameStart();
+                break;
+            case 2:
+
+                break;
+            case 3:
+                SetScenes("set");
+                break;
+            case 4:
+                SetScenes("achievement");
+                break;
+            case 5:
+                SetScenes("credit");
+                break;
+            case 6:
+                GameQuit();
+                break;
+            default:
+                break;
+        }
+    }
+    private void SetMenuBtnEvent(int btnIndex)
+    {
+        switch (btnIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                GoBack();
+                break;
+            default:
+                break;
+        }
+    }
+    private void AchievementMenuBtnEvent(int btnIndex)
+    {
+        switch (btnIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                GoBack();
+                break;
+            default:
+                break;
+        }
+    }
+    private void CreditMenuBtnEvent(int btnIndex)
+    {
+        switch (btnIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                GoBack();
                 break;
             default:
                 break;
@@ -120,3 +172,5 @@ public class MainScenes_Controller : MonoBehaviour
     }
 
 }
+
+
