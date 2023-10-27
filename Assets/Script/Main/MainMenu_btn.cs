@@ -13,8 +13,6 @@ public class MainMenu_btn : MonoBehaviour
     [SerializeField] MainScenes_Controller mainScenes_controller;
     [SerializeField] Animator btn_animator;
     [SerializeField] private int thisIndex;
-    public GameObject Main_menu;
-    public GameObject Set_menu;
 
     private void Update()
     {
