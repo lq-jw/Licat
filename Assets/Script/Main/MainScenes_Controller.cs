@@ -28,6 +28,7 @@ public class MainScenes_Controller : MonoBehaviour
             Main_menu.SetActive(true);
             now_menu = "main";
         }
+        EscOnClick();
     }
 
     private void CloseScenes()      // 如果有新的scene，要在這裡更新
@@ -56,6 +57,8 @@ public class MainScenes_Controller : MonoBehaviour
             case "credit":
                 Credit_menu.SetActive(true);
                 break;
+            default:
+                break;
         }
     }
 
@@ -74,6 +77,30 @@ public class MainScenes_Controller : MonoBehaviour
     private void GoBack()
     {
         SetScenes("main");
+    }
+
+    private void EscOnClick()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            switch (now_menu)
+            {
+                case "main":
+                    GameQuit();
+                    break;
+                case "set":
+                    SetScenes("main");
+                    break;
+                case "achievement":
+                    SetScenes("main");
+                    break;
+                case "credit":
+                    SetScenes("main");
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public void BtnOnClick(int index)
