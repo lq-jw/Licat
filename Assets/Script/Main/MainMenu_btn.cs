@@ -3,6 +3,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,6 +24,14 @@ public class MainMenu_btn : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
                 mainScenes_controller.BtnOnClick(thisIndex);
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                mainScenes_controller.BtnOnClick(thisIndex, 1);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                mainScenes_controller.BtnOnClick(thisIndex, 2);
             }
         }
         else

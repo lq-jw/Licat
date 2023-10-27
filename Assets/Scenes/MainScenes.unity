@@ -906,8 +906,8 @@ GameObject:
   m_Component:
   - component: {fileID: 261572878}
   - component: {fileID: 261572881}
-  - component: {fileID: 261572880}
   - component: {fileID: 261572879}
+  - component: {fileID: 261572882}
   m_Layer: 5
   m_Name: btn_BGM
   m_TagString: Untagged
@@ -949,22 +949,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &261572880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261572877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 1401643788}
-  mainScenes_controller: {fileID: 2103240189}
-  btn_animator: {fileID: 261572881}
-  thisIndex: 2
 --- !u!95 &261572881
 Animator:
   serializedVersion: 5
@@ -986,6 +970,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &261572882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261572877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828cc9b04f46547c1882c879aa4d1dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainmenu_btn_controller: {fileID: 1401643788}
+  btn_animator: {fileID: 261572881}
+  thisIndex: 2
+  slider: {fileID: 519180170}
 --- !u!1 &264521660
 GameObject:
   m_ObjectHideFlags: 0
@@ -3460,8 +3460,8 @@ GameObject:
   m_Component:
   - component: {fileID: 643116057}
   - component: {fileID: 643116059}
-  - component: {fileID: 643116058}
   - component: {fileID: 643116060}
+  - component: {fileID: 643116061}
   m_Layer: 5
   m_Name: btn_MainSound
   m_TagString: Untagged
@@ -3491,22 +3491,6 @@ RectTransform:
   m_AnchoredPosition: {x: -137.5, y: 589}
   m_SizeDelta: {x: 275, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &643116058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 643116056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 1401643788}
-  mainScenes_controller: {fileID: 2103240189}
-  btn_animator: {fileID: 643116059}
-  thisIndex: 1
 --- !u!95 &643116059
 Animator:
   serializedVersion: 5
@@ -3540,6 +3524,22 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &643116061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643116056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828cc9b04f46547c1882c879aa4d1dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainmenu_btn_controller: {fileID: 1401643788}
+  btn_animator: {fileID: 643116059}
+  thisIndex: 1
+  slider: {fileID: 1524399417}
 --- !u!1 &657617569
 GameObject:
   m_ObjectHideFlags: 0
@@ -7047,6 +7047,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1368094388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1368094389}
+  m_Layer: 0
+  m_Name: Setting_system
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1368094389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368094388}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1391687470
 GameObject:
   m_ObjectHideFlags: 0
@@ -9706,6 +9737,8 @@ GameObject:
   - component: {fileID: 1879509938}
   - component: {fileID: 1879509937}
   - component: {fileID: 1879509939}
+  - component: {fileID: 1879509941}
+  - component: {fileID: 1879509940}
   m_Layer: 5
   m_Name: btn_SceneMode
   m_TagString: Untagged
@@ -9784,6 +9817,30 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!222 &1879509940
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879509935}
+  m_CullTransparentMesh: 1
+--- !u!114 &1879509941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879509935}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d255913813d4692a6c7aae5a374e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainmenu_btn_controller: {fileID: 1401643788}
+  btn_animator: {fileID: 1879509938}
+  thisIndex: 0
+  text: {fileID: 0}
 --- !u!1 &1912367897
 GameObject:
   m_ObjectHideFlags: 0
@@ -10832,8 +10889,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2039374797}
   - component: {fileID: 2039374800}
-  - component: {fileID: 2039374799}
   - component: {fileID: 2039374798}
+  - component: {fileID: 2039374801}
   m_Layer: 5
   m_Name: btn_SE
   m_TagString: Untagged
@@ -10875,22 +10932,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &2039374799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039374796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 1401643788}
-  mainScenes_controller: {fileID: 2103240189}
-  btn_animator: {fileID: 2039374800}
-  thisIndex: 3
 --- !u!95 &2039374800
 Animator:
   serializedVersion: 5
@@ -10912,6 +10953,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2039374801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039374796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828cc9b04f46547c1882c879aa4d1dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainmenu_btn_controller: {fileID: 1401643788}
+  btn_animator: {fileID: 2039374800}
+  thisIndex: 3
+  slider: {fileID: 1483677972}
 --- !u!1 &2047848901
 GameObject:
   m_ObjectHideFlags: 0

@@ -103,106 +103,150 @@ public class MainScenes_Controller : MonoBehaviour
         }
     }
 
-    public void BtnOnClick(int index)
+    public void BtnOnClick(int index, int mode = 0)
     {
         Debug.Log(now_menu + " " + index);
-        BtnEvent(index);
+        BtnEvent(index, mode);
     }
-    private void BtnEvent(int btnIndex)
+
+    private void BtnEvent(int btnIndex, int mode)
     {
         switch (now_menu)
         {
             case "main":
-                MainMenuBtnEvent(btnIndex);
+                MainMenuBtnEvent(btnIndex, mode);
                 break;
             case "set":
-                SetMenuBtnEvent(btnIndex);
+                SetMenuBtnEvent(btnIndex, mode);
                 break;
             case "achievement":
-                AchievementMenuBtnEvent(btnIndex);
+                AchievementMenuBtnEvent(btnIndex, mode);
                 break;
             case "credit":
-                CreditMenuBtnEvent(btnIndex);
+                CreditMenuBtnEvent(btnIndex, mode);
                 break;
             default:
                 break;
         }
     }
 
-    private void MainMenuBtnEvent(int btnIndex)
+    private void MainMenuBtnEvent(int btnIndex, int mode)
     {
-        switch (btnIndex)
+        if (mode == 0)
         {
-            case 0:
-                SceneManager.LoadScene("gameScene");
-                break;
-            case 1:
-                GameStart();
-                break;
-            case 2:
+            switch (btnIndex)
+            {
+                case 0:
+                    SceneManager.LoadScene("gameScene");
+                    break;
+                case 1:
+                    GameStart();
+                    break;
+                case 2:
 
-                break;
-            case 3:
-                SetScenes("set");
-                break;
-            case 4:
-                SetScenes("achievement");
-                break;
-            case 5:
-                SetScenes("credit");
-                break;
-            case 6:
-                GameQuit();
-                break;
-            default:
-                break;
+                    break;
+                case 3:
+                    SetScenes("set");
+                    break;
+                case 4:
+                    SetScenes("achievement");
+                    break;
+                case 5:
+                    SetScenes("credit");
+                    break;
+                case 6:
+                    GameQuit();
+                    break;
+                default:
+                    break;
+            }
         }
     }
-    private void SetMenuBtnEvent(int btnIndex)
+    private void SetMenuBtnEvent(int btnIndex, int mode)
     {
-        switch (btnIndex)
+        switch (mode)
         {
             case 0:
+                switch (btnIndex)
+                {
+                    case 5:
+                        GoBack();
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 1:
+                switch (btnIndex)
+                {
+                    case 0:
+                    Debug.Log("-");
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                GoBack();
-                break;
-            default:
-                break;
-        }
-    }
-    private void AchievementMenuBtnEvent(int btnIndex)
-    {
-        switch (btnIndex)
-        {
-            case 0:
-                break;
-            case 1:
-                GoBack();
+                switch (btnIndex)
+                {
+                    case 0:
+                    Debug.Log("+");
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
                 break;
             default:
                 break;
         }
+
     }
-    private void CreditMenuBtnEvent(int btnIndex)
+    private void AchievementMenuBtnEvent(int btnIndex, int mode)
     {
-        switch (btnIndex)
+        if (mode == 0)
         {
-            case 0:
-                break;
-            case 1:
-                GoBack();
-                break;
-            default:
-                break;
+            switch (btnIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    GoBack();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    private void CreditMenuBtnEvent(int btnIndex, int mode)
+    {
+        if (mode == 0)
+        {
+            switch (btnIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    GoBack();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
