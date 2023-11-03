@@ -16,8 +16,8 @@ public class MainScenes_Controller : MonoBehaviour
 
     void Start()
     {
-        CloseScenes();
-        Open.SetActive(true);
+        SetScenes("open");
+        // SetScenes("open");
     }
 
     void Update()
@@ -28,10 +28,10 @@ public class MainScenes_Controller : MonoBehaviour
             Main_menu.SetActive(true);
             now_menu = "main";
         }
-        EscOnClick();
+        OnEscClick();
     }
 
-    private void CloseScenes()      // 如果有新的scene，要在這裡更新
+    private void CloseScenes()      // 關閉所有場景，如果有新的scene，要在這裡更新
     {
         Open.SetActive(false);
         Main_menu.SetActive(false);
@@ -39,12 +39,15 @@ public class MainScenes_Controller : MonoBehaviour
         Achievement_menu.SetActive(false);
         Credit_menu.SetActive(false);
     }
-    private void SetScenes(string set)
+    private void SetScenes(string set)      // 切換場景，會關閉場景，更新 now_menu
     {
         now_menu = set;
         CloseScenes();
         switch (now_menu)
         {
+            case "open":
+                Open.SetActive(true);
+                break;
             case "main":
                 Main_menu.SetActive(true);
                 break;
@@ -62,29 +65,33 @@ public class MainScenes_Controller : MonoBehaviour
         }
     }
 
-    public void GameStart()
+    public void GameStart()     // 進入遊戲
     {
         print("start");
         SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
     }
 
-    public void GameQuit()
+    public void GameQuit()      // 離開遊戲
     {
         Debug.Log("Quit Game");
         Application.Quit();
     }
 
-    private void GoBack()
+    private void GoBack()       // menu中的各頁回到上一頁
     {
         SetScenes("main");
     }
 
-    private void EscOnClick()
+    private void OnEscClick()       // menu中的esc事件
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             switch (now_menu)
             {
+                case "open":
+                    GameQuit();
+                    break;
                 case "main":
                     GameQuit();
                     break;
@@ -137,7 +144,7 @@ public class MainScenes_Controller : MonoBehaviour
             switch (btnIndex)
             {
                 case 0:
-                    SceneManager.LoadScene("gameScene");
+                    GameStart();
                     break;
                 case 1:
                     GameStart();
@@ -180,7 +187,7 @@ public class MainScenes_Controller : MonoBehaviour
                 switch (btnIndex)
                 {
                     case 0:
-                    Debug.Log("-");
+                        Debug.Log("-");
                         break;
                     case 1:
                         break;
@@ -198,7 +205,7 @@ public class MainScenes_Controller : MonoBehaviour
                 switch (btnIndex)
                 {
                     case 0:
-                    Debug.Log("+");
+                        Debug.Log("+");
                         break;
                     case 1:
                         break;
