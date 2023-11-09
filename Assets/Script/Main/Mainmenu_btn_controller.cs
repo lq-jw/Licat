@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Mainmenu_btn_controller : MonoBehaviour
 {
-    private int index;
+    [SerializeField] private int index;
     [SerializeField] private bool keyDown;
     [SerializeField] private int maxIndex;      // 每個menu的max都不一樣，要手動輸入
 
