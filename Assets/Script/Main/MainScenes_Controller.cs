@@ -231,9 +231,7 @@ public class MainScenes_Controller : MonoBehaviour
             switch (btnIndex)
             {
                 case 0:
-                    break;
-                case 1:
-                    GoBack();
+                GoBack();
                     break;
                 default:
                     break;
@@ -247,9 +245,7 @@ public class MainScenes_Controller : MonoBehaviour
             switch (btnIndex)
             {
                 case 0:
-                    break;
-                case 1:
-                    GoBack();
+                GoBack();
                     break;
                 default:
                     break;

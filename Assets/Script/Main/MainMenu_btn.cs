@@ -6,14 +6,26 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class MainMenu_btn : MonoBehaviour
+public class MainMenu_btn : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
     // 不知道這裡到底要怎麼決定public private好
     [SerializeField] Mainmenu_btn_controller mainmenu_btn_controller;
     [SerializeField] MainScenes_Controller mainScenes_controller;
     [SerializeField] Animator btn_animator;
     [SerializeField] private int thisIndex;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("onclick");
+        mainScenes_controller.BtnOnClick(thisIndex);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        mainmenu_btn_controller.ChangeSelect(thisIndex);
+    }
 
     private void Update()
     {

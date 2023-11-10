@@ -2,14 +2,15 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Mainmenu_btn_controller : MonoBehaviour
 {
-    [SerializeField] private int index;
-    [SerializeField] private bool keyDown;
+    [SerializeField] private int index, iFirstInputDelayTimeCounter;
     [SerializeField] private int maxIndex;      // 每個menu的max都不一樣，要手動輸入
-
+    [SerializeField] private bool isKeyDown;
+    [SerializeField] private float fTimer = 0;
 
     public int GetSelect()      // 輸出選取值
     {
@@ -28,8 +29,10 @@ public class Mainmenu_btn_controller : MonoBehaviour
     {
         if (Input.GetAxis("Vertical") != 0)
         {
-            if (!keyDown)
+            if (!isKeyDown)
             {
+                isKeyDown = true;
+                fTimer = 0;
                 if (Input.GetAxis("Vertical") < 0)
                 {
                     if (index < maxIndex)
@@ -52,12 +55,26 @@ public class Mainmenu_btn_controller : MonoBehaviour
                         index = maxIndex;
                     }
                 }
-                keyDown = true;
+            }
+            else
+            {
+                fTimer += Time.deltaTime;
+                if (iFirstInputDelayTimeCounter < 30)
+                {
+                    if (fTimer > 1) isKeyDown = false;
+                    iFirstInputDelayTimeCounter++;
+                }
+                else
+                {
+                    if (fTimer > 0.25) isKeyDown = false;
+                }
             }
         }
         else
         {
-            keyDown = false;
+            fTimer=0;
+            iFirstInputDelayTimeCounter = 0;
+            isKeyDown = false;
         }
     }
 }
