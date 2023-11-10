@@ -190,7 +190,7 @@ public class PauseScenes_Controller : MonoBehaviour
     private void BackToMainMenu()
     {
         Debug.Log("BackToMainMenu");
-        SceneManager.LoadScene("MainScenes");
+        SceneManager.LoadScene("MainScene");
     }
 
 }

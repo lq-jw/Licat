@@ -16,8 +16,8 @@ public class MainScenes_Controller : MonoBehaviour
 
     void Start()
     {
-        SetScenes("open");
         // SetScenes("open");
+        SetScenes("main");
     }
 
     void Update()
