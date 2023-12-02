@@ -10,9 +10,11 @@ public class MainScenes_Controller : MonoBehaviour
     [SerializeField] private GameObject Logo, Open, Main_menu, Start_menu, Set_menu;
 
     [SerializeField] private string now_menu;
+    [SerializeField] private bool isFirstGame = true;
 
     void Start()
     {
+        isFirstGame = false;        // 測試用
         SetScenes("open");
         // SetScenes("main");
     }
@@ -30,7 +32,6 @@ public class MainScenes_Controller : MonoBehaviour
 
     private void CloseScenes()      // 關閉所有場景，如果有新的scene，要在這裡更新
     {
-        Logo.SetActive(false);
         Open.SetActive(false);
         Main_menu.SetActive(false);
         Start_menu.SetActive(false);
@@ -55,6 +56,7 @@ public class MainScenes_Controller : MonoBehaviour
                 Start_menu.SetActive(true);
                 break;
             case "set":
+                Logo.SetActive(false);
                 Set_menu.SetActive(true);
                 break;
             default:
@@ -64,6 +66,7 @@ public class MainScenes_Controller : MonoBehaviour
 
     public void NewGame()     // 開啟新遊戲
     {
+        isFirstGame = false;
         print("start new game");
         SceneManager.LoadScene("GameScene");
         SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
@@ -142,7 +145,8 @@ public class MainScenes_Controller : MonoBehaviour
             switch (btnIndex)
             {
                 case 0:
-                    SetScenes("start");
+                    if (isFirstGame) NewGame();
+                    else SetScenes("start");
                     break;
                 case 1:
                     SetScenes("set");
