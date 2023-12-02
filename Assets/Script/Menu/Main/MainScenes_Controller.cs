@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MainScenes_Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject Logo, Open, Main_menu, Set_menu;
+    [SerializeField] private GameObject Logo, Open, Main_menu, Start_menu, Set_menu;
 
     [SerializeField] private string now_menu;
 
@@ -33,6 +33,7 @@ public class MainScenes_Controller : MonoBehaviour
         Logo.SetActive(false);
         Open.SetActive(false);
         Main_menu.SetActive(false);
+        Start_menu.SetActive(false);
         Set_menu.SetActive(false);
     }
     private void SetScenes(string set)      // 切換場景，會關閉場景，更新 now_menu
@@ -49,6 +50,10 @@ public class MainScenes_Controller : MonoBehaviour
                 Logo.SetActive(true);
                 Main_menu.SetActive(true);
                 break;
+            case "start":
+                Logo.SetActive(true);
+                Start_menu.SetActive(true);
+                break;
             case "set":
                 Set_menu.SetActive(true);
                 break;
@@ -57,9 +62,16 @@ public class MainScenes_Controller : MonoBehaviour
         }
     }
 
-    public void GameStart()     // 進入遊戲
+    public void NewGame()     // 開啟新遊戲
     {
-        print("start");
+        print("start new game");
+        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+    }
+
+    public void ContinueGame()     // 繼續遊戲
+    {
+        print("continue game");
         SceneManager.LoadScene("GameScene");
         SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
     }
@@ -87,8 +99,11 @@ public class MainScenes_Controller : MonoBehaviour
                 case "main":
                     SetScenes("open");
                     break;
+                case "start":
+                    GoBack();
+                    break;
                 case "set":
-                    SetScenes("main");
+                    GoBack();
                     break;
                 default:
                     break;
@@ -98,7 +113,7 @@ public class MainScenes_Controller : MonoBehaviour
 
     public void BtnOnClick(int index, int mode = 0)
     {
-        Debug.Log(now_menu + " " + index);
+        // Debug.Log(now_menu + " " + index);
         BtnEvent(index, mode);
     }
 
@@ -108,6 +123,9 @@ public class MainScenes_Controller : MonoBehaviour
         {
             case "main":
                 MainMenuBtnEvent(btnIndex, mode);
+                break;
+            case "start":
+                StartMenuBtnEvent(btnIndex, mode);
                 break;
             case "set":
                 SetMenuBtnEvent(btnIndex, mode);
@@ -124,13 +142,34 @@ public class MainScenes_Controller : MonoBehaviour
             switch (btnIndex)
             {
                 case 0:
-                    GameStart();
+                    SetScenes("start");
                     break;
                 case 1:
                     SetScenes("set");
                     break;
                 case 2:
                     GameQuit();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private void StartMenuBtnEvent(int btnIndex, int mode)
+    {
+        if (mode == 0)
+        {
+            switch (btnIndex)
+            {
+                case 0:
+                    ContinueGame();
+                    break;
+                case 1:
+                    NewGame();
+                    break;
+                case 2:
+                    GoBack();
                     break;
                 default:
                     break;
@@ -192,35 +231,6 @@ public class MainScenes_Controller : MonoBehaviour
         }
 
     }
-    private void AchievementMenuBtnEvent(int btnIndex, int mode)
-    {
-        if (mode == 0)
-        {
-            switch (btnIndex)
-            {
-                case 0:
-                    GoBack();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-    private void CreditMenuBtnEvent(int btnIndex, int mode)
-    {
-        if (mode == 0)
-        {
-            switch (btnIndex)
-            {
-                case 0:
-                    GoBack();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
 }
 
 
