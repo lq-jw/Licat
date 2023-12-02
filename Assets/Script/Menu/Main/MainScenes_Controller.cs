@@ -7,17 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class MainScenes_Controller : MonoBehaviour
 {
-    public GameObject Main_menu;
-    public GameObject Open;
-    public GameObject Set_menu;
-    [SerializeField] private GameObject Achievement_menu, Credit_menu;
+    [SerializeField] private GameObject Logo, Open, Main_menu, Set_menu;
 
     [SerializeField] private string now_menu;
 
     void Start()
     {
-        // SetScenes("open");
-        SetScenes("main");
+        SetScenes("open");
+        // SetScenes("main");
     }
 
     void Update()
@@ -33,11 +30,10 @@ public class MainScenes_Controller : MonoBehaviour
 
     private void CloseScenes()      // 關閉所有場景，如果有新的scene，要在這裡更新
     {
+        Logo.SetActive(false);
         Open.SetActive(false);
         Main_menu.SetActive(false);
         Set_menu.SetActive(false);
-        Achievement_menu.SetActive(false);
-        Credit_menu.SetActive(false);
     }
     private void SetScenes(string set)      // 切換場景，會關閉場景，更新 now_menu
     {
@@ -46,19 +42,15 @@ public class MainScenes_Controller : MonoBehaviour
         switch (now_menu)
         {
             case "open":
+                Logo.SetActive(true);
                 Open.SetActive(true);
                 break;
             case "main":
+                Logo.SetActive(true);
                 Main_menu.SetActive(true);
                 break;
             case "set":
                 Set_menu.SetActive(true);
-                break;
-            case "achievement":
-                Achievement_menu.SetActive(true);
-                break;
-            case "credit":
-                Credit_menu.SetActive(true);
                 break;
             default:
                 break;
@@ -93,15 +85,9 @@ public class MainScenes_Controller : MonoBehaviour
                     GameQuit();
                     break;
                 case "main":
-                    GameQuit();
+                    SetScenes("open");
                     break;
                 case "set":
-                    SetScenes("main");
-                    break;
-                case "achievement":
-                    SetScenes("main");
-                    break;
-                case "credit":
                     SetScenes("main");
                     break;
                 default:
@@ -126,12 +112,6 @@ public class MainScenes_Controller : MonoBehaviour
             case "set":
                 SetMenuBtnEvent(btnIndex, mode);
                 break;
-            case "achievement":
-                AchievementMenuBtnEvent(btnIndex, mode);
-                break;
-            case "credit":
-                CreditMenuBtnEvent(btnIndex, mode);
-                break;
             default:
                 break;
         }
@@ -147,21 +127,9 @@ public class MainScenes_Controller : MonoBehaviour
                     GameStart();
                     break;
                 case 1:
-                    GameStart();
-                    break;
-                case 2:
-
-                    break;
-                case 3:
                     SetScenes("set");
                     break;
-                case 4:
-                    SetScenes("achievement");
-                    break;
-                case 5:
-                    SetScenes("credit");
-                    break;
-                case 6:
+                case 2:
                     GameQuit();
                     break;
                 default:
@@ -231,7 +199,7 @@ public class MainScenes_Controller : MonoBehaviour
             switch (btnIndex)
             {
                 case 0:
-                GoBack();
+                    GoBack();
                     break;
                 default:
                     break;
@@ -245,7 +213,7 @@ public class MainScenes_Controller : MonoBehaviour
             switch (btnIndex)
             {
                 case 0:
-                GoBack();
+                    GoBack();
                     break;
                 default:
                     break;
