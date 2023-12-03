@@ -15,62 +15,48 @@ public class MainScenes_Controller : MonoBehaviour
     void Start()
     {
         isFirstGame = false;        // 測試用
-        SetScenes("open");
-        // SetScenes("main");
+        GotoPage("open");
+        // GotoPage("main");        // 測試用
         pre_menu = now_menu;
     }
 
     void Update()
     {
-        if (Open.activeSelf && Input.anyKeyDown && !(Input.GetKeyDown(KeyCode.Escape))) SetScenes("main");
+        if (Open.activeSelf && Input.anyKeyDown && !(Input.GetKeyDown(KeyCode.Escape))) GotoPage("main");
         OnEscClick();
     }
 
-    private void CloseScenes(string scene = "all")      // 關閉所有場景，如果有新的scene，要在這裡更新
+    private void CloseScenes()      // 關閉所有場景，如果有新的scene，要在這裡更新，除了Logo
     {
-        // switch (scene)
-        // {
-        //     case "quit":
-        //         Quit_check.SetActive(false);
-        //         break;
-        //     default:
         Open.SetActive(false);
         Main_menu.SetActive(false);
         Start_menu.SetActive(false);
         Set_menu.SetActive(false);
         Quit_check.SetActive(false);
-        //         break;
-        // }
     }
-    private void SetScenes(string set)      // 切換場景，會關閉場景，更新 now_menu
+    private void GotoPage(string set)      // 切換場景，會關閉場景，更新 now_menu
     {
-        pre_menu = now_menu;
+        pre_menu = now_menu;    // 給離開遊戲確認頁的 goback 用的
         now_menu = set;
         CloseScenes();
         switch (now_menu)
         {
             case "open":
-                // CloseScenes();
                 Logo.SetActive(true);
                 Open.SetActive(true);
                 break;
             case "main":
-                // CloseScenes();
                 Logo.SetActive(true);
                 Main_menu.SetActive(true);
                 break;
             case "start":
-                // CloseScenes();
                 Logo.SetActive(true);
                 Start_menu.SetActive(true);
                 break;
             case "set":
-                // CloseScenes();
-                // Logo.SetActive(false);
                 Set_menu.SetActive(true);
                 break;
             case "quit":
-                // Logo.SetActive(false);
                 Quit_check.SetActive(true);
                 break;
             default:
@@ -103,28 +89,25 @@ public class MainScenes_Controller : MonoBehaviour
         else CheckGameQuit();
     }
 
-    private void CheckGameQuit()        // 確認是否要離開遊戲
+    private void CheckGameQuit()        // 顯示離開遊戲確認頁，確認是否要離開遊戲
     {
-        SetScenes("quit");
+        GotoPage("quit");
     }
 
     private void GoBack()       // menu中的各頁回到上一頁
     {
-        SetScenes("main");
-        // switch (now_menu)
-        // {
-        //     case "main":
-        //         Debug.Log("go back to open");
-        //         SetScenes("open");
-
-        //         break;
-        //     case "quit":
-        //         SetScenes(pre_menu);
-        //         break;
-        //     default:
-        //         SetScenes("main");
-        //         break;
-        // }
+        switch (now_menu)
+        {
+            case "main":
+                GotoPage("open");
+                break;
+            case "quit":
+                GotoPage(pre_menu);
+                break;
+            default:
+                GotoPage("main");
+                break;
+        }
 
     }
 
@@ -137,19 +120,8 @@ public class MainScenes_Controller : MonoBehaviour
                 case "open":
                     GameQuit();
                     break;
-                case "main":
-                    SetScenes("open");
-                    break;
-                case "start":
-                    GoBack();
-                    break;
-                case "set":
-                    GoBack();
-                    break;
-                case "quit":
-                    SetScenes(pre_menu);
-                    break;
                 default:
+                    GoBack();
                     break;
             }
         }
@@ -190,10 +162,10 @@ public class MainScenes_Controller : MonoBehaviour
             {
                 case 0:
                     if (isFirstGame) NewGame();
-                    else SetScenes("start");
+                    else GotoPage("start");
                     break;
                 case 1:
-                    SetScenes("set");
+                    GotoPage("set");
                     break;
                 case 2:
                     GameQuit();
