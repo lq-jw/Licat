@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class PauseScenes_Controller : MonoBehaviour
 {
 
-    [SerializeField] private GameObject Pause_menu, Set_menu, BG;
+    [SerializeField] private GameObject Pause_menu, Set_menu, Quit_check, BG;
     [SerializeField] private string now_menu;
     [SerializeField] private bool isPause;
 
     // Start is called before the first frame update
     void Start()
     {
-        SetScenes("game");
+        GotoPage("game");
     }
 
     // Update is called once per frame
@@ -26,8 +26,9 @@ public class PauseScenes_Controller : MonoBehaviour
     {
         Pause_menu.SetActive(false);
         Set_menu.SetActive(false);
+        Quit_check.SetActive(false);
     }
-    private void SetScenes(string set)      // 切換場景，會關閉場景，更新 now_menu
+    private void GotoPage(string set)      // 切換場景，會關閉場景，更新 now_menu
     {
         now_menu = set;
         CloseScenes();
@@ -46,6 +47,10 @@ public class PauseScenes_Controller : MonoBehaviour
                 Set_menu.SetActive(true);
                 isPause = true;
                 break;
+            case "quit":
+                Quit_check.SetActive(true);
+                isPause = true;
+                break;
             default:
                 break;
         }
@@ -53,7 +58,7 @@ public class PauseScenes_Controller : MonoBehaviour
 
     private void GoBack()       // menu中的各頁回到上一頁
     {
-        SetScenes("pause");
+        GotoPage("pause");
     }
 
     private void OnEscClick()       // menu中的esc事件
@@ -63,13 +68,16 @@ public class PauseScenes_Controller : MonoBehaviour
             switch (now_menu)
             {
                 case "game":
-                    SetScenes("pause");
+                    GotoPage("pause");
                     break;
                 case "pause":
-                    SetScenes("game");
+                    GotoPage("game");
                     break;
                 case "set":
-                    SetScenes("pause");
+                    GotoPage("pause");
+                    break;
+                case "quit":
+                    GotoPage("pause");
                     break;
                 default:
                     break;
@@ -80,7 +88,7 @@ public class PauseScenes_Controller : MonoBehaviour
 
     public void BtnOnClick(int index, int mode = 0)
     {
-        Debug.Log(now_menu + " " + index);
+        // Debug.Log(now_menu + " " + index);
         BtnEvent(index, mode);
     }
 
@@ -96,6 +104,9 @@ public class PauseScenes_Controller : MonoBehaviour
                 case "set":
                     SetMenuBtnEvent(btnIndex, mode);
                     break;
+                case "quit":
+                    QuitMenuBtnEvent(btnIndex, mode);
+                    break;
                 default:
                     break;
             }
@@ -107,10 +118,10 @@ public class PauseScenes_Controller : MonoBehaviour
         switch (btnIndex)
         {
             case 0:
-                SetScenes("game");
+                GotoPage("game");
                 break;
             case 1:
-                SetScenes("set");
+                GotoPage("set");
                 break;
             case 2:
                 GameSaveAndBackToMain();
@@ -176,15 +187,33 @@ public class PauseScenes_Controller : MonoBehaviour
 
     }
 
+private void QuitMenuBtnEvent(int btnIndex, int mode)
+    {
+        if (mode == 0)
+        {
+            switch (btnIndex)
+            {
+                case 0:
+                    BackToMainMenu();
+                    break;
+                case 1:
+                    GoBack();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
     private void GameSaveAndBackToMain()
     {
         GameSave();
-        BackToMainMenu();
     }
 
     private void GameSave()
     {
         Debug.Log("Save Game");
+        GotoPage("quit");
     }
 
     private void BackToMainMenu()
