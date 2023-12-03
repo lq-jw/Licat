@@ -22,6 +22,11 @@ public class PauseScenes_Controller : MonoBehaviour
         OnEscClick();
     }
 
+    public bool CheckIsPause()      // 給其他 scene 檢查是否在暫停狀態（但我不確定把控制這個變數的權力）給 pause menu 這樣到底好不好）
+    {
+        return isPause;
+    }
+
     private void CloseScenes()      // 關閉所有場景，如果有新的scene，要在這裡更新
     {
         Pause_menu.SetActive(false);
@@ -187,7 +192,7 @@ public class PauseScenes_Controller : MonoBehaviour
 
     }
 
-private void QuitMenuBtnEvent(int btnIndex, int mode)
+    private void QuitMenuBtnEvent(int btnIndex, int mode)
     {
         if (mode == 0)
         {
