@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class MainScenes_Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject Logo, Open, Main_menu, Start_menu, Set_menu;
+    [SerializeField] private GameObject Logo, Open, Main_menu, Start_menu, Set_menu, Quit_check;
 
-    [SerializeField] private string now_menu;
+    [SerializeField] private string now_menu, pre_menu;
     [SerializeField] private bool isFirstGame = true;
 
     void Start()
@@ -17,54 +17,68 @@ public class MainScenes_Controller : MonoBehaviour
         isFirstGame = false;        // 測試用
         SetScenes("open");
         // SetScenes("main");
+        pre_menu = now_menu;
     }
 
     void Update()
     {
-        if (Open.activeSelf && Input.anyKeyDown)
-        {
-            Open.SetActive(false);
-            Main_menu.SetActive(true);
-            now_menu = "main";
-        }
+        if (Open.activeSelf && Input.anyKeyDown && !(Input.GetKeyDown(KeyCode.Escape))) SetScenes("main");
         OnEscClick();
     }
 
-    private void CloseScenes()      // 關閉所有場景，如果有新的scene，要在這裡更新
+    private void CloseScenes(string scene = "all")      // 關閉所有場景，如果有新的scene，要在這裡更新
     {
+        // switch (scene)
+        // {
+        //     case "quit":
+        //         Quit_check.SetActive(false);
+        //         break;
+        //     default:
         Open.SetActive(false);
         Main_menu.SetActive(false);
         Start_menu.SetActive(false);
         Set_menu.SetActive(false);
+        Quit_check.SetActive(false);
+        //         break;
+        // }
     }
     private void SetScenes(string set)      // 切換場景，會關閉場景，更新 now_menu
     {
+        pre_menu = now_menu;
         now_menu = set;
         CloseScenes();
         switch (now_menu)
         {
             case "open":
+                // CloseScenes();
                 Logo.SetActive(true);
                 Open.SetActive(true);
                 break;
             case "main":
+                // CloseScenes();
                 Logo.SetActive(true);
                 Main_menu.SetActive(true);
                 break;
             case "start":
+                // CloseScenes();
                 Logo.SetActive(true);
                 Start_menu.SetActive(true);
                 break;
             case "set":
-                Logo.SetActive(false);
+                // CloseScenes();
+                // Logo.SetActive(false);
                 Set_menu.SetActive(true);
+                break;
+            case "quit":
+                // Logo.SetActive(false);
+                Quit_check.SetActive(true);
                 break;
             default:
                 break;
         }
     }
 
-    public void NewGame()     // 開啟新遊戲
+    private void NewGame()     // 開啟新遊戲
     {
         isFirstGame = false;
         print("start new game");
@@ -72,22 +86,46 @@ public class MainScenes_Controller : MonoBehaviour
         SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
     }
 
-    public void ContinueGame()     // 繼續遊戲
+    private void ContinueGame()     // 繼續遊戲
     {
         print("continue game");
         SceneManager.LoadScene("GameScene");
         SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
     }
 
-    public void GameQuit()      // 離開遊戲
+    private void GameQuit()      // 離開遊戲
     {
-        Debug.Log("Quit Game");
-        Application.Quit();
+        if (now_menu == "quit")
+        {
+            Debug.Log("Quit Game");
+            Application.Quit();
+        }
+        else CheckGameQuit();
+    }
+
+    private void CheckGameQuit()        // 確認是否要離開遊戲
+    {
+        SetScenes("quit");
     }
 
     private void GoBack()       // menu中的各頁回到上一頁
     {
         SetScenes("main");
+        // switch (now_menu)
+        // {
+        //     case "main":
+        //         Debug.Log("go back to open");
+        //         SetScenes("open");
+
+        //         break;
+        //     case "quit":
+        //         SetScenes(pre_menu);
+        //         break;
+        //     default:
+        //         SetScenes("main");
+        //         break;
+        // }
+
     }
 
     private void OnEscClick()       // menu中的esc事件
@@ -107,6 +145,9 @@ public class MainScenes_Controller : MonoBehaviour
                     break;
                 case "set":
                     GoBack();
+                    break;
+                case "quit":
+                    SetScenes(pre_menu);
                     break;
                 default:
                     break;
@@ -132,6 +173,9 @@ public class MainScenes_Controller : MonoBehaviour
                 break;
             case "set":
                 SetMenuBtnEvent(btnIndex, mode);
+                break;
+            case "quit":
+                QuitMenuBtnEvent(btnIndex, mode);
                 break;
             default:
                 break;
@@ -234,6 +278,23 @@ public class MainScenes_Controller : MonoBehaviour
                 break;
         }
 
+    }
+    private void QuitMenuBtnEvent(int btnIndex, int mode)
+    {
+        if (mode == 0)
+        {
+            switch (btnIndex)
+            {
+                case 0:
+                    GameQuit();
+                    break;
+                case 1:
+                    GoBack();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
 
