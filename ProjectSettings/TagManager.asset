@@ -8,10 +8,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Background
+  - Role_stage
   - Water
   - UI
-  - 
+  - Ground & Wall
   - 
   - 
   - 
