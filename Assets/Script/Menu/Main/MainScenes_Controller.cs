@@ -127,6 +127,9 @@ public class MainScenes_Controller : MonoBehaviour
         }
     }
 
+/////////////////////////////////////////////////////////
+// menu 按鈕控制、事件
+
     public void BtnOnClick(int index, int mode = 0)
     {
         // Debug.Log(now_menu + " " + index);
