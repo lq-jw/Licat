@@ -117,6 +117,7 @@ public class MainScenes_Controller : MonoBehaviour
             switch (now_menu)
             {
                 case "open":
+                case "main":
                     GameQuit();
                     break;
                 default:
