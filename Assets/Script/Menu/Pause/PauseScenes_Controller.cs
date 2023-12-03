@@ -1,3 +1,6 @@
+// Pause menu 畫面控制區
+// 控制頁面切換、按鈕的功能
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseScenes_Controller : MonoBehaviour
 {
-
     [SerializeField] private GameObject Pause_menu, Set_menu, Quit_check, BG;
     [SerializeField] private string now_menu;
     [SerializeField] private bool isPause;

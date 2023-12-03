@@ -1,4 +1,5 @@
-// menu 畫面控制區
+// Pain menu 畫面控制區
+// 控制頁面切換、按鈕的功能
 
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ public class MainScenes_Controller : MonoBehaviour
 
     void Start()
     {
-        isFirstGame = false;        // 測試用
+        isFirstGame = false;        // 測試用，等資料的部分弄好後，就要刪掉
         GotoPage("open");
         // GotoPage("main");        // 測試用
         pre_menu = now_menu;
@@ -23,6 +24,7 @@ public class MainScenes_Controller : MonoBehaviour
     void Update()
     {
         if (Open.activeSelf && Input.anyKeyDown && !(Input.GetKeyDown(KeyCode.Escape))) GotoPage("main");
+        // ＾給 open 用的判定
         OnEscClick();
     }
 
@@ -101,11 +103,8 @@ public class MainScenes_Controller : MonoBehaviour
             case "main":
                 GotoPage("open");
                 break;
-            case "quit":
-                GotoPage(pre_menu);
-                break;
             default:
-                GotoPage("main");
+                GotoPage(pre_menu);
                 break;
         }
 
@@ -127,8 +126,8 @@ public class MainScenes_Controller : MonoBehaviour
         }
     }
 
-/////////////////////////////////////////////////////////
-// menu 按鈕控制、事件
+    /////////////////////////////////////////////////////////
+    // menu 按鈕控制、事件
 
     public void BtnOnClick(int index, int mode = 0)
     {
