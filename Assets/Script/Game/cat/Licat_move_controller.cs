@@ -160,8 +160,8 @@ public class Licat_move_controller : MonoBehaviour
 
         licat_yallow_prefab.SetActive(true);
         licat_blue_prefab.SetActive(true);
-        blue_Ani.SetBool("is_solid", true);
-        yallow_Ani.SetBool("is_solid", true);
+        blue_Ani.SetBool("is_solid", false);
+        yallow_Ani.SetBool("is_solid", false);
         
         licat_yallow_prefab.GetComponent<Licat_yallow_move_controller>().enabled = false;
         licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = true;
