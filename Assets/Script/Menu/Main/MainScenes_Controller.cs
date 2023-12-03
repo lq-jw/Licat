@@ -70,14 +70,16 @@ public class MainScenes_Controller : MonoBehaviour
     {
         isFirstGame = false;
         print("start new game");
-        SceneManager.LoadScene("GameScene");
+        // SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Level_0");
         SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
     }
 
     private void ContinueGame()     // 繼續遊戲
     {
         print("continue game");
-        SceneManager.LoadScene("GameScene");
+        // SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Level_0");
         SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
     }
 
