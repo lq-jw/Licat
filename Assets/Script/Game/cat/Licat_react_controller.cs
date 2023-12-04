@@ -13,7 +13,7 @@ public class Licat_react_controller : MonoBehaviour
     Rigidbody2D Rigidbody;
     public Animator catAni;
     public CinemachineVirtualCamera virtualCamera;
-    private bool solid, spilt_solid;
+    private bool solid;
 
     private float hp = 0f;
     private float max_hp;
@@ -39,7 +39,7 @@ public class Licat_react_controller : MonoBehaviour
     {
         solid = catAni.GetBool("is_solid");
 
-        if (collision.CompareTag("ditch"))  //碰到水溝(死)
+        if (collision.CompareTag("Ditch"))  //碰到水溝(死)
         {
             if (virtualCamera != null)
             {

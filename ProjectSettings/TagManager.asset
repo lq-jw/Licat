@@ -66,6 +66,9 @@ TagManager:
   - name: stage
     uniqueID: 2669012725
     locked: 0
+  - name: front
+    uniqueID: 4051450009
+    locked: 0
   - name: ui
     uniqueID: 1292811967
     locked: 0

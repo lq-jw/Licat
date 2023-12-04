@@ -118,7 +118,7 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))      //分裂，融合動畫
+        if (Input.GetKeyDown(KeyCode.R))      //分裂，融合動畫
         {
             if (catAni.GetBool("is_split") == true)
             {
@@ -136,7 +136,7 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))        //變形動畫
+        if (Input.GetKeyDown(KeyCode.Q))        //變形動畫
         {
             if (catAni.GetBool("is_solid") == true)
             {

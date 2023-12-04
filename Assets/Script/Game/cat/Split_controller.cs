@@ -18,25 +18,38 @@ public class Split_controller : MonoBehaviour
     public GameObject blue_triangle;
     public GameObject yallow_triangle;
 
+    private float pressTime = 0f;
+    private float requiredPressTime = 1f; // 長按所需的時間
+
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.R))
         {
-            print("stoppppppp");
+            Debug.Log("F key is being held down");
+            pressTime += Time.deltaTime;
+            if(pressTime >= requiredPressTime)
+            {
+                print("stoppppppp");
 
-            Big_licat.transform.position = new Vector3((Blue_licat.transform.position.x) - 2, Blue_licat.transform.position.y, 3);
+                Big_licat.transform.position = new Vector3((Blue_licat.transform.position.x) - 2, Blue_licat.transform.position.y, 3);
 
-            Big_licat.SetActive(true);
-            Big_licat.GetComponent<Licat_move_controller>().enabled = true;
-            catSr.enabled = true;
-            polygonCollider2D.enabled = true;
-            LeftBoxCollider2D.enabled = true;
+                Big_licat.SetActive(true);
+                Big_licat.GetComponent<Licat_move_controller>().enabled = true;
+                catSr.enabled = true;
+                polygonCollider2D.enabled = true;
+                LeftBoxCollider2D.enabled = true;
 
-            StartCoroutine(CloseSplitController());
+                StartCoroutine(CloseSplitController());
+            }
+        }
+        else
+        {
+            pressTime = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (Blue_licat.GetComponent<Licat_blue_move_controller>().enabled == false)
             {

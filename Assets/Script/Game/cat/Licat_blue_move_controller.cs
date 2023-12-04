@@ -89,7 +89,7 @@ public class Licat_blue_move_controller : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (catAni.GetBool("is_solid") == true)
             {
