@@ -63,7 +63,7 @@ public class Tube_through_1_controller : MonoBehaviour
             Debug.Log(Big_cat.transform.position.x);
             yield return null;
         }
-        while (Big_cat.transform.position.x < gameObject.transform.position.x + 5)
+        while (Big_cat.transform.position.x < gameObject.transform.position.x + 6)
         {
             Big_cat.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             Big_cat.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);

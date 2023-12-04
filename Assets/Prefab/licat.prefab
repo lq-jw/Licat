@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5452990571666520432}
   - component: {fileID: 5452990571666520437}
   - component: {fileID: 928039505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: licat
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5452990572292603852}
   - component: {fileID: 5452990572292603855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 'rightFoot '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5452990572864264848}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5452990573064767544}
   - component: {fileID: 5452990573064767547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: leftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
