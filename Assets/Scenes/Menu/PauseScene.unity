@@ -293,8 +293,8 @@ RectTransform:
   m_Father: {fileID: 1746640121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.49, y: 0}
+  m_AnchorMax: {x: 0.49, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u904A\u6232\u5DF2\u5132\u5B58\u81F3\u7576\u524D\u9032\u5EA6"
+  m_text: "\u904A\u6232\u5DF2\u5132\u5B58\u81F3\u7576\u524D\u9032\u5EA6\n\u78BA\u5B9A\u56DE\u5230\u4E3B\u9078\u55AE\uFF1F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b92b98acc128486ea80fcecda75c607, type: 2}
   m_sharedMaterial: {fileID: 8635842897002093813, guid: 8b92b98acc128486ea80fcecda75c607, type: 2}
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 190372195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 799107476707aec4bb3dc099aded53be, type: 3}
+  m_Script: {fileID: 11500000, guid: 46bf303094971419fa11ac0f9c398dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
@@ -972,10 +972,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 203423692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4247177d5fc0b4b2ebf1f94357cd1746, type: 3}
+  m_Script: {fileID: 11500000, guid: 56873e7b1cdc0434cba4b43592b5ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
+  menu_btn_controller: {fileID: 514685547}
   btn_animator: {fileID: 203423695}
   firstIndex: 0
   lastIndex: 2
@@ -1625,10 +1625,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf154242a16d42bf91210369716ab0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
-  scenes_controller: {fileID: 1531711998}
+  menu_btn_controller: {fileID: 514685547}
   btn_animator: {fileID: 339359554}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 3
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 1531711998}
 --- !u!225 &339359553
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2177,7 +2181,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2252,8 +2256,8 @@ RectTransform:
   m_Father: {fileID: 752936005}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2329,7 +2333,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.76, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2508,7 +2512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &514685546
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2549,7 +2553,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 514685545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 799107476707aec4bb3dc099aded53be, type: 3}
+  m_Script: {fileID: 11500000, guid: 46bf303094971419fa11ac0f9c398dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
@@ -2644,10 +2648,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf154242a16d42bf91210369716ab0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 190372197}
-  scenes_controller: {fileID: 1531711998}
+  menu_btn_controller: {fileID: 190372197}
   btn_animator: {fileID: 605255405}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 0
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 1531711998}
 --- !u!1 &605927879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3279,10 +3287,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf154242a16d42bf91210369716ab0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 712960953}
-  scenes_controller: {fileID: 1531711998}
+  menu_btn_controller: {fileID: 712960953}
   btn_animator: {fileID: 672391880}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 0
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 1531711998}
 --- !u!1 &676998365
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,10 +3436,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf154242a16d42bf91210369716ab0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
-  scenes_controller: {fileID: 1531711998}
+  menu_btn_controller: {fileID: 514685547}
   btn_animator: {fileID: 712750523}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 4
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 1531711998}
 --- !u!95 &712750523
 Animator:
   serializedVersion: 5
@@ -3465,7 +3481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &712960952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3501,7 +3517,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 712960951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 799107476707aec4bb3dc099aded53be, type: 3}
+  m_Script: {fileID: 11500000, guid: 46bf303094971419fa11ac0f9c398dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
@@ -4307,7 +4323,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.49, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4671,10 +4687,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf154242a16d42bf91210369716ab0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
-  scenes_controller: {fileID: 1531711998}
+  menu_btn_controller: {fileID: 514685547}
   btn_animator: {fileID: 986554772}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 5
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 1531711998}
 --- !u!95 &986554772
 Animator:
   serializedVersion: 5
@@ -4829,10 +4849,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf154242a16d42bf91210369716ab0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 712960953}
-  scenes_controller: {fileID: 1531711998}
+  menu_btn_controller: {fileID: 712960953}
   btn_animator: {fileID: 1051913210}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 1
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 1531711998}
 --- !u!1 &1063356566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4844,8 +4868,6 @@ GameObject:
   - component: {fileID: 1063356567}
   - component: {fileID: 1063356571}
   - component: {fileID: 1063356570}
-  - component: {fileID: 1063356569}
-  - component: {fileID: 1063356568}
   m_Layer: 5
   m_Name: txv
   m_TagString: Untagged
@@ -4873,43 +4895,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -62.5}
   m_SizeDelta: {x: 200, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1063356568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063356566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4247177d5fc0b4b2ebf1f94357cd1746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
-  btn_animator: {fileID: 1063356569}
-  firstIndex: 4
-  lastIndex: 4
---- !u!95 &1063356569
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063356566}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ec5b6e29c4a074cd580d841435425b8f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1063356570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5828,13 +5813,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1242968432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4247177d5fc0b4b2ebf1f94357cd1746, type: 3}
+  m_Script: {fileID: 11500000, guid: 56873e7b1cdc0434cba4b43592b5ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
+  menu_btn_controller: {fileID: 514685547}
   btn_animator: {fileID: 1242968435}
   firstIndex: 4
-  lastIndex: 4
+  lastIndex: 0
 --- !u!95 &1242968435
 Animator:
   serializedVersion: 5
@@ -5998,8 +5983,8 @@ RectTransform:
   m_Father: {fileID: 1973493781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.76, y: 0}
+  m_AnchorMax: {x: 0.76, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7076,8 +7061,6 @@ GameObject:
   - component: {fileID: 1581005075}
   - component: {fileID: 1581005079}
   - component: {fileID: 1581005078}
-  - component: {fileID: 1581005077}
-  - component: {fileID: 1581005076}
   m_Layer: 5
   m_Name: txv
   m_TagString: Untagged
@@ -7105,43 +7088,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -62.5}
   m_SizeDelta: {x: 200, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1581005076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581005074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4247177d5fc0b4b2ebf1f94357cd1746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
-  btn_animator: {fileID: 1581005077}
-  firstIndex: 0
-  lastIndex: 0
---- !u!95 &1581005077
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581005074}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ec5b6e29c4a074cd580d841435425b8f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1581005078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7290,10 +7236,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1592133314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4247177d5fc0b4b2ebf1f94357cd1746, type: 3}
+  m_Script: {fileID: 11500000, guid: 56873e7b1cdc0434cba4b43592b5ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
+  menu_btn_controller: {fileID: 514685547}
   btn_animator: {fileID: 1592133317}
   firstIndex: 3
   lastIndex: 3
@@ -7733,10 +7679,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf154242a16d42bf91210369716ab0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 712960953}
-  scenes_controller: {fileID: 1531711998}
+  menu_btn_controller: {fileID: 712960953}
   btn_animator: {fileID: 1616827424}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 2
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 1531711998}
 --- !u!1 &1627702627
 GameObject:
   m_ObjectHideFlags: 0
@@ -7824,10 +7774,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf154242a16d42bf91210369716ab0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 190372197}
-  scenes_controller: {fileID: 1531711998}
+  menu_btn_controller: {fileID: 190372197}
   btn_animator: {fileID: 1627702631}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 1
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 1531711998}
 --- !u!1 &1652717548
 GameObject:
   m_ObjectHideFlags: 0
@@ -8396,8 +8350,6 @@ GameObject:
   - component: {fileID: 1712256459}
   - component: {fileID: 1712256463}
   - component: {fileID: 1712256462}
-  - component: {fileID: 1712256461}
-  - component: {fileID: 1712256460}
   m_Layer: 5
   m_Name: txv
   m_TagString: Untagged
@@ -8425,43 +8377,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -62.5}
   m_SizeDelta: {x: 200, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1712256460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712256458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4247177d5fc0b4b2ebf1f94357cd1746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
-  btn_animator: {fileID: 1712256461}
-  firstIndex: 1
-  lastIndex: 3
---- !u!95 &1712256461
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712256458}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ec5b6e29c4a074cd580d841435425b8f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1712256462
 MonoBehaviour:
   m_ObjectHideFlags: 0

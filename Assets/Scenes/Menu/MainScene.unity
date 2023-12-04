@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu_btn_controller: {fileID: 0}
+  menu_btn_controller: {fileID: 751388194}
   btn_animator: {fileID: 221734915}
   firstIndex: 0
   lastIndex: 0
@@ -6399,7 +6399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu_btn_controller: {fileID: 0}
+  menu_btn_controller: {fileID: 1401643788}
   btn_animator: {fileID: 1004154970}
   firstIndex: 0
   lastIndex: 0
@@ -6505,7 +6505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu_btn_controller: {fileID: 0}
+  menu_btn_controller: {fileID: 1401643788}
   btn_animator: {fileID: 1009106841}
   firstIndex: 0
   lastIndex: 0
@@ -6863,7 +6863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu_btn_controller: {fileID: 0}
+  menu_btn_controller: {fileID: 1662777407}
   btn_animator: {fileID: 1049635380}
   firstIndex: 0
   lastIndex: 0
@@ -7095,7 +7095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu_btn_controller: {fileID: 0}
+  menu_btn_controller: {fileID: 1662777407}
   btn_animator: {fileID: 1094072052}
   firstIndex: 0
   lastIndex: 0
@@ -9245,7 +9245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu_btn_controller: {fileID: 0}
+  menu_btn_controller: {fileID: 1662777407}
   btn_animator: {fileID: 1431187237}
   firstIndex: 0
   lastIndex: 0
@@ -10789,7 +10789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu_btn_controller: {fileID: 0}
+  menu_btn_controller: {fileID: 751388194}
   btn_animator: {fileID: 1782646340}
   firstIndex: 0
   lastIndex: 0
@@ -11265,7 +11265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d067cacb4de5d4cbf17f5204e58a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu_btn_controller: {fileID: 0}
+  menu_btn_controller: {fileID: 1401643788}
   btn_animator: {fileID: 1879509938}
   firstIndex: 0
   lastIndex: 0
