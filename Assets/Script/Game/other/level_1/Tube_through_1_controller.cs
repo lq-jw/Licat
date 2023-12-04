@@ -16,7 +16,7 @@ public class Tube_through_1_controller : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             int layerMask = LayerMask.GetMask("Role_stage");
 

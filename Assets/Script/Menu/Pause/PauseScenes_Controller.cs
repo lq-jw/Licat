@@ -12,6 +12,7 @@ public class PauseScenes_Controller : MonoBehaviour
     [SerializeField] private string now_menu;
     [SerializeField] private bool isPause;
 
+
     // Start is called before the first frame update
     void Start()
     {

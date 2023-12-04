@@ -37,6 +37,7 @@ public class Close_trigger : MonoBehaviour
         {
             print("switch level");
             SceneManager.LoadScene("Level_1");
+            SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
         }
     }
 

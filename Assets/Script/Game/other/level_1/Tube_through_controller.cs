@@ -7,7 +7,7 @@ public class Tube_through_controller : MonoBehaviour
     public BoxCollider2D tube_collider;
     public Animator Big_cat_ani;
     public GameObject Big_cat;
-    private float moveSpeed = 10000f;
+    //private float moveSpeed = 10000f;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class Tube_through_controller : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             int layerMask = LayerMask.GetMask("Role_stage");
 

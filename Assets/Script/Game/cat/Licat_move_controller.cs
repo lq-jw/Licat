@@ -46,6 +46,7 @@ public class Licat_move_controller : MonoBehaviour
         licat_blue_prefab.SetActive(false);
         licat_yallow_prefab.GetComponent<Licat_yallow_move_controller>().enabled = false;
         licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = false;
+        catAni.SetBool("is_faceRight", true);
     }
 
     // Update is called once per frame
@@ -118,7 +119,7 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))      //分裂，融合動畫
+        if (Input.GetKeyDown(KeyCode.R) && catAni.GetBool("is_solid") == false)      //分裂，融合動畫
         {
             if (catAni.GetBool("is_split") == true)
             {
