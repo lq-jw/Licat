@@ -293,8 +293,8 @@ RectTransform:
   m_Father: {fileID: 1746640121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.49, y: 0}
-  m_AnchorMax: {x: 0.49, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1629,7 +1629,7 @@ GameObject:
   - component: {fileID: 339359551}
   - component: {fileID: 339359550}
   m_Layer: 5
-  m_Name: btn_SceneMode
+  m_Name: switcher_SceneMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1882,7 +1882,7 @@ GameObject:
   - component: {fileID: 353982669}
   - component: {fileID: 353982668}
   m_Layer: 5
-  m_Name: btn_SE
+  m_Name: slider_SE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1922,8 +1922,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828cc9b04f46547c1882c879aa4d1dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
+  menu_btn_controller: {fileID: 514685547}
   btn_animator: {fileID: 353982670}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 2
   slider: {fileID: 274403860}
 --- !u!225 &353982669
@@ -2249,7 +2251,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2324,8 +2326,8 @@ RectTransform:
   m_Father: {fileID: 752936005}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2401,7 +2403,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.76, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2580,7 +2582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &514685546
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3452,7 +3454,7 @@ GameObject:
   - component: {fileID: 712750522}
   - component: {fileID: 712750521}
   m_Layer: 5
-  m_Name: btn_Language
+  m_Name: switcher_Language
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3549,7 +3551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &712960952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4391,7 +4393,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.49, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6051,8 +6053,8 @@ RectTransform:
   m_Father: {fileID: 1973493781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.76, y: 0}
-  m_AnchorMax: {x: 0.76, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8592,7 +8594,7 @@ GameObject:
   - component: {fileID: 1753900839}
   - component: {fileID: 1753900838}
   m_Layer: 5
-  m_Name: btn_BGM
+  m_Name: slider_BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8632,8 +8634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828cc9b04f46547c1882c879aa4d1dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
+  menu_btn_controller: {fileID: 514685547}
   btn_animator: {fileID: 1753900840}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 1
   slider: {fileID: 1367770735}
 --- !u!225 &1753900839
@@ -9119,7 +9123,7 @@ GameObject:
   - component: {fileID: 1867625227}
   - component: {fileID: 1867625226}
   m_Layer: 5
-  m_Name: btn_MainSound
+  m_Name: slider_MainSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9159,8 +9163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828cc9b04f46547c1882c879aa4d1dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenu_btn_controller: {fileID: 514685547}
+  menu_btn_controller: {fileID: 514685547}
   btn_animator: {fileID: 1867625228}
+  firstIndex: 0
+  lastIndex: 0
   thisIndex: 0
   slider: {fileID: 1536572844}
 --- !u!225 &1867625227
