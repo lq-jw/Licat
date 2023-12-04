@@ -1,5 +1,6 @@
-// 使用在每個主選單UI按鈕當中，決定按鈕自己到底要不要被hover
-// 如果onclick，就呼叫主選單畫面控制的btnOnClick，並把自己的index傳給它
+// 繼承 Menu_btn，PauseMenu 控制的 btn（因為 scenes_controller 需要個別處理）
+// 使用時需要在 update 呼叫 SetBtnAction 函數，執行按鈕的各種反應
+// 使用時需要完成 CheckIsClick 函數
 
 using System.Collections;
 using System.Collections.Generic;
@@ -7,36 +8,27 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu_btn : MonoBehaviour
+public class PauseMenu_btn : Menu_btn
 {
-    // 不知道這裡到底要怎麼決定public private好
-    [SerializeField] Mainmenu_btn_controller mainmenu_btn_controller;
-    [SerializeField] PauseScenes_Controller scenes_controller;
-    [SerializeField] Animator btn_animator;
-    [SerializeField] private int thisIndex;
+    [SerializeField] private PauseScenes_Controller scenes_controller;
 
+    // private void Start()
+    // {
+    //     Initial_menu_btn();
+    // }
+    
     private void Update()
     {
-        if (mainmenu_btn_controller.GetSelect() == thisIndex)
+        Update_menu_btn();
+        CheckIsClick();
+    }
+
+    protected override void CheckIsClick()     // 呼叫 scenes_controller 處理按鈕事件
+    {
+        if (isClick)
         {
-            // Debug.Log("select" + thisIndex);
-            btn_animator.SetBool("btn_hover", true);
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
-            {
-                scenes_controller.BtnOnClick(thisIndex);
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                scenes_controller.BtnOnClick(thisIndex, 1);
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                scenes_controller.BtnOnClick(thisIndex, 2);
-            }
-        }
-        else
-        {
-            btn_animator.SetBool("btn_hover", false);
+            scenes_controller.BtnOnClick(thisIndex, clickMode);
+            isClick = false;
         }
     }
 }

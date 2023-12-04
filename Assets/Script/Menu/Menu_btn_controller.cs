@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Mainmenu_btn_controller : MonoBehaviour
+public class Menu_btn_controller : MonoBehaviour
 {
     [SerializeField] private int index, iFirstInputDelayTimeCounter;
     [SerializeField] private int maxIndex;      // 每個menu的max都不一樣，要手動輸入
@@ -22,7 +22,7 @@ public class Mainmenu_btn_controller : MonoBehaviour
         else if (select > maxIndex) index = maxIndex;
         // ^ 防呆
         else index = select;
-        Debug.Log("change" + select);
+        // Debug.Log("change" + select);
     }
 
     private void Update()
