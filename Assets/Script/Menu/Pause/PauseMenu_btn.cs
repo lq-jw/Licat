@@ -12,6 +12,11 @@ public class PauseMenu_btn : Menu_btn
 {
     [SerializeField] private PauseScenes_Controller scenes_controller;
 
+    // private void Start()
+    // {
+    //     Initial_menu_btn();
+    // }
+    
     private void Update()
     {
         Update_menu_btn();

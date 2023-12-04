@@ -22,7 +22,7 @@ public class Menu_btn_controller : MonoBehaviour
         else if (select > maxIndex) index = maxIndex;
         // ^ 防呆
         else index = select;
-        Debug.Log("change" + select);
+        // Debug.Log("change" + select);
     }
 
     private void Update()
