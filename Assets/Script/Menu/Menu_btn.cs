@@ -13,9 +13,7 @@ using UnityEngine.EventSystems;
 
 public abstract class Menu_btn : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
-    // 不知道這裡到底要怎麼決定public private好
     [SerializeField] private Mainmenu_btn_controller mainmenu_btn_controller;
-    // [SerializeField] MainScenes_Controller mainScenes_controller;
     [SerializeField] private Animator btn_animator;
     [SerializeField] protected int thisIndex, clickMode = 0;
     [SerializeField] protected bool isClick = false;
@@ -23,7 +21,6 @@ public abstract class Menu_btn : MonoBehaviour, IPointerEnterHandler, IPointerCl
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("onclick");
-        // mainScenes_controller.BtnOnClick(thisIndex);
         MarkIsClick();
     }
 
@@ -41,17 +38,14 @@ public abstract class Menu_btn : MonoBehaviour, IPointerEnterHandler, IPointerCl
             btn_animator.SetBool("btn_hover", true);
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
-                // mainScenes_controller.BtnOnClick(thisIndex);
                 MarkIsClick();
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                // mainScenes_controller.BtnOnClick(thisIndex, 1);
                 MarkIsClick(1);
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                // mainScenes_controller.BtnOnClick(thisIndex, 2);
                 MarkIsClick(2);
             }
         }
