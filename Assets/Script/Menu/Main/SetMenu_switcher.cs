@@ -5,7 +5,7 @@ using TMPro;
 
 public class SetMenu_switcher : MonoBehaviour
 {
-    [SerializeField] Mainmenu_btn_controller mainmenu_btn_controller;
+    [SerializeField] Menu_btn_controller mainmenu_btn_controller;
     [SerializeField] Animator btn_animator;
     [SerializeField] private int thisIndex;
     [SerializeField] private TextMeshPro text;
