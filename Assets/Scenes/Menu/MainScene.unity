@@ -730,9 +730,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 751388194}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 221734915}
   thisIndex: 1
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &221734915
 Animator:
   serializedVersion: 5
@@ -5038,9 +5040,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1283453719}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 847139221}
   thisIndex: 1
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &847139221
 Animator:
   serializedVersion: 5
@@ -6375,9 +6379,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1283453719}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 952500195}
   thisIndex: 2
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &952500195
 Animator:
   serializedVersion: 5
@@ -6466,9 +6472,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1401643788}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 1004154970}
   thisIndex: 5
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &1004154970
 Animator:
   serializedVersion: 5
@@ -6568,9 +6576,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1401643788}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 1009106841}
   thisIndex: 4
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &1009106841
 Animator:
   serializedVersion: 5
@@ -6922,9 +6932,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1662777407}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 1049635380}
   thisIndex: 1
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &1049635380
 Animator:
   serializedVersion: 5
@@ -7150,9 +7162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1662777407}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 1094072052}
   thisIndex: 0
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &1094072052
 Animator:
   serializedVersion: 5
@@ -7313,7 +7327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1155915678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8079,7 +8093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1283453718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9296,9 +9310,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1662777407}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 1431187237}
   thisIndex: 2
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &1431187237
 Animator:
   serializedVersion: 5
@@ -10434,9 +10450,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1283453719}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 1747963046}
   thisIndex: 0
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &1747963046
 Animator:
   serializedVersion: 5
@@ -10832,9 +10850,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 751388194}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 1782646340}
   thisIndex: 0
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &1782646340
 Animator:
   serializedVersion: 5
@@ -11304,9 +11324,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenu_btn_controller: {fileID: 1401643788}
-  mainScenes_controller: {fileID: 2103240189}
   btn_animator: {fileID: 1879509938}
   thisIndex: 3
+  clickMode: 0
+  isClick: 0
+  scenes_controller: {fileID: 2103240189}
 --- !u!95 &1879509938
 Animator:
   serializedVersion: 5
