@@ -16,7 +16,7 @@ public class Tube_through_controller : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && Big_cat_ani.GetBool("is_solid") == false)
         {
             int layerMask = LayerMask.GetMask("Role_stage");
 

@@ -11,6 +11,8 @@ public class Split_controller : MonoBehaviour
     public GameObject charController;
 
     public Animator catAni;
+    public Animator catblueAni;
+    public Animator catyallowAni;
     public SpriteRenderer catSr;
     public PolygonCollider2D polygonCollider2D;
     public BoxCollider2D LeftBoxCollider2D;
@@ -29,7 +31,7 @@ public class Split_controller : MonoBehaviour
         {
             Debug.Log("F key is being held down");
             pressTime += Time.deltaTime;
-            if(pressTime >= requiredPressTime)
+            if(pressTime >= requiredPressTime && catblueAni.GetBool("is_solid") == false && catyallowAni.GetBool("is_solid") == false)
             {
                 print("stoppppppp");
 
