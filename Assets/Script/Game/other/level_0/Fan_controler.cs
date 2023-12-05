@@ -8,7 +8,7 @@ public class Fan_controler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             int layerMask = ~(1 << gameObject.layer);
 
@@ -24,7 +24,7 @@ public class Fan_controler : MonoBehaviour
                 }
                 else
                 {
-                    fan_ani.SetBool("is_fan_open", false);
+                    fan_ani.SetBool("is_open", false);
                 }
             }
             else
