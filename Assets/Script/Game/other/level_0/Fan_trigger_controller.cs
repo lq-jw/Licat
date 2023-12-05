@@ -4,15 +4,45 @@ using UnityEngine;
 
 public class Fan_trigger_controller : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject trigger;
+    public Animator Big_cat_ani;
+
     void Start()
     {
-        
+        Hide(trigger);
     }
 
-    // Update is called once per frame
-    void Update()
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Player") || collision.CompareTag("Player_blue") || collision.CompareTag("Player_yallow"))
+    //    {
+    //        Show(trigger);
+    //        print("enter");
+    //    }
+
+    //}
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Player") || collision.CompareTag("Player_blue") || collision.CompareTag("Player_yallow"))
+        {
+            Show(trigger);
+            print("enter");
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        Hide(trigger);
+        print("exit");
+    }
+
+    public void Show(GameObject trigger)
+    {
+        trigger.SetActive(true);
+    }
+    public void Hide(GameObject trigger)
+    {
+        trigger.SetActive(false);
     }
 }
