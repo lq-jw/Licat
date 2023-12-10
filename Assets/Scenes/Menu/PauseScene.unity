@@ -6692,6 +6692,7 @@ MonoBehaviour:
   Set_menu: {fileID: 514685545}
   Quit_check: {fileID: 190372195}
   BG: {fileID: 1579407151}
+  EventSystem: {fileID: 146071821}
   now_menu: 
   isPause: 0
 --- !u!1 &1536572842

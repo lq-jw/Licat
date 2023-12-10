@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseScenes_Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject Pause_menu, Set_menu, Quit_check, BG;
+    [SerializeField] private GameObject Pause_menu, Set_menu, Quit_check, BG, EventSystem;
     [SerializeField] private string now_menu;
     [SerializeField] private bool isPause;
 
@@ -45,10 +45,12 @@ public class PauseScenes_Controller : MonoBehaviour
         {
             case "game":
                 BG.SetActive(false);
+                EventSystem.SetActive(false);
                 isPause = false;
                 break;
             case "pause":
                 Pause_menu.SetActive(true);
+                EventSystem.SetActive(true);
                 isPause = true;
                 break;
             case "set":
@@ -93,8 +95,8 @@ public class PauseScenes_Controller : MonoBehaviour
         }
     }
 
-/////////////////////////////////////////////////////////
-// menu 按鈕控制、事件
+    /////////////////////////////////////////////////////////
+    // menu 按鈕控制、事件
 
     public void BtnOnClick(int index, int mode = 0)
     {
