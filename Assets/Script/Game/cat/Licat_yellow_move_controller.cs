@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Licat_yallow_move_controller : MonoBehaviour
+public class Licat_yellow_move_controller : MonoBehaviour
 {
     public float speed;
     public float speed_x_constraint;

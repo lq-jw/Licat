@@ -9,8 +9,8 @@ TagManager:
   - Hydrophobic
   - DeathBorder
   - Box
-  - Player_yallow
   - Player_blue
+  - Player_yellow
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class C_Btn_L_controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Box") || collision.CompareTag("Player") || collision.CompareTag("Player_blue") || collision.CompareTag("Player_yallow"))
+        if (collision.CompareTag("Box") || collision.CompareTag("Player") || collision.CompareTag("Player_blue") || collision.CompareTag("Player_yellow"))
         {
             connectedDoor.GetComponent<C_Door_controller>().SetSwitch1(true);
             print("switch2 true");
@@ -19,7 +19,7 @@ public class C_Btn_L_controller : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Box") || collision.CompareTag("Player") || collision.CompareTag("Player_blue") || collision.CompareTag("Player_yallow"))
+        if (collision.CompareTag("Box") || collision.CompareTag("Player") || collision.CompareTag("Player_blue") || collision.CompareTag("Player_yellow"))
         {
             connectedDoor.GetComponent<C_Door_controller>().SetSwitch1(false);
             btn_ani.SetBool("is_trigger", false);

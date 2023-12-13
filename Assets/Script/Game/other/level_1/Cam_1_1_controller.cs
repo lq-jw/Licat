@@ -13,13 +13,13 @@ public class Cam_1_1_controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Player_yallow") || collision.CompareTag("Player_blue")) 
+        if (collision.CompareTag("Player") || collision.CompareTag("Player_yellow") || collision.CompareTag("Player_blue")) 
             this.GetComponent<CinemachineVirtualCamera>().enabled = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Player_yallow") || collision.CompareTag("Player_blue")) 
+        if (collision.CompareTag("Player") || collision.CompareTag("Player_yellow") || collision.CompareTag("Player_blue")) 
             this.GetComponent<CinemachineVirtualCamera>().enabled = false;
     }
 }

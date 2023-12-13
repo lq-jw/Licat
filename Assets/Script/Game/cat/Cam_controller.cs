@@ -16,14 +16,14 @@ public class Cam_controller : MonoBehaviour
 
     void Update()
     {
-        if (blue_licat.GetComponent<Licat_blue_move_controller>().enabled && yellow_licat.GetComponent<Licat_yallow_move_controller>().enabled == false)
+        if (blue_licat.GetComponent<Licat_blue_move_controller>().enabled && yellow_licat.GetComponent<Licat_yellow_move_controller>().enabled == false)
         {
             //print("vCam_blue  ON");
             vCam_licat.enabled = false;
             vCam_yellow.enabled = false;
             vCam_blue.enabled = true;
         }
-        else if (blue_licat.GetComponent<Licat_blue_move_controller>().enabled == false && yellow_licat.GetComponent<Licat_yallow_move_controller>().enabled)
+        else if (blue_licat.GetComponent<Licat_blue_move_controller>().enabled == false && yellow_licat.GetComponent<Licat_yellow_move_controller>().enabled)
         {
             //print("vCam_yellow  ON");
             vCam_licat.enabled = false;

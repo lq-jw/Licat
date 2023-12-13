@@ -4,11 +4,11 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.UI;
 
-public class Licat_react_yalow_controller : MonoBehaviour
+public class Licat_react_yellow_controller : MonoBehaviour
 {
     Vector3 checkPoint;
 
-    Licat_yallow_move_controller blue_licat;
+    Licat_yellow_move_controller blue_licat;
     float moveSpeed;
     Rigidbody2D Rigidbody;
     public Animator catAni;
@@ -22,7 +22,7 @@ public class Licat_react_yalow_controller : MonoBehaviour
 
     void Start()
     {
-        blue_licat = GetComponent<Licat_yallow_move_controller>();
+        blue_licat = GetComponent<Licat_yellow_move_controller>();
         Rigidbody = GetComponent<Rigidbody2D>();
 
         max_hp = 10f;

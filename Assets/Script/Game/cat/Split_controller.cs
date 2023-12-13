@@ -57,7 +57,7 @@ public class Split_controller : MonoBehaviour
             {
                 Blue_licat.GetComponent<Licat_blue_move_controller>().enabled = true;
                 blue_triangle.SetActive(true);
-                Yallow_licat.GetComponent<Licat_yallow_move_controller>().enabled = false;
+                Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled = false;
                 yallow_triangle.SetActive(false);
                 //print("blue on");
             }
@@ -65,7 +65,7 @@ public class Split_controller : MonoBehaviour
             {
                 Blue_licat.GetComponent<Licat_blue_move_controller>().enabled = false;
                 blue_triangle.SetActive(false);
-                Yallow_licat.GetComponent<Licat_yallow_move_controller>().enabled = true;
+                Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled = true;
                 yallow_triangle.SetActive(true);
                 //print("blue off");
             }
@@ -77,7 +77,9 @@ public class Split_controller : MonoBehaviour
 
             yield return new WaitForSeconds(0f);
             Blue_licat.GetComponent<Licat_blue_move_controller>().enabled = false;
-            Yallow_licat.GetComponent<Licat_yallow_move_controller>().enabled = false;
+            Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled = false;
+            blue_triangle.SetActive(true);
+            yallow_triangle.SetActive(false);
             Yallow_licat.SetActive(false);
             Blue_licat.SetActive(false);
 

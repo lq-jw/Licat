@@ -100,8 +100,8 @@ GameObject:
   - component: {fileID: 2345745953448404391}
   - component: {fileID: 1093209221}
   m_Layer: 0
-  m_Name: licat_yallow
-  m_TagString: Player_yallow
+  m_Name: licat_yellow
+  m_TagString: Player_yellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
