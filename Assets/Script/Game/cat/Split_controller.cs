@@ -39,9 +39,16 @@ public class Split_controller : MonoBehaviour
 
                 Big_licat.SetActive(true);
                 Big_licat.GetComponent<Licat_move_controller>().enabled = true;
-                catSr.enabled = true;
-                polygonCollider2D.enabled = true;
-                LeftBoxCollider2D.enabled = true;
+
+                catAni.Play("_L_R_merge");
+
+                catAni.SetBool("is_split", false);
+                catAni.SetBool("is_solid", false);
+                catAni.SetBool("is_faceRight", true);
+
+                //catSr.enabled = true;
+                //polygonCollider2D.enabled = true;
+                //LeftBoxCollider2D.enabled = true;
 
                 StartCoroutine(CloseSplitController());
             }

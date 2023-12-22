@@ -172,31 +172,56 @@ public class Licat_move_controller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && catAni.GetBool("is_solid") == false)      //分裂，融合動畫
         {
-            if (catAni.GetBool("is_split") == true)
-            {
-                catAni.SetBool("is_split", false);
+            //if (catAni.GetBool("is_split") == true)
+            //{
+            //    catAni.SetBool("is_split", false);
 
-                licat_yallow_prefab.GetComponent<Licat_yellow_move_controller>().enabled = false;
-                licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = false;
-                licat_yallow_prefab.SetActive(false);
-                licat_blue_prefab.SetActive(false);
-            }
-            else
+            //    licat_yallow_prefab.GetComponent<Licat_yellow_move_controller>().enabled = false;
+            //    licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = false;
+            //    licat_yallow_prefab.SetActive(false);
+            //    licat_blue_prefab.SetActive(false);
+            //}
+            //else
+            //{
+            //    catAni.SetBool("is_split", true);
+            //    Invoke("ActCherController", 0.5f);
+            //}
+
+            if (!catAni.GetBool("is_split"))
             {
                 catAni.SetBool("is_split", true);
-                Invoke("ActCherController", 1.3f);
+                Invoke("ActCherController", 0.5f);
             }
+
         }
 
         if (Input.GetKeyDown(KeyCode.Q))        //變形動畫
         {
             if (catAni.GetBool("is_solid") == true)
             {
-                catAni.SetBool("is_solid", false);
+                if (!catAni.GetBool("is_faceRight"))
+                {
+                    catAni.SetBool("is_solid", false);
+                    catAni.Play("_N_L_convert");
+                }
+                else if (catAni.GetBool("is_faceRight"))
+                {
+                    catAni.SetBool("is_solid", false);
+                    catAni.Play("_N_R_convert");
+                }
             }
             else if (catAni.GetBool("is_solid") == false)
             {
-                catAni.SetBool("is_solid", true);
+                if (!catAni.GetBool("is_faceRight"))
+                {
+                    catAni.SetBool("is_solid", true);
+                    catAni.Play("_L_L_convert");
+                }
+                else if (catAni.GetBool("is_faceRight"))
+                {
+                    catAni.SetBool("is_solid", true);
+                    catAni.Play("_L_R_convert");
+                }
             }
         }
 
@@ -218,11 +243,12 @@ public class Licat_move_controller : MonoBehaviour
         licat_yallow_prefab.GetComponent<Licat_yellow_move_controller>().enabled = false;
         licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = true;
 
+        licat.SetActive(false);
         //licat.GetComponent<Licat_move_controller>().enabled = false;
-        catSr.enabled = false;
-        polygonCollider2D.enabled = false;
-        LeftBoxCollider2D.enabled = false;
-        RightBoxCollider2D.enabled = false;
+        //catSr.enabled = false;
+        //polygonCollider2D.enabled = false;
+        //LeftBoxCollider2D.enabled = false;
+        //RightBoxCollider2D.enabled = false;
 
         splitController.SetActive(true);
         splitController.GetComponent<Split_controller>().enabled = true;
