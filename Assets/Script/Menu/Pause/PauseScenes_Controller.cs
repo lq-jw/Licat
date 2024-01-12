@@ -73,7 +73,7 @@ public class PauseScenes_Controller : MonoBehaviour
 
     private void OnEscClick()       // menu中的esc事件
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Xbox_menu"))
         {
             switch (now_menu)
             {

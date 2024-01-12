@@ -8,7 +8,7 @@ public class Fan_controler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("X"))
         {
             int layerMask = ~(1 << gameObject.layer);
 

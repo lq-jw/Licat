@@ -33,7 +33,7 @@ public class Close_trigger : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("X"))
         {
             print("switch level");
             SceneManager.LoadScene("Level_1");

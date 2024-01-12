@@ -27,7 +27,7 @@ public class Split_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) || Input.GetButton("B"))
         {
             Debug.Log("F key is being held down");
             pressTime += Time.deltaTime;
@@ -58,7 +58,7 @@ public class Split_controller : MonoBehaviour
             pressTime = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("RB"))
         {
             if (Blue_licat.GetComponent<Licat_blue_move_controller>().enabled == false)
             {

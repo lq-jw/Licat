@@ -9,6 +9,7 @@ public class Licat_move_controller : MonoBehaviour
     public float moveSpeed;
 
     float _inputH;                    //接左右輸入
+    float _inputV;                    //接上下輸入
     private bool isMoving = false;
     private bool isMoving_R = false;
 
@@ -19,6 +20,7 @@ public class Licat_move_controller : MonoBehaviour
 
     public Transform footPoint;                       //確認站的位子
     private bool touchGround = true;                  //確認站的位子
+    private bool touchPlatform = true;
 
     Rigidbody2D Rigidbody;
 
@@ -60,6 +62,8 @@ public class Licat_move_controller : MonoBehaviour
         bool leftPress = Input.GetKey(KeyCode.A);
 
         _inputH = Input.GetAxisRaw("Horizontal");
+        _inputV = Input.GetAxisRaw("Vertical");
+
 
         if (!rightPress && !leftPress && touchGround && _inputH == 0)
         {
@@ -80,7 +84,7 @@ public class Licat_move_controller : MonoBehaviour
             //catAni.SetBool("is_move_R", false);
             //catAni.SetBool("is_liquid_move", false);
             //catAni.SetBool("is_liquid_move_R", false);
-            
+
         }
 
         if (rightPress || _inputH == 1)    //向右走動畫
@@ -129,7 +133,7 @@ public class Licat_move_controller : MonoBehaviour
                     isMoving = true;
                 }
                 else if (isMoving == true)
-                { 
+                {
                     print("is_move  true");
                     catAni.SetBool("is_move", true);
                 }
@@ -149,11 +153,19 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && touchGround)      //跳動畫
+        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1)
+        {
+            if (touchPlatform == true)
+            {
+                StartCoroutine(GetDownPlatform());
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && touchGround || Input.GetButtonDown("A") && touchGround)      //跳動畫
         {
             if (catAni.GetBool("is_solid") == true)
             {
-                print("jump");
+                //print("jump");
                 if (FaceRight == false)
                 {
                     catAni.SetTrigger("is_jump");
@@ -170,7 +182,7 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && catAni.GetBool("is_solid") == false)      //分裂，融合動畫
+        if (Input.GetKeyDown(KeyCode.R) && catAni.GetBool("is_solid") == false || Input.GetButtonDown("B") && catAni.GetBool("is_solid") == false)      //分裂，融合動畫
         {
             //if (catAni.GetBool("is_split") == true)
             //{
@@ -195,7 +207,7 @@ public class Licat_move_controller : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))        //變形動畫
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Y"))        //變形動畫
         {
             if (catAni.GetBool("is_solid") == true)
             {
@@ -256,7 +268,20 @@ public class Licat_move_controller : MonoBehaviour
 
     void PointCheck()
     {
-        touchGround = Physics2D.OverlapCircle(footPoint.position, 0.5f, LayerMask.GetMask("Ground & Wall") | LayerMask.GetMask("Platform"));
+        touchGround = Physics2D.OverlapCircle(footPoint.position, 0.2f, LayerMask.GetMask("Ground & Wall") | LayerMask.GetMask("Platform"));
+        touchPlatform = Physics2D.OverlapCircle(footPoint.position, 0.5f, LayerMask.GetMask("Platform"));
+    }
+
+    IEnumerator GetDownPlatform()
+    {
+        polygonCollider2D.enabled = false;
+        LeftBoxCollider2D.enabled = false;
+        RightBoxCollider2D.enabled = false;
+        yield return new WaitForSeconds(0.2f);
+
+        polygonCollider2D.enabled = true;
+        LeftBoxCollider2D.enabled = true;
+        RightBoxCollider2D.enabled = true;
     }
 
     void FixedUpdate()

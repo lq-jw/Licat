@@ -9,12 +9,14 @@ public class Licat_blue_move_controller : MonoBehaviour
     public float moveSpeed = 0f;
 
     float _inputH;
+    float _inputV;
     bool _inputJump;
     [SerializeField] float JumpForce = 10;
     [SerializeField] float gravityScale = 5;
     [SerializeField] float fallGravityScale = 15;
     public Transform footPoint;
     private bool touchGround = true;
+    private bool touchPlatform = true;
     Rigidbody2D Rigidbody;
     public Animator catAni;
     public SpriteRenderer catSr;
@@ -37,8 +39,9 @@ public class Licat_blue_move_controller : MonoBehaviour
         bool leftPress = Input.GetKey(KeyCode.A);
 
         _inputH = Input.GetAxisRaw("Horizontal");
+        _inputV = Input.GetAxisRaw("Vertical");
 
-        if (!rightPress && !leftPress && touchGround)
+        if (!rightPress && !leftPress && touchGround && _inputH == 0)
         {
             moveSpeed = 0f;
         }
@@ -49,7 +52,7 @@ public class Licat_blue_move_controller : MonoBehaviour
             catAni.SetBool("is_liquid_move", false);
         }
 
-        if (rightPress)
+        if (rightPress || _inputH == 1)
         {
             if (catSr.flipX == false)
             {
@@ -64,7 +67,7 @@ public class Licat_blue_move_controller : MonoBehaviour
                 catAni.SetBool("is_move", true);
             }
         }
-        if (leftPress)
+        if (leftPress || _inputH == -1)
         {
             if (catSr.flipX == true)
             {
@@ -80,7 +83,15 @@ public class Licat_blue_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && touchGround)
+        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1)
+        {
+            if (touchPlatform == true)
+            {
+                StartCoroutine(GetDownPlatform());
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && touchGround || Input.GetButtonDown("A") && touchGround)
         {
             if (catAni.GetBool("is_solid") == true)
             {
@@ -89,7 +100,7 @@ public class Licat_blue_move_controller : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Y"))
         {
             if (catAni.GetBool("is_solid") == true)
             {
@@ -107,7 +118,17 @@ public class Licat_blue_move_controller : MonoBehaviour
     void PointCheck()
     {
         touchGround = Physics2D.OverlapCircle(footPoint.position, 0.5f, LayerMask.GetMask("Ground & Wall") | LayerMask.GetMask("Platform"));
+        touchPlatform = Physics2D.OverlapCircle(footPoint.position, 0.5f, LayerMask.GetMask("Platform"));
     }
+
+    IEnumerator GetDownPlatform()
+    {
+        polygonCollider2D.enabled = false;
+        yield return new WaitForSeconds(0.2f);
+
+        polygonCollider2D.enabled = true;
+    }
+
 
     void FixedUpdate()
     {
