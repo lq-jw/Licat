@@ -7,6 +7,7 @@ public class SetMenu_slider : Hoverable_item
 {
     [SerializeField] private Slider slider;
     private bool flag = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,12 @@ public class SetMenu_slider : Hoverable_item
         {
             // Debug.Log("select" + thisIndex);
             flag = true;
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+
+            if (Input.GetAxis("Horizontal") == -1)
             {
                 SetSlider(false);
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetAxis("Horizontal") == 1)
             {
                 SetSlider(true);
             }

@@ -127,14 +127,14 @@ public class Licat_move_controller : MonoBehaviour
             {
                 if (isMoving == false)
                 {
-                    print("is_move  false");
+                    //print("is_move  false");
                     catAni.Play("_N_L_move_0");
                     catAni.SetBool("is_move", true);
                     isMoving = true;
                 }
                 else if (isMoving == true)
                 {
-                    print("is_move  true");
+                    //print("is_move  true");
                     catAni.SetBool("is_move", true);
                 }
             }
@@ -274,14 +274,70 @@ public class Licat_move_controller : MonoBehaviour
 
     IEnumerator GetDownPlatform()
     {
+        if (FaceRight)
+        {
+            if (catAni.GetBool("is_solid") == true)
+            {
+                catAni.Play("_N_R_move_0");
+                catAni.SetBool("is_move_R", true);
+            }
+            else if (catAni.GetBool("is_solid") == false)
+            {
+                catAni.Play("_L_R_move_0");
+                catAni.SetBool("is_liquid_move_R", true);
+            }
+        }
+        else if(!FaceRight)
+        {
+            if (catAni.GetBool("is_solid") == true)
+            {
+                catAni.Play("_N_L_move_1");
+                catAni.SetBool("is_move", true);
+            }
+            else if (catAni.GetBool("is_solid") == false)
+            {
+                catAni.Play("_L_L_move_1");
+                catAni.SetBool("is_liquid_move", true);
+            }
+        }
+
+        yield return new WaitForSeconds(0.1f);
+
         polygonCollider2D.enabled = false;
         LeftBoxCollider2D.enabled = false;
         RightBoxCollider2D.enabled = false;
+
         yield return new WaitForSeconds(0.2f);
 
         polygonCollider2D.enabled = true;
         LeftBoxCollider2D.enabled = true;
         RightBoxCollider2D.enabled = true;
+
+        //yield return new WaitForSeconds(2f);
+
+        //if (FaceRight)
+        //{
+        //    if (catAni.GetBool("is_solid") == true)
+        //    {
+        //        catAni.SetBool("is_move_R", false);
+        //    }
+        //    else if (catAni.GetBool("is_solid") == false)
+        //    {
+        //        catAni.SetBool("is_liquid_move_R", false);
+        //    }
+        //}
+        //else if (!FaceRight)
+        //{
+        //    if (catAni.GetBool("is_solid") == true)
+        //    {
+        //        catAni.SetBool("is_move", false);
+        //    }
+        //    else if (catAni.GetBool("is_solid") == false)
+        //    {
+        //        catAni.SetBool("is_liquid_move", false);
+        //    }
+        //}
+
     }
 
     void FixedUpdate()

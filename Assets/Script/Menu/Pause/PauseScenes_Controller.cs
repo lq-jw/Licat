@@ -13,6 +13,8 @@ public class PauseScenes_Controller : MonoBehaviour
     [SerializeField] private bool isPause;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -111,7 +113,7 @@ public class PauseScenes_Controller : MonoBehaviour
             switch (now_menu)
             {
                 case "pause":
-                    PauseMenuBtnEvent(btnIndex);
+                    PauseMenuBtnEvent(btnIndex, mode);
                     break;
                 case "set":
                     SetMenuBtnEvent(btnIndex, mode);
@@ -125,21 +127,24 @@ public class PauseScenes_Controller : MonoBehaviour
         }
     }
 
-    private void PauseMenuBtnEvent(int btnIndex)
+    private void PauseMenuBtnEvent(int btnIndex, int mode)
     {
-        switch (btnIndex)
+        if(mode == 0)
         {
-            case 0:
-                GotoPage("game");
-                break;
-            case 1:
-                GotoPage("set");
-                break;
-            case 2:
-                GameSaveAndBackToMain();
-                break;
-            default:
-                break;
+            switch (btnIndex)
+            {
+                case 0:
+                    GotoPage("game");
+                    break;
+                case 1:
+                    GotoPage("set");
+                    break;
+                case 2:
+                    GameSaveAndBackToMain();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

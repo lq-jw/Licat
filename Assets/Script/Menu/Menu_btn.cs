@@ -42,23 +42,31 @@ public abstract class Menu_btn : Hoverable_item, IPointerClickHandler
         if (menu_btn_controller.GetSelect() == thisIndex)
         {
             // Debug.Log("select" + thisIndex);
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A"))
             {
+                Debug.Log("enter");
                 MarkIsClick();
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            //else if (Input.GetAxis("Horizontal") == -1)
+            //{
+            //    Debug.Log("left");
+            //    MarkIsClick(1);   
+            //}
+            //else if (Input.GetAxis("Horizontal") == 1)
+            //{
+            //    Debug.Log("right");
+            //    MarkIsClick(2);
+            //}
+            else
             {
-                MarkIsClick(1);
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                MarkIsClick(2);
+                Debug.Log("wow");
             }
         }
     }
 
     private void MarkIsClick(int mode = 0)
     {
+        Debug.Log("mode" + mode);
         isClick = true;
         clickMode = mode;
     }
