@@ -24,11 +24,11 @@ public class SetMenu_slider : Hoverable_item
             // Debug.Log("select" + thisIndex);
             flag = true;
 
-            if (Input.GetAxis("Horizontal") == -1)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("LB"))
             {
                 SetSlider(false);
             }
-            else if (Input.GetAxis("Horizontal") == 1)
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetButtonDown("RB"))
             {
                 SetSlider(true);
             }

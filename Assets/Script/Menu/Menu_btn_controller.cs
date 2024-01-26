@@ -27,13 +27,13 @@ public class Menu_btn_controller : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxis("Vertical") != 0)
+        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("DPAD_v") != 0)
         {
             if (!isKeyDown)
             {
                 isKeyDown = true;
                 fTimer = 0;
-                if (Input.GetAxis("Vertical") < 0)
+                if (Input.GetAxis("Vertical") < 0 || Input.GetAxis("DPAD_v") < 0)
                 {
                     if (index < maxIndex)
                     {
@@ -44,7 +44,7 @@ public class Menu_btn_controller : MonoBehaviour
                         index = 0;
                     }
                 }
-                else if (Input.GetAxis("Vertical") > 0)
+                else if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("DPAD_v") > 0)
                 {
                     if (index > 0)
                     {

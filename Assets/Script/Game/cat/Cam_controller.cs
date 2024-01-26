@@ -12,9 +12,13 @@ public class Cam_controller : MonoBehaviour
     public GameObject blue_licat;
     public GameObject yellow_licat;
 
-    private bool cam_level;
-
     void Update()
+    {
+        Cam_change();
+    }
+
+
+    public virtual void Cam_change()
     {
         if (blue_licat.GetComponent<Licat_blue_move_controller>().enabled && yellow_licat.GetComponent<Licat_yellow_move_controller>().enabled == false)
         {
@@ -38,5 +42,4 @@ public class Cam_controller : MonoBehaviour
             vCam_licat.enabled = true;
         }
     }
-
 }

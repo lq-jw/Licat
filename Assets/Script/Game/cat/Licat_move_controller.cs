@@ -14,6 +14,7 @@ public class Licat_move_controller : MonoBehaviour
     private bool isMoving_R = false;
 
     bool _inputJump;                                  //--跳躍相關
+    bool _inputGetDownPlatform;                       //--
     [SerializeField] float JumpForce = 10;            //--
     [SerializeField] float gravityScale = 5;          //--
     [SerializeField] float fallGravityScale = 15;     //--
@@ -153,7 +154,7 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1)
+        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1) //從浮空走道下來
         {
             if (touchPlatform == true)
             {
@@ -278,13 +279,15 @@ public class Licat_move_controller : MonoBehaviour
         {
             if (catAni.GetBool("is_solid") == true)
             {
-                catAni.Play("_N_R_move_0");
+                catAni.Play("_N_R_move_1");
                 catAni.SetBool("is_move_R", true);
+                _inputGetDownPlatform = true;
             }
             else if (catAni.GetBool("is_solid") == false)
             {
-                catAni.Play("_L_R_move_0");
+                catAni.Play("_L_R_move_1");
                 catAni.SetBool("is_liquid_move_R", true);
+                _inputGetDownPlatform = true;
             }
         }
         else if(!FaceRight)
@@ -293,11 +296,13 @@ public class Licat_move_controller : MonoBehaviour
             {
                 catAni.Play("_N_L_move_1");
                 catAni.SetBool("is_move", true);
+                _inputGetDownPlatform = true;
             }
             else if (catAni.GetBool("is_solid") == false)
             {
                 catAni.Play("_L_L_move_1");
                 catAni.SetBool("is_liquid_move", true);
+                _inputGetDownPlatform = true;
             }
         }
 
@@ -307,7 +312,7 @@ public class Licat_move_controller : MonoBehaviour
         LeftBoxCollider2D.enabled = false;
         RightBoxCollider2D.enabled = false;
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
 
         polygonCollider2D.enabled = true;
         LeftBoxCollider2D.enabled = true;
@@ -383,7 +388,12 @@ public class Licat_move_controller : MonoBehaviour
 
     void Jump()
     {
-        if (_inputJump && touchGround)
+        if (touchPlatform && _inputGetDownPlatform)
+        {
+            Rigidbody.AddForce(Vector2.up * 50, ForceMode2D.Impulse);
+            _inputGetDownPlatform = false;
+        }
+        else if (touchGround && _inputJump)
         {
             Rigidbody.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
             _inputJump = false;

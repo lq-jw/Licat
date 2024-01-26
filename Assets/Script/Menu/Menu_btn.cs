@@ -44,22 +44,15 @@ public abstract class Menu_btn : Hoverable_item, IPointerClickHandler
             // Debug.Log("select" + thisIndex);
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A"))
             {
-                Debug.Log("enter");
                 MarkIsClick();
             }
-            //else if (Input.GetAxis("Horizontal") == -1)
-            //{
-            //    Debug.Log("left");
-            //    MarkIsClick(1);   
-            //}
-            //else if (Input.GetAxis("Horizontal") == 1)
-            //{
-            //    Debug.Log("right");
-            //    MarkIsClick(2);
-            //}
-            else
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("LB"))
             {
-                Debug.Log("wow");
+                MarkIsClick(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetButtonDown("RB"))
+            {
+                MarkIsClick(2);
             }
         }
     }
