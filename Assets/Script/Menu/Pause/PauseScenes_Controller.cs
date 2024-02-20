@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class PauseScenes_Controller : MonoBehaviour
 {
     [SerializeField] private GameObject Pause_menu, Set_menu, Quit_check, BG, EventSystem;
+    [SerializeField] private ASyncLoader Loader;
+
     [SerializeField] private string now_menu;
     [SerializeField] private bool isPause;
 
@@ -129,7 +131,7 @@ public class PauseScenes_Controller : MonoBehaviour
 
     private void PauseMenuBtnEvent(int btnIndex, int mode)
     {
-        if(mode == 0)
+        if (mode == 0)
         {
             switch (btnIndex)
             {
@@ -236,7 +238,7 @@ public class PauseScenes_Controller : MonoBehaviour
     private void BackToMainMenu()
     {
         Debug.Log("BackToMainMenu");
-        SceneManager.LoadScene("MainScene");
+        Loader.LoadScene("MainScene");
     }
 
 }

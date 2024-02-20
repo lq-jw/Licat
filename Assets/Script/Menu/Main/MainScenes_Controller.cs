@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class MainScenes_Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject Logo, Open, Main_menu, Start_menu, Set_menu, Quit_check;
 
+    [SerializeField] private GameObject Logo, Open, Main_menu, Start_menu, Set_menu, Quit_check;
+    [SerializeField] private ASyncLoader Loader;
     [SerializeField] private string now_menu, pre_menu;
     [SerializeField] private bool isFirstGame = true;
 
@@ -69,18 +70,17 @@ public class MainScenes_Controller : MonoBehaviour
     private void NewGame()     // 開啟新遊戲
     {
         isFirstGame = false;
-        print("start new game");
+        Debug.Log("start new game");
         // SceneManager.LoadScene("GameScene");
-        SceneManager.LoadScene("Level_0");
-        SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+        Loader.LoadScene("Level_0", true);
+        // SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
     }
 
-    private void ContinueGame()     // 繼續遊戲
+    private void ContinueGame(string levelToLoad = "Level_0")     // 繼續遊戲
     {
-        print("continue game");
+        Debug.Log("continue game");
         // SceneManager.LoadScene("GameScene");
-        SceneManager.LoadScene("Level_0");
-        SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+        Loader.LoadScene(levelToLoad, true);
     }
 
     private void GameQuit()      // 離開遊戲
