@@ -19,7 +19,7 @@ public class Tutorial_controller : MonoBehaviour
     private bool b_AllTutorial_check = false;
 
     private float timer = 0;
-    private float TutorialAni_countDown = 5f;
+    private float TutorialAni_countDown = 3f;
 
     void Update()
     {

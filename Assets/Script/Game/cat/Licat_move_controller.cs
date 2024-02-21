@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Licat_move_controller : MonoBehaviour
@@ -42,6 +43,8 @@ public class Licat_move_controller : MonoBehaviour
 
     public GameObject splitController;
 
+    private string SceneName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,19 +55,32 @@ public class Licat_move_controller : MonoBehaviour
         licat_yallow_prefab.GetComponent<Licat_yellow_move_controller>().enabled = false;
         licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = false;
         catAni.SetBool("is_faceRight", true);
+
+        SceneName = SceneManager.GetActiveScene().name;
+        print("SceceName  " + SceneName);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //bool isMoving = false;
+        CatMove(); //控制走、跳、跳下、貓叫
+        if(SceneName != "Level_0")
+        {
+            CatTransformSplit(); //控制變態、分裂
+        }
+        PointCheck();
+
+
+    }
+
+    private void CatMove() 
+    {
         bool isWalking = catAni.GetBool("is_move");
         bool rightPress = Input.GetKey(KeyCode.D);
         bool leftPress = Input.GetKey(KeyCode.A);
 
         _inputH = Input.GetAxisRaw("Horizontal");
         _inputV = Input.GetAxisRaw("Vertical");
-
 
         if (!rightPress && !leftPress && touchGround && _inputH == 0)
         {
@@ -81,10 +97,10 @@ public class Licat_move_controller : MonoBehaviour
 
         if (isWalking && !rightPress || !leftPress && _inputH == 0)
         {
-            //catAni.SetBool("is_move", false);
-            //catAni.SetBool("is_move_R", false);
-            //catAni.SetBool("is_liquid_move", false);
-            //catAni.SetBool("is_liquid_move_R", false);
+            catAni.SetBool("is_move", false);
+            catAni.SetBool("is_move_R", false);
+            catAni.SetBool("is_liquid_move", false);
+            catAni.SetBool("is_liquid_move_R", false);
 
         }
 
@@ -128,14 +144,12 @@ public class Licat_move_controller : MonoBehaviour
             {
                 if (isMoving == false)
                 {
-                    //print("is_move  false");
                     catAni.Play("_N_L_move_0");
                     catAni.SetBool("is_move", true);
                     isMoving = true;
                 }
                 else if (isMoving == true)
                 {
-                    //print("is_move  true");
                     catAni.SetBool("is_move", true);
                 }
             }
@@ -166,7 +180,6 @@ public class Licat_move_controller : MonoBehaviour
         {
             if (catAni.GetBool("is_solid") == true)
             {
-                //print("jump");
                 if (FaceRight == false)
                 {
                     catAni.SetTrigger("is_jump");
@@ -182,30 +195,17 @@ public class Licat_move_controller : MonoBehaviour
 
             }
         }
+    }
 
+    private void CatTransformSplit()
+    {
         if (Input.GetKeyDown(KeyCode.R) && catAni.GetBool("is_solid") == false || Input.GetButtonDown("B") && catAni.GetBool("is_solid") == false)      //分裂，融合動畫
         {
-            //if (catAni.GetBool("is_split") == true)
-            //{
-            //    catAni.SetBool("is_split", false);
-
-            //    licat_yallow_prefab.GetComponent<Licat_yellow_move_controller>().enabled = false;
-            //    licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = false;
-            //    licat_yallow_prefab.SetActive(false);
-            //    licat_blue_prefab.SetActive(false);
-            //}
-            //else
-            //{
-            //    catAni.SetBool("is_split", true);
-            //    Invoke("ActCherController", 0.5f);
-            //}
-
             if (!catAni.GetBool("is_split"))
             {
                 catAni.SetBool("is_split", true);
                 Invoke("ActCherController", 0.5f);
             }
-
         }
 
         if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Y"))        //變形動畫
@@ -237,8 +237,6 @@ public class Licat_move_controller : MonoBehaviour
                 }
             }
         }
-
-        PointCheck();
     }
 
     void ActCherController()
@@ -257,11 +255,6 @@ public class Licat_move_controller : MonoBehaviour
         licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = true;
 
         licat.SetActive(false);
-        //licat.GetComponent<Licat_move_controller>().enabled = false;
-        //catSr.enabled = false;
-        //polygonCollider2D.enabled = false;
-        //LeftBoxCollider2D.enabled = false;
-        //RightBoxCollider2D.enabled = false;
 
         splitController.SetActive(true);
         splitController.GetComponent<Split_controller>().enabled = true;
@@ -344,6 +337,8 @@ public class Licat_move_controller : MonoBehaviour
         //}
 
     }
+
+
 
     void FixedUpdate()
     {
