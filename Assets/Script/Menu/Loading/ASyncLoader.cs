@@ -1,3 +1,5 @@
+// Loading頁使用
+// 需要loading頁的時候，呼叫LoadScene（頁面名字，是否是關卡）
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +12,7 @@ public class ASyncLoader : MonoBehaviour
     [SerializeField] private GameObject Loading_screen;
 
     // [SerializeField] private float progress = 100, progress_pause = 100;
+    // ＾測試用
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,7 @@ public class ASyncLoader : MonoBehaviour
 
         // progress = Mathf.Clamp(loadOperation.progress / 0.9f, 0, 100);
         // progress_pause = Mathf.Clamp01(loadPauseOperation.progress / 0.9f);
+        // ＾測試用
         while (!(loadOperation.isDone && isnotLoadingPause))
         {
             yield return null;
