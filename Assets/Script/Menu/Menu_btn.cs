@@ -18,6 +18,7 @@ public abstract class Menu_btn : Hoverable_item, IPointerClickHandler
 {
     [SerializeField] protected int clickMode = 0;
     [SerializeField] protected bool isClick = false;
+    [SerializeField] private HandleState_passer passer;
 
     protected void Initial_menu_btn()      // 防呆
     {
@@ -27,6 +28,11 @@ public abstract class Menu_btn : Hoverable_item, IPointerClickHandler
     {
         Update_hoverable_item();
         SetBtnAction();
+    }
+
+    void Awake()
+    {
+        passer = GameObject.FindObjectOfType<HandleState_passer>();
     }
 
     protected abstract void CheckIsClick();     // 須完成
@@ -42,9 +48,15 @@ public abstract class Menu_btn : Hoverable_item, IPointerClickHandler
         if (menu_btn_controller.GetSelect() == thisIndex)
         {
             // Debug.Log("select" + thisIndex);
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A"))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
                 MarkIsClick();
+                passer.SetIsHandle(false);
+            }
+            else if (Input.GetButtonDown("A"))
+            {
+                MarkIsClick();
+                passer.SetIsHandle(true);
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("LB"))
             {
