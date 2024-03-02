@@ -1082,6 +1082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: licat
       objectReference: {fileID: 0}
+    - target: {fileID: 5452990571666520435, guid: 7681addb9710dff4b9097e89d76971aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5452990571666520436, guid: 7681addb9710dff4b9097e89d76971aa, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -13983,6 +13987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: licat_yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 2345745953448404318, guid: 81b7ec5c42761c1449cb026faab67fb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2345745953448404389, guid: 81b7ec5c42761c1449cb026faab67fb1, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -16551,7 +16559,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1297166153
 BoxCollider2D:
@@ -21875,8 +21883,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733626881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.490005, y: -5.546008, z: -4.2078075}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalPosition: {x: -32.490005, y: -5.79, z: -4.2078075}
+  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1450715553}
@@ -25453,6 +25461,10 @@ PrefabInstance:
     - target: {fileID: 7295077448080096664, guid: debf099bb5d66f34c943db5c85330d68, type: 3}
       propertyPath: m_Name
       value: licat_blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295077448080096664, guid: debf099bb5d66f34c943db5c85330d68, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7295077448080096669, guid: debf099bb5d66f34c943db5c85330d68, type: 3}
       propertyPath: m_RootOrder
