@@ -50,11 +50,13 @@ public class Licat_move_controller : MonoBehaviour
     {
         Rigidbody = this.gameObject.GetComponent<Rigidbody2D>();
         polygonCollider2D = this.gameObject.GetComponent<PolygonCollider2D>();
+
         licat_yallow_prefab.SetActive(false);
         licat_blue_prefab.SetActive(false);
         licat_yallow_prefab.GetComponent<Licat_yellow_move_controller>().enabled = false;
         licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = false;
-        catAni.SetBool("is_faceRight", true);
+
+        catAni.SetBool("is_faceRight", false);
 
         SceneName = SceneManager.GetActiveScene().name;
         print("SceceName  " + SceneName);
@@ -82,7 +84,7 @@ public class Licat_move_controller : MonoBehaviour
         _inputH = Input.GetAxisRaw("Horizontal");
         _inputV = Input.GetAxisRaw("Vertical");
 
-        if (!rightPress && !leftPress && touchGround && _inputH == 0)
+        if (!rightPress && !leftPress && touchGround && _inputH == 0)   //讓貓的動畫跟移動停下來
         {
             Rigidbody.velocity = new Vector2(_inputH * 0, Rigidbody.velocity.y);
             moveSpeed = 0f;
@@ -95,7 +97,7 @@ public class Licat_move_controller : MonoBehaviour
             catAni.SetBool("is_liquid_move_R", false);
         }
 
-        if (isWalking && !rightPress || !leftPress && _inputH == 0)
+        if (isWalking && !rightPress || !leftPress && _inputH == 0)   //讓貓的動畫跟移動停下來、缺一不可
         {
             catAni.SetBool("is_move", false);
             catAni.SetBool("is_move_R", false);
@@ -348,7 +350,7 @@ public class Licat_move_controller : MonoBehaviour
         polygonCollider2D.SetPath(0, points);         //設定碰撞體
     }
 
-    void Moving()
+    void Moving()  //實際的左右移動
     {
         if (_inputH != 0)
         {
@@ -381,7 +383,7 @@ public class Licat_move_controller : MonoBehaviour
         }
     }
 
-    void Jump()
+    void Jump()    //實際的跳
     {
         if (touchPlatform && _inputGetDownPlatform)
         {
@@ -404,7 +406,7 @@ public class Licat_move_controller : MonoBehaviour
         }
     }
 
-    public void setMoveSpeed(float newMoveSpeed)
+    public void setMoveSpeed(float newMoveSpeed)  //改變貓的速度
     {
         moveSpeed = newMoveSpeed;
     }

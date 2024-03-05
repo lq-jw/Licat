@@ -7,37 +7,34 @@ using UnityEngine.SceneManagement;
 public class Close_trigger : MonoBehaviour
 {
     public GameObject trigger;
+    public Animator eatAni;
+    public GameObject Cat;
 
-    public CinemachineVirtualCamera licat_cam_0;
-    public GameObject licat;
-    public Cam_controller cam_;
+    public bool isPressF = false;
 
 
     void Start()
     {
         Hide(trigger);
-        //cam_ = GetComponent<Cam_controller>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Show(trigger);
-        print("enter");
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         Hide(trigger);
-        print("exit");
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("X"))
         {
-            print("switch level");
-            SceneManager.LoadScene("Level_1");
-            SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+            eatAni.SetBool("is_pressF", true);
+            Cat.SetActive(false);
+            isPressF = true;
         }
     }
 

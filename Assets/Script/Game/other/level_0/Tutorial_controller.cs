@@ -37,7 +37,6 @@ public class Tutorial_controller : MonoBehaviour
 
     private void TutorialAni()
     {
-        print("TutorialAni");
         if (!b_Move_check) b_Move_check = BigCatAni.GetBool("is_move") || BigCatAni.GetBool("is_move_R");
         if(!b_Jump_check) b_Jump_check = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A");
         if(!b_JumpDown_check) b_JumpDown_check = Input.GetKeyDown(KeyCode.S) || Input.GetAxisRaw("Vertical") == -1;
@@ -73,7 +72,6 @@ public class Tutorial_controller : MonoBehaviour
 
     private void RandomTutorialAni()
     {
-        print("RandomTutorialAni");
         Tutorial_count = Random.Range(0, Tutorial_Max_count-1);
         Tutorial_ani.SetInteger("Tutorial_controller", Tutorial_count);
         Tutorial_icon_ani.SetInteger("Tutorial_icon_controller", Tutorial_count);
