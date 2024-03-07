@@ -45,6 +45,10 @@ public class Licat_move_controller : MonoBehaviour
 
     private string SceneName;
 
+    private string touchByLicat;
+    private string touchByLicat_beforeGetDown;
+    private bool isGetDownPlatform = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -170,11 +174,18 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1) //從浮空走道下來
+        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1 && isGetDownPlatform == true) //從浮空走道下來
         {
-            if (touchPlatform == true)
+            if (touchPlatform == true )
             {
+                touchByLicat_beforeGetDown = touchByLicat;
                 StartCoroutine(GetDownPlatform());
+                isGetDownPlatform = false;
+            }
+
+            if (touchByLicat_beforeGetDown != touchByLicat)
+            {
+                isGetDownPlatform = true;
             }
         }
 
@@ -307,40 +318,17 @@ public class Licat_move_controller : MonoBehaviour
         LeftBoxCollider2D.enabled = false;
         RightBoxCollider2D.enabled = false;
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.2f);
 
         polygonCollider2D.enabled = true;
         LeftBoxCollider2D.enabled = true;
         RightBoxCollider2D.enabled = true;
-
-        //yield return new WaitForSeconds(2f);
-
-        //if (FaceRight)
-        //{
-        //    if (catAni.GetBool("is_solid") == true)
-        //    {
-        //        catAni.SetBool("is_move_R", false);
-        //    }
-        //    else if (catAni.GetBool("is_solid") == false)
-        //    {
-        //        catAni.SetBool("is_liquid_move_R", false);
-        //    }
-        //}
-        //else if (!FaceRight)
-        //{
-        //    if (catAni.GetBool("is_solid") == true)
-        //    {
-        //        catAni.SetBool("is_move", false);
-        //    }
-        //    else if (catAni.GetBool("is_solid") == false)
-        //    {
-        //        catAni.SetBool("is_liquid_move", false);
-        //    }
-        //}
-
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        touchByLicat = collision.gameObject.name;
+    }
 
     void FixedUpdate()
     {
