@@ -736,6 +736,7 @@ MonoBehaviour:
   thisIndex: 1
   clickMode: 0
   isClick: 0
+  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &221734915
 Animator:
@@ -1874,6 +1875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c05fe8be72945878894114e2b4f4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUseHandle: 0
   passerCounter: 0
 --- !u!4 &543190203
 Transform:
@@ -3233,6 +3235,7 @@ MonoBehaviour:
   thisIndex: 1
   clickMode: 0
   isClick: 0
+  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &847139221
 Animator:
@@ -3811,6 +3814,7 @@ MonoBehaviour:
   thisIndex: 2
   clickMode: 0
   isClick: 0
+  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &952500195
 Animator:
@@ -3918,6 +3922,7 @@ MonoBehaviour:
   thisIndex: 1
   clickMode: 0
   isClick: 0
+  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1049635380
 Animator:
@@ -4013,6 +4018,7 @@ MonoBehaviour:
   thisIndex: 0
   clickMode: 0
   isClick: 0
+  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1094072052
 Animator:
@@ -5334,6 +5340,7 @@ MonoBehaviour:
   thisIndex: 2
   clickMode: 0
   isClick: 0
+  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1431187237
 Animator:
@@ -5972,6 +5979,7 @@ MonoBehaviour:
   thisIndex: 0
   clickMode: 0
   isClick: 0
+  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1747963046
 Animator:
@@ -6187,6 +6195,7 @@ MonoBehaviour:
   thisIndex: 0
   clickMode: 0
   isClick: 0
+  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1782646340
 Animator:
