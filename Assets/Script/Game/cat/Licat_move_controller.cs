@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Licat_move_controller : MonoBehaviour
 {
+
+    [SerializeField] private HandleState_passer handlePasser;     // 傳遞是否是handle用
+
     public float speed;   //速度
     public float moveSpeed;
 
@@ -64,16 +67,20 @@ public class Licat_move_controller : MonoBehaviour
     void Update()
     {
         CatMove(); //控制走、跳、跳下、貓叫
-        if(SceneName != "Level_0")
+        if (SceneName != "Level_0")
         {
             CatTransformSplit(); //控制變態、分裂
         }
         PointCheck();
-
-
     }
 
-    private void CatMove() 
+    void Awake()
+    {
+        handlePasser = GameObject.FindObjectOfType<HandleState_passer>();
+        // 自動抓handlePasser
+    }
+
+    private void CatMove()
     {
         bool isWalking = catAni.GetBool("is_move");
         bool rightPress = Input.GetKey(KeyCode.D);
@@ -81,6 +88,10 @@ public class Licat_move_controller : MonoBehaviour
 
         _inputH = Input.GetAxisRaw("Horizontal");
         _inputV = Input.GetAxisRaw("Vertical");
+
+        if (isWalking) handlePasser.SetIsHandle(true);
+        else handlePasser.SetIsHandle(true);
+        // ^ 判斷是否是handle，紀錄值
 
         if (!rightPress && !leftPress && touchGround && _inputH == 0)
         {
@@ -250,7 +261,7 @@ public class Licat_move_controller : MonoBehaviour
         licat_blue_prefab.SetActive(true);
         blue_Ani.SetBool("is_solid", false);
         yallow_Ani.SetBool("is_solid", false);
-        
+
         licat_yallow_prefab.GetComponent<Licat_yellow_move_controller>().enabled = false;
         licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = true;
 
@@ -283,7 +294,7 @@ public class Licat_move_controller : MonoBehaviour
                 _inputGetDownPlatform = true;
             }
         }
-        else if(!FaceRight)
+        else if (!FaceRight)
         {
             if (catAni.GetBool("is_solid") == true)
             {

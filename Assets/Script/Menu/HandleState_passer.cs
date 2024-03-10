@@ -27,7 +27,7 @@ public class HandleState_passer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckIsShouldDestroy();
+        // CheckIsShouldDestroy();
         // ＾不想讓他自刪的話就不要這行函式
     }
 
