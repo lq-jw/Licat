@@ -16,6 +16,8 @@ public class EatAniController : MonoBehaviour
     public GameObject G_cupboard;
     public GameObject G_floor;
 
+    public Animator Vcam_flowOut_ani;
+
     private bool isPressF = false;
     private bool isEatAni_2_finish = false;
     private bool isEatAni_3_finish = false;
@@ -35,6 +37,7 @@ public class EatAniController : MonoBehaviour
         {
             G_eatAni_2.SetActive(true);
             isEatAni_2_finish = true;
+            Vcam_flowOut_ani.enabled = true;
         }
 
         if (stateInfo2.normalizedTime >= 1.0f && isEatAni_3_finish == false)
@@ -44,6 +47,7 @@ public class EatAniController : MonoBehaviour
             G_cupboard.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.6f);
             G_floor.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.6f);
             isEatAni_3_finish = true;
+            
         }
 
         if (stateInfo3)
