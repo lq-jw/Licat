@@ -6,27 +6,32 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Licat_move_controller : MonoBehaviour
 {
-    public float speed;   //³t«×
+
+    public float speed;   //é€Ÿåº¦
     public float moveSpeed;
 
-    float _inputH;                    //±µ¥ª¥k¿é¤J
-    float _inputV;                    //±µ¤W¤U¿é¤J
+    float _inputH;                    //æ¥å·¦å³è¼¸å…¥
+    float _inputV;                    //æ¥ä¸Šä¸‹è¼¸å…¥
     private bool isMoving = false;
     private bool isMoving_R = false;
 
-    bool _inputJump;                                  //--¸õÅD¬ÛÃö
+    private bool _inputKbdSpace, _inputKbdW, _inputKbdA, _inputKbdS, _inputKbdD, _inputKbdC, _inputKbdQ, _inputKbdE, _inputKbdR, _inputKbdF;
+    // ^ æ¥éµç›¤è¼¸å…¥ï¼ˆæ˜¯KeyDownï¼Œåªåµæ¸¬æŒ‰ä¸‹å»ï¼Œæ²’æœ‰åµæ¸¬é•·æŒ‰ï¼‰
+    private bool _inputHddX, _inputHddY, _inputHddA, _inputHddB, _inputHddLB;
+
+    bool _inputJump;                                  //--è·³èºç›¸é—œ
     bool _inputGetDownPlatform;                       //--
     [SerializeField] float JumpForce = 10;            //--
     [SerializeField] float gravityScale = 5;          //--
     [SerializeField] float fallGravityScale = 15;     //--
 
-    public Transform footPoint;                       //½T»{¯¸ªº¦ì¤l
-    private bool touchGround = true;                  //½T»{¯¸ªº¦ì¤l
+    public Transform footPoint;                       //ç¢ºèªç«™çš„ä½å­
+    private bool touchGround = true;                  //ç¢ºèªç«™çš„ä½å­
     private bool touchPlatform = true;
 
     Rigidbody2D Rigidbody;
 
-    public Animator catAni;                              //³]©w°Êµe
+    public Animator catAni;                              //è¨­å®šå‹•ç•«
     public SpriteRenderer catSr;
     public GameObject licat_yallow_prefab;
     public GameObject licat_blue_prefab;
@@ -39,7 +44,7 @@ public class Licat_move_controller : MonoBehaviour
     public BoxCollider2D RightBoxCollider2D;
 
 
-    private List<Vector2> points = new List<Vector2>();  //¸I¼²ÅÜ¤Æ
+    private List<Vector2> points = new List<Vector2>();  //ç¢°æ’è®ŠåŒ–
 
     public GameObject splitController;
 
@@ -69,26 +74,47 @@ public class Licat_move_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CatMove(); //±±¨î¨«¡B¸õ¡B¸õ¤U¡B¿ß¥s
-        if(SceneName != "Level_0")
+        UserInputCheck();
+        CatMove(); //æ§åˆ¶èµ°ã€è·³ã€è·³ä¸‹ã€è²“å«
+        if (SceneName != "Level_0")
         {
-            CatTransformSplit(); //±±¨îÅÜºA¡B¤Àµõ
+            CatTransformSplit(); //æ§åˆ¶è®Šæ…‹ã€åˆ†è£‚
         }
         PointCheck();
-
-
     }
 
-    private void CatMove() 
+    private void UserInputCheck()
     {
+        // string[] inputType={W,A,S,D,Q,E,R,F,C,Space}
+        // é›–èªªçŸ¥é“é€™è£¡è¦ç”¨ for + å­—ä¸²é™£åˆ—å•¦ï¼Œä½†å¥½æ‡¶
+        _inputKbdW = Input.GetKeyDown(KeyCode.W);
+        _inputKbdA = Input.GetKeyDown(KeyCode.A);
+        _inputKbdS = Input.GetKeyDown(KeyCode.S);
+        _inputKbdD = Input.GetKeyDown(KeyCode.D);
+        _inputKbdQ = Input.GetKeyDown(KeyCode.Q);
+        _inputKbdE = Input.GetKeyDown(KeyCode.E);
+        _inputKbdR = Input.GetKeyDown(KeyCode.R);
+        _inputKbdF = Input.GetKeyDown(KeyCode.F);
+        _inputKbdC = Input.GetKeyDown(KeyCode.C);
+        _inputKbdSpace = Input.GetKeyDown(KeyCode.Space);
+
+        _inputHddX = Input.GetButtonDown("X");
+        _inputHddY = Input.GetButtonDown("Y");
+        _inputHddA = Input.GetButtonDown("A");
+        _inputHddB = Input.GetButtonDown("B");
+        _inputHddLB = Input.GetButtonDown("LB");
+    }
+
+    private void CatMove()
+    {
+        _inputH = Input.GetAxisRaw("Horizontal");
+        _inputV = Input.GetAxisRaw("Vertical");
+
         bool isWalking = catAni.GetBool("is_move");
         bool rightPress = Input.GetKey(KeyCode.D);
         bool leftPress = Input.GetKey(KeyCode.A);
 
-        _inputH = Input.GetAxisRaw("Horizontal");
-        _inputV = Input.GetAxisRaw("Vertical");
-
-        if (!rightPress && !leftPress && touchGround && _inputH == 0)   //Åı¿ßªº°Êµe¸ò²¾°Ê°±¤U¨Ó
+        if (!rightPress && !leftPress && touchGround && _inputH == 0)   //è®“è²“çš„å‹•ç•«è·Ÿç§»å‹•åœä¸‹ä¾†
         {
             Rigidbody.velocity = new Vector2(_inputH * 0, Rigidbody.velocity.y);
             moveSpeed = 0f;
@@ -101,7 +127,7 @@ public class Licat_move_controller : MonoBehaviour
             catAni.SetBool("is_liquid_move_R", false);
         }
 
-        if (isWalking && !rightPress || !leftPress && _inputH == 0)   //Åı¿ßªº°Êµe¸ò²¾°Ê°±¤U¨Ó¡B¯Ê¤@¤£¥i
+        if (isWalking && !rightPress || !leftPress && _inputH == 0)   //è®“è²“çš„å‹•ç•«è·Ÿç§»å‹•åœä¸‹ä¾†ã€ç¼ºä¸€ä¸å¯
         {
             catAni.SetBool("is_move", false);
             catAni.SetBool("is_move_R", false);
@@ -110,7 +136,7 @@ public class Licat_move_controller : MonoBehaviour
 
         }
 
-        if (rightPress || _inputH == 1)    //¦V¥k¨«°Êµe
+        if (rightPress || _inputH == 1)    //å‘å³èµ°å‹•ç•«
         {
             FaceRight = true;
             catAni.SetBool("is_faceRight", true);
@@ -142,7 +168,7 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (leftPress || _inputH == -1)         //¦V¥ª¨«°Êµe
+        if (leftPress || _inputH == -1)         //å‘å·¦èµ°å‹•ç•«
         {
             FaceRight = false;
             catAni.SetBool("is_faceRight", false);
@@ -174,22 +200,17 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1 && isGetDownPlatform == true) //±q¯BªÅ¨«¹D¤U¨Ó
+        if (_inputKbdS || _inputV == -1 && isGetDownPlatform == true) //å¾æµ®ç©ºèµ°é“ä¸‹ä¾†
         {
-            if (touchPlatform == true )
+            if (touchPlatform == true)
             {
                 touchByLicat_beforeGetDown = touchByLicat;
                 StartCoroutine(GetDownPlatform());
                 isGetDownPlatform = false;
             }
-
-            if (touchByLicat_beforeGetDown != touchByLicat)
-            {
-                isGetDownPlatform = true;
-            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && touchGround || Input.GetButtonDown("A") && touchGround)      //¸õ°Êµe
+        if (touchGround && (_inputKbdSpace || _inputHddA))      //è·³å‹•ç•«
         {
             if (catAni.GetBool("is_solid") == true)
             {
@@ -212,7 +233,7 @@ public class Licat_move_controller : MonoBehaviour
 
     private void CatTransformSplit()
     {
-        if (Input.GetKeyDown(KeyCode.R) && catAni.GetBool("is_solid") == false || Input.GetButtonDown("B") && catAni.GetBool("is_solid") == false)      //¤Àµõ¡A¿Ä¦X°Êµe
+        if ((_inputKbdR || _inputHddB) && catAni.GetBool("is_solid") == false)      //åˆ†è£‚ï¼Œèåˆå‹•ç•«
         {
             if (!catAni.GetBool("is_split"))
             {
@@ -221,7 +242,7 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Y"))        //ÅÜ§Î°Êµe
+        if (_inputKbdQ || _inputHddY)        //è®Šå½¢å‹•ç•«
         {
             if (catAni.GetBool("is_solid") == true)
             {
@@ -263,7 +284,7 @@ public class Licat_move_controller : MonoBehaviour
         licat_blue_prefab.SetActive(true);
         blue_Ani.SetBool("is_solid", false);
         yallow_Ani.SetBool("is_solid", false);
-        
+
         licat_yallow_prefab.GetComponent<Licat_yellow_move_controller>().enabled = false;
         licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = true;
 
@@ -296,7 +317,7 @@ public class Licat_move_controller : MonoBehaviour
                 _inputGetDownPlatform = true;
             }
         }
-        else if(!FaceRight)
+        else if (!FaceRight)
         {
             if (catAni.GetBool("is_solid") == true)
             {
@@ -328,6 +349,11 @@ public class Licat_move_controller : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         touchByLicat = collision.gameObject.name;
+
+        if (touchByLicat_beforeGetDown != touchByLicat)     // åˆ¤æ–·è²“æ˜¯å¦è½åœ°ï¼ˆçµ¦è½ä¸‹çš„åŠŸèƒ½ç”¨ï¼‰
+        {
+            isGetDownPlatform = true;
+        }
     }
 
     void FixedUpdate()
@@ -335,10 +361,10 @@ public class Licat_move_controller : MonoBehaviour
         Moving();
         Jump();
         catSr.sprite.GetPhysicsShape(0, points);
-        polygonCollider2D.SetPath(0, points);         //³]©w¸I¼²Åé
+        polygonCollider2D.SetPath(0, points);         //è¨­å®šç¢°æ’é«”
     }
 
-    void Moving()  //¹ê»Úªº¥ª¥k²¾°Ê
+    void Moving()  //å¯¦éš›çš„å·¦å³ç§»å‹•
     {
         if (_inputH != 0)
         {
@@ -371,7 +397,7 @@ public class Licat_move_controller : MonoBehaviour
         }
     }
 
-    void Jump()    //¹ê»Úªº¸õ
+    void Jump()    //å¯¦éš›çš„è·³
     {
         if (touchPlatform && _inputGetDownPlatform)
         {
@@ -394,7 +420,7 @@ public class Licat_move_controller : MonoBehaviour
         }
     }
 
-    public void setMoveSpeed(float newMoveSpeed)  //§ïÅÜ¿ßªº³t«×
+    public void setMoveSpeed(float newMoveSpeed)  //æ”¹è®Šè²“çš„é€Ÿåº¦
     {
         moveSpeed = newMoveSpeed;
     }

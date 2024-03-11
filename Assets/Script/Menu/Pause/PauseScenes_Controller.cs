@@ -29,6 +29,11 @@ public class PauseScenes_Controller : MonoBehaviour
         OnEscClick();
     }
 
+    void Awake()
+    {
+        Loader = GameObject.FindObjectOfType<ASyncLoader>();
+    }
+
     public bool CheckIsPause()      // 給其他 scene 檢查是否在暫停狀態（但我不確定把控制這個變數的權力）給 pause menu 這樣到底好不好）
     {
         return isPause;
