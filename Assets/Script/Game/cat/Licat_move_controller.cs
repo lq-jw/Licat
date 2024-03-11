@@ -45,16 +45,22 @@ public class Licat_move_controller : MonoBehaviour
 
     private string SceneName;
 
+    private string touchByLicat;
+    private string touchByLicat_beforeGetDown;
+    private bool isGetDownPlatform = true;
+
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody = this.gameObject.GetComponent<Rigidbody2D>();
         polygonCollider2D = this.gameObject.GetComponent<PolygonCollider2D>();
+
         licat_yallow_prefab.SetActive(false);
         licat_blue_prefab.SetActive(false);
         licat_yallow_prefab.GetComponent<Licat_yellow_move_controller>().enabled = false;
         licat_blue_prefab.GetComponent<Licat_blue_move_controller>().enabled = false;
-        catAni.SetBool("is_faceRight", true);
+
+        catAni.SetBool("is_faceRight", false);
 
         SceneName = SceneManager.GetActiveScene().name;
         print("SceceName  " + SceneName);
@@ -82,7 +88,7 @@ public class Licat_move_controller : MonoBehaviour
         _inputH = Input.GetAxisRaw("Horizontal");
         _inputV = Input.GetAxisRaw("Vertical");
 
-        if (!rightPress && !leftPress && touchGround && _inputH == 0)
+        if (!rightPress && !leftPress && touchGround && _inputH == 0)   //讓貓的動畫跟移動停下來
         {
             Rigidbody.velocity = new Vector2(_inputH * 0, Rigidbody.velocity.y);
             moveSpeed = 0f;
@@ -95,7 +101,7 @@ public class Licat_move_controller : MonoBehaviour
             catAni.SetBool("is_liquid_move_R", false);
         }
 
-        if (isWalking && !rightPress || !leftPress && _inputH == 0)
+        if (isWalking && !rightPress || !leftPress && _inputH == 0)   //讓貓的動畫跟移動停下來、缺一不可
         {
             catAni.SetBool("is_move", false);
             catAni.SetBool("is_move_R", false);
@@ -168,11 +174,18 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1) //從浮空走道下來
+        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1 && isGetDownPlatform == true) //從浮空走道下來
         {
-            if (touchPlatform == true)
+            if (touchPlatform == true )
             {
+                touchByLicat_beforeGetDown = touchByLicat;
                 StartCoroutine(GetDownPlatform());
+                isGetDownPlatform = false;
+            }
+
+            if (touchByLicat_beforeGetDown != touchByLicat)
+            {
+                isGetDownPlatform = true;
             }
         }
 
@@ -305,40 +318,17 @@ public class Licat_move_controller : MonoBehaviour
         LeftBoxCollider2D.enabled = false;
         RightBoxCollider2D.enabled = false;
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.2f);
 
         polygonCollider2D.enabled = true;
         LeftBoxCollider2D.enabled = true;
         RightBoxCollider2D.enabled = true;
-
-        //yield return new WaitForSeconds(2f);
-
-        //if (FaceRight)
-        //{
-        //    if (catAni.GetBool("is_solid") == true)
-        //    {
-        //        catAni.SetBool("is_move_R", false);
-        //    }
-        //    else if (catAni.GetBool("is_solid") == false)
-        //    {
-        //        catAni.SetBool("is_liquid_move_R", false);
-        //    }
-        //}
-        //else if (!FaceRight)
-        //{
-        //    if (catAni.GetBool("is_solid") == true)
-        //    {
-        //        catAni.SetBool("is_move", false);
-        //    }
-        //    else if (catAni.GetBool("is_solid") == false)
-        //    {
-        //        catAni.SetBool("is_liquid_move", false);
-        //    }
-        //}
-
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        touchByLicat = collision.gameObject.name;
+    }
 
     void FixedUpdate()
     {
@@ -348,7 +338,7 @@ public class Licat_move_controller : MonoBehaviour
         polygonCollider2D.SetPath(0, points);         //設定碰撞體
     }
 
-    void Moving()
+    void Moving()  //實際的左右移動
     {
         if (_inputH != 0)
         {
@@ -381,7 +371,7 @@ public class Licat_move_controller : MonoBehaviour
         }
     }
 
-    void Jump()
+    void Jump()    //實際的跳
     {
         if (touchPlatform && _inputGetDownPlatform)
         {
@@ -404,7 +394,7 @@ public class Licat_move_controller : MonoBehaviour
         }
     }
 
-    public void setMoveSpeed(float newMoveSpeed)
+    public void setMoveSpeed(float newMoveSpeed)  //改變貓的速度
     {
         moveSpeed = newMoveSpeed;
     }

@@ -51,9 +51,6 @@ TagManager:
   - name: wall
     uniqueID: 1799269121
     locked: 0
-  - name: floor
-    uniqueID: 988376877
-    locked: 0
   - name: b_bg
     uniqueID: 2121034061
     locked: 0
@@ -62,6 +59,12 @@ TagManager:
     locked: 0
   - name: f_bg
     uniqueID: 2845313789
+    locked: 0
+  - name: ff_bg
+    uniqueID: 3772698373
+    locked: 0
+  - name: floor
+    uniqueID: 988376877
     locked: 0
   - name: stage
     uniqueID: 2669012725
