@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class Licat_move_controller : MonoBehaviour
 {
 
-    [SerializeField] private HandleState_passer handlePasser;     // 傳遞是否是handle用
-
     public float speed;   //速度
     public float moveSpeed;
 
@@ -16,6 +14,10 @@ public class Licat_move_controller : MonoBehaviour
     float _inputV;                    //接上下輸入
     private bool isMoving = false;
     private bool isMoving_R = false;
+
+    private bool _inputKbdSpace, _inputKbdW, _inputKbdA, _inputKbdS, _inputKbdD, _inputKbdC, _inputKbdQ, _inputKbdE, _inputKbdR, _inputKbdF;
+    // ^ 接鍵盤輸入（是KeyDown，只偵測按下去，沒有偵測長按）
+    private bool _inputHddX, _inputHddY, _inputHddA, _inputHddB, _inputHddLB;
 
     bool _inputJump;                                  //--跳躍相關
     bool _inputGetDownPlatform;                       //--
@@ -72,6 +74,7 @@ public class Licat_move_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UserInputCheck();
         CatMove(); //控制走、跳、跳下、貓叫
         if (SceneName != "Level_0")
         {
@@ -80,25 +83,36 @@ public class Licat_move_controller : MonoBehaviour
         PointCheck();
     }
 
-    void Awake()
+    private void UserInputCheck()
     {
-        handlePasser = GameObject.FindObjectOfType<HandleState_passer>();
-        // 自動抓handlePasser
+        // string[] inputType={W,A,S,D,Q,E,R,F,C,Space}
+        // 雖說知道這裡要用 for + 字串陣列啦，但好懶
+        _inputKbdW = Input.GetKeyDown(KeyCode.W);
+        _inputKbdA = Input.GetKeyDown(KeyCode.A);
+        _inputKbdS = Input.GetKeyDown(KeyCode.S);
+        _inputKbdD = Input.GetKeyDown(KeyCode.D);
+        _inputKbdQ = Input.GetKeyDown(KeyCode.Q);
+        _inputKbdE = Input.GetKeyDown(KeyCode.E);
+        _inputKbdR = Input.GetKeyDown(KeyCode.R);
+        _inputKbdF = Input.GetKeyDown(KeyCode.F);
+        _inputKbdC = Input.GetKeyDown(KeyCode.C);
+        _inputKbdSpace = Input.GetKeyDown(KeyCode.Space);
+
+        _inputHddX = Input.GetButtonDown("X");
+        _inputHddY = Input.GetButtonDown("Y");
+        _inputHddA = Input.GetButtonDown("A");
+        _inputHddB = Input.GetButtonDown("B");
+        _inputHddLB = Input.GetButtonDown("LB");
     }
 
     private void CatMove()
     {
-        bool isWalking = catAni.GetBool("is_move");
-        bool rightPress = Input.GetKey(KeyCode.D);
-        bool leftPress = Input.GetKey(KeyCode.A);
-
         _inputH = Input.GetAxisRaw("Horizontal");
         _inputV = Input.GetAxisRaw("Vertical");
 
-
-        if (isWalking) handlePasser.SetIsHandle(true);
-        else handlePasser.SetIsHandle(true);
-        // ^ 判斷是否是handle，紀錄值
+        bool isWalking = catAni.GetBool("is_move");
+        bool rightPress = Input.GetKey(KeyCode.D);
+        bool leftPress = Input.GetKey(KeyCode.A);
 
         if (!rightPress && !leftPress && touchGround && _inputH == 0)   //讓貓的動畫跟移動停下來
         {
@@ -186,22 +200,17 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) || _inputV == -1 && isGetDownPlatform == true) //從浮空走道下來
+        if (_inputKbdS || _inputV == -1 && isGetDownPlatform == true) //從浮空走道下來
         {
-            if (touchPlatform == true )
+            if (touchPlatform == true)
             {
                 touchByLicat_beforeGetDown = touchByLicat;
                 StartCoroutine(GetDownPlatform());
                 isGetDownPlatform = false;
             }
-
-            if (touchByLicat_beforeGetDown != touchByLicat)
-            {
-                isGetDownPlatform = true;
-            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && touchGround || Input.GetButtonDown("A") && touchGround)      //跳動畫
+        if (touchGround && (_inputKbdSpace || _inputHddA))      //跳動畫
         {
             if (catAni.GetBool("is_solid") == true)
             {
@@ -224,7 +233,7 @@ public class Licat_move_controller : MonoBehaviour
 
     private void CatTransformSplit()
     {
-        if (Input.GetKeyDown(KeyCode.R) && catAni.GetBool("is_solid") == false || Input.GetButtonDown("B") && catAni.GetBool("is_solid") == false)      //分裂，融合動畫
+        if ((_inputKbdR || _inputHddB) && catAni.GetBool("is_solid") == false)      //分裂，融合動畫
         {
             if (!catAni.GetBool("is_split"))
             {
@@ -233,7 +242,7 @@ public class Licat_move_controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Y"))        //變形動畫
+        if (_inputKbdQ || _inputHddY)        //變形動畫
         {
             if (catAni.GetBool("is_solid") == true)
             {
@@ -340,6 +349,11 @@ public class Licat_move_controller : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         touchByLicat = collision.gameObject.name;
+
+        if (touchByLicat_beforeGetDown != touchByLicat)     // 判斷貓是否落地（給落下的功能用）
+        {
+            isGetDownPlatform = true;
+        }
     }
 
     void FixedUpdate()

@@ -27,6 +27,7 @@ public class HandleState_passer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckUserInput();
         // CheckIsShouldDestroy();
         // ＾不想讓他自刪的話就不要這行函式
     }
@@ -78,4 +79,31 @@ public class HandleState_passer : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void CheckUserInput()
+    {
+        // _inputH = Input.GetAxisRaw("Horizontal");
+        // _inputV = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKeyDown(KeyCode.W) ||
+            Input.GetKeyDown(KeyCode.A) ||
+            Input.GetKeyDown(KeyCode.S) ||
+            Input.GetKeyDown(KeyCode.D) ||
+            Input.GetKeyDown(KeyCode.Q) ||
+            Input.GetKeyDown(KeyCode.E) ||
+            Input.GetKeyDown(KeyCode.R) ||
+            Input.GetKeyDown(KeyCode.F) ||
+            Input.GetKeyDown(KeyCode.C)
+                ) SetIsHandle(false);
+        // ^ 判斷是否是handle，紀錄值
+
+        if (Input.GetButtonDown("X") ||
+            Input.GetButtonDown("Y") ||
+            Input.GetButtonDown("A") ||
+            Input.GetButtonDown("B") ||
+            Input.GetButtonDown("LB") ||
+            Input.GetButtonDown("Xbox_menu")
+                ) SetIsHandle(true);
+    }
+
 }
