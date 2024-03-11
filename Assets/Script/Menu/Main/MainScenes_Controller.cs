@@ -22,6 +22,11 @@ public class MainScenes_Controller : MonoBehaviour
         pre_menu = now_menu;
     }
 
+    void Awake()
+    {
+        Loader = GameObject.FindObjectOfType<ASyncLoader>();
+    }
+
     void Update()
     {
         if (Open.activeSelf && Input.anyKeyDown && !(Input.GetKeyDown(KeyCode.Escape))) GotoPage("main");
