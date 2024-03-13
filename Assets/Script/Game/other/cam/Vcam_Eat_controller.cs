@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class cam_Eat_controller : MonoBehaviour
+//吃怪東西的鏡頭，在接收到 F 之後會打開
+public class Vcam_Eat_controller : MonoBehaviour
 {
-    public bool isEatAniTrigger = false;
-
     void Start()
     {
         this.GetComponent<CinemachineVirtualCamera>().enabled = false;

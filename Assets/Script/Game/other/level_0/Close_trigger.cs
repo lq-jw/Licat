@@ -4,14 +4,14 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
 
+//控制吃怪東西的動畫
+
 public class Close_trigger : MonoBehaviour
 {
     public GameObject trigger;
     public Animator eatAni;
     public GameObject Cat;
-
-    public bool isPressF = false;
-
+    public GameObject S_eatAniController;
 
     void Start()
     {
@@ -34,7 +34,7 @@ public class Close_trigger : MonoBehaviour
         {
             eatAni.SetBool("is_pressF", true);
             Cat.SetActive(false);
-            isPressF = true;
+            S_eatAniController.SetActive(true);
         }
     }
 
