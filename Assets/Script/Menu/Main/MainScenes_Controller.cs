@@ -20,6 +20,7 @@ public class MainScenes_Controller : MonoBehaviour
         GotoPage("open");
         // GotoPage("main");        // 測試用
         pre_menu = now_menu;
+        Loader = GameObject.FindObjectOfType<ASyncLoader>();
     }
 
     void Awake()
@@ -72,20 +73,30 @@ public class MainScenes_Controller : MonoBehaviour
         }
     }
 
+    private void LoadGame(string levelToLoad, bool loadPause = false)
+    {
+        if (Loader != null)
+        {
+            Loader.LoadScene(levelToLoad, loadPause);
+        }
+        else
+        {
+            SceneManager.LoadScene(levelToLoad);
+            if (loadPause) SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+        }
+    }
     private void NewGame()     // 開啟新遊戲
     {
         isFirstGame = false;
         Debug.Log("start new game");
-        // SceneManager.LoadScene("GameScene");
-        Loader.LoadScene("Level_0", true);
-        // SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+        LoadGame("Level_0", true);
     }
 
     private void ContinueGame(string levelToLoad = "Level_0")     // 繼續遊戲
     {
         Debug.Log("continue game");
         // SceneManager.LoadScene("GameScene");
-        Loader.LoadScene(levelToLoad, true);
+        LoadGame(levelToLoad, true);
     }
 
     private void GameQuit()      // 離開遊戲
@@ -220,7 +231,7 @@ public class MainScenes_Controller : MonoBehaviour
                         break;
                 }
                 break;
-            case 1:
+            case -1:
                 switch (btnIndex)
                 {
                     case 0:
@@ -238,7 +249,7 @@ public class MainScenes_Controller : MonoBehaviour
                         break;
                 }
                 break;
-            case 2:
+            case 1:
                 switch (btnIndex)
                 {
                     case 0:

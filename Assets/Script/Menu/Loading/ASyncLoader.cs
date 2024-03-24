@@ -21,16 +21,15 @@ public class ASyncLoader : MonoBehaviour
     }
 
 
-    void Awake()
-    {
-        // GameObject[] objs = GameObject.FindGameObjectsWithTag("handle_passer");
-        ASyncLoader[] objs = GameObject.FindObjectsOfType<ASyncLoader>();
-        if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
-        DontDestroyOnLoad(this.gameObject);
-    }
+    // void Awake()
+    // {
+    //     ASyncLoader[] objs = GameObject.FindObjectsOfType<ASyncLoader>();
+    //     if (objs.Length > 1)
+    //     {
+    //         Destroy(this.gameObject);
+    //     }
+    //     DontDestroyOnLoad(this.gameObject);
+    // }
 
     // 讓他在下個場景載入完成後自動關掉
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -41,13 +40,13 @@ public class ASyncLoader : MonoBehaviour
         Debug.Log(mode);
     }
 
-    void OnDisable()
-    {
-        Loading_screen.SetActive(false);        //其實這沒用
-        Debug.Log("close loading screen.");
-        Debug.Log("OnDisable");
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    // void OnDisable()
+    // {
+    //     Loading_screen.SetActive(false);        //其實這沒用
+    //     Debug.Log("close loading screen.");
+    //     Debug.Log("OnDisable");
+    //     SceneManager.sceneLoaded -= OnSceneLoaded;
+    // }
 
     // Update is called once per frame
     public void LoadScene(string levelToLoad, bool loadPause = false)
@@ -56,7 +55,7 @@ public class ASyncLoader : MonoBehaviour
         Loading_screen.SetActive(true);
         Debug.Log("open loading screen.");
         StartCoroutine(LoadLevelASync(levelToLoad, loadPause));
-        SceneManager.sceneLoaded += OnSceneLoaded;      // 讓他在下個場景載入完成後自動關掉的監聽
+        // SceneManager.sceneLoaded += OnSceneLoaded;      // 讓他在下個場景載入完成後自動關掉的監聽
     }
 
     IEnumerator LoadLevelASync(string levelToLoad, bool loadPause = false)

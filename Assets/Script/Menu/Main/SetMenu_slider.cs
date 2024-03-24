@@ -1,3 +1,5 @@
+// 母類別包含 menu_btn_controller, firstIndex, lastIndex
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,8 +45,8 @@ public class SetMenu_slider : Hoverable_item
     {
         if (flag)
         {
-            if (mode) SliderIncrease();
-            else SliderDecrease();
+            if (mode) SliderIncrease(); // +
+            else SliderDecrease();      // -
         }
     }
     private void SliderDecrease()

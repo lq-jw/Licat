@@ -736,7 +736,6 @@ MonoBehaviour:
   thisIndex: 1
   clickMode: 0
   isClick: 0
-  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &221734915
 Animator:
@@ -3179,7 +3178,6 @@ MonoBehaviour:
   thisIndex: 1
   clickMode: 0
   isClick: 0
-  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &847139221
 Animator:
@@ -3758,7 +3756,6 @@ MonoBehaviour:
   thisIndex: 2
   clickMode: 0
   isClick: 0
-  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &952500195
 Animator:
@@ -3866,7 +3863,6 @@ MonoBehaviour:
   thisIndex: 1
   clickMode: 0
   isClick: 0
-  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1049635380
 Animator:
@@ -3962,7 +3958,6 @@ MonoBehaviour:
   thisIndex: 0
   clickMode: 0
   isClick: 0
-  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1094072052
 Animator:
@@ -5239,7 +5234,6 @@ MonoBehaviour:
   thisIndex: 2
   clickMode: 0
   isClick: 0
-  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1431187237
 Animator:
@@ -5878,7 +5872,6 @@ MonoBehaviour:
   thisIndex: 0
   clickMode: 0
   isClick: 0
-  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1747963046
 Animator:
@@ -6093,7 +6086,6 @@ MonoBehaviour:
   thisIndex: 0
   clickMode: 0
   isClick: 0
-  passer: {fileID: 0}
   scenes_controller: {fileID: 2103240189}
 --- !u!95 &1782646340
 Animator:
@@ -6116,6 +6108,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1813663444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1085760390107917370, guid: be10f0703c5a84a6c9ccccc53afaa4f1, type: 3}
+  m_PrefabInstance: {fileID: 1085760389022103786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7e5ad93999e4cdb9d397edd22359de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1854462209
 GameObject:
   m_ObjectHideFlags: 0
@@ -7210,7 +7213,7 @@ MonoBehaviour:
   Start_menu: {fileID: 1662777405}
   Set_menu: {fileID: 1401643786}
   Quit_check: {fileID: 751388192}
-  Loader: {fileID: 0}
+  Loader: {fileID: 1813663444}
   now_menu: 
   pre_menu: 
   isFirstGame: 1
@@ -7415,6 +7418,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1085760390107917349, guid: be10f0703c5a84a6c9ccccc53afaa4f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615516390890467406, guid: be10f0703c5a84a6c9ccccc53afaa4f1, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
