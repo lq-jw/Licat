@@ -27,7 +27,7 @@ public class C_Door_controller : MonoBehaviour
 
     private void CheckSwitches()
     {
-        // 如果兩個開關都被觸發，打開門，否則關閉門
+        // 
         if (btn_L || btn_R)
         {
             OpenDoor();
