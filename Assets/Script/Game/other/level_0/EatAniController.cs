@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EatAniController : MonoBehaviour
 {
+    [SerializeField] private ASyncLoader Loader;
+
     public Animator eatAni_1;  //¯È³U
 
     public GameObject G_eatAni_2;  //¦Y©ÇªF¦è
@@ -21,6 +23,11 @@ public class EatAniController : MonoBehaviour
     private bool isPressF = false;
     private bool isEatAni_2_finish = false;
     private bool isEatAni_3_finish = false;
+
+    void Awake()
+    {
+        ASyncLoader Loader = GameObject.FindObjectOfType<ASyncLoader>();
+    }
 
     void Update()
     {
@@ -54,6 +61,15 @@ public class EatAniController : MonoBehaviour
             print("switch level");
             //SceneManager.LoadScene("Level_1");
             //SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+            if (Loader != null)
+            {
+                Loader.LoadScene("Level_1", true);
+            }
+            else
+            {
+                SceneManager.LoadScene("Level_1");
+                SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+            }
         }
     }
 }
