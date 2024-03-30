@@ -3,7 +3,7 @@
 // （寫入）紀錄是否使用手把：SetIsHandle(bool set)
 // （輸出）呼叫紀錄值：GetIsHandle()
 // true：用手把 flase：用鍵盤
-// 暫時設定如果不在menu或第0關會刪掉，需要可以再改
+// 無法根據左右鍵或搖桿去判斷是否使用手把
 
 using System.Collections;
 using System.Collections.Generic;
@@ -59,7 +59,7 @@ public class HandleState_passer : MonoBehaviour
         isUseHandle = set;
     }
 
-
+    
 
     private bool CheckIsSceneLoaded(string sceneName)
     {
@@ -85,25 +85,36 @@ public class HandleState_passer : MonoBehaviour
         // _inputH = Input.GetAxisRaw("Horizontal");
         // _inputV = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.W) ||
-            Input.GetKeyDown(KeyCode.A) ||
-            Input.GetKeyDown(KeyCode.S) ||
-            Input.GetKeyDown(KeyCode.D) ||
-            Input.GetKeyDown(KeyCode.Q) ||
-            Input.GetKeyDown(KeyCode.E) ||
-            Input.GetKeyDown(KeyCode.R) ||
-            Input.GetKeyDown(KeyCode.F) ||
-            Input.GetKeyDown(KeyCode.C)
-                ) SetIsHandle(false);
-        // ^ 判斷是否是handle，紀錄值
+        if (isUseHandle)
+        {
+            if (Input.GetKeyDown(KeyCode.W) ||
+                Input.GetKeyDown(KeyCode.A) ||
+                Input.GetKeyDown(KeyCode.S) ||
+                Input.GetKeyDown(KeyCode.D) ||
+                Input.GetKeyDown(KeyCode.Q) ||
+                Input.GetKeyDown(KeyCode.E) ||
+                Input.GetKeyDown(KeyCode.R) ||
+                Input.GetKeyDown(KeyCode.F) ||
+                Input.GetKeyDown(KeyCode.C) ||
+                Input.GetKeyDown(KeyCode.LeftArrow) ||
+                Input.GetKeyDown(KeyCode.RightArrow) ||
+                Input.GetKeyDown(KeyCode.DownArrow)
+                    ) SetIsHandle(false);
+        }
+        else
+        {
+            if (Input.GetButtonDown("X") ||
+                Input.GetButtonDown("Y") ||
+                Input.GetButtonDown("A") ||
+                Input.GetButtonDown("B") ||
+                Input.GetButtonDown("LB") ||
+                Input.GetButtonDown("Xbox_menu")
+                    ) SetIsHandle(true);
 
-        if (Input.GetButtonDown("X") ||
-            Input.GetButtonDown("Y") ||
-            Input.GetButtonDown("A") ||
-            Input.GetButtonDown("B") ||
-            Input.GetButtonDown("LB") ||
-            Input.GetButtonDown("Xbox_menu")
-                ) SetIsHandle(true);
+            // if (!(!(Input.GetAxisRaw("Horizontal") == 0) &&
+            //     (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
+            //         ) SetIsHandle(true);
+        }
     }
 
 }
