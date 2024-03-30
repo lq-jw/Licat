@@ -244,7 +244,14 @@ public class PauseScenes_Controller : MonoBehaviour
     private void BackToMainMenu()
     {
         Debug.Log("BackToMainMenu");
-        Loader.LoadScene("MainScene");
+        if (Loader != null)
+        {
+            Loader.LoadScene("MainScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainScene");
+        }
     }
 
 }
