@@ -8,13 +8,31 @@ using UnityEngine.UI;
 public class SetMenu_slider : Hoverable_item
 {
     [SerializeField] private Slider slider;
+    private float volume = 0.5f;
     private bool flag = false;
+    private string type = "";
 
     // Start is called before the first frame update
     void Start()
     {
         Initial_hoverable_item();
         flag = false;
+        switch (thisIndex)
+        {
+            case 0:
+                type = "mainVolume";
+                break;
+            case 1:
+                type = "bgmVolume";
+                break;
+            case 2:
+                type = "seVolume";
+                break;
+            default:
+                break;
+        }
+        volume = GameManager.instance.GetVolume(type);
+        slider.value = volume;
     }
 
     // Update is called once per frame
@@ -48,13 +66,22 @@ public class SetMenu_slider : Hoverable_item
             if (mode) SliderIncrease(); // +
             else SliderDecrease();      // -
         }
+        if (volume < 0f) volume = 0f;
+        if (volume > 1f) volume = 1f;
+        UpdateSliderAndVolume();
     }
     private void SliderDecrease()
     {
-        slider.value -= 0.1f;
+        volume -= 0.1f;
     }
     private void SliderIncrease()
     {
-        slider.value += 0.1f;
+        volume += 0.1f;
+    }
+
+    private void UpdateSliderAndVolume()
+    {
+        slider.value = volume;
+        GameManager.instance.SetSettings(type, volume);
     }
 }
