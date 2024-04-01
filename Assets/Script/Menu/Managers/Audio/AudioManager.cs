@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayBGM("lv1_water");
+        // PlayBGM("lv1_water");
     }
 
     public void PlayBGM(string name)

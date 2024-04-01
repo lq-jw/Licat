@@ -13,10 +13,23 @@ public class Vcam_Begin_controller : MonoBehaviour
 
     //public SpriteRenderer tutorialRender;
     public GameObject G_bed;
+    private bool isNewGame = true;
 
+    private void Awake()
+    {
+        isNewGame = GameManager.instance.GetIsNewGame();
+    }
     private void Start()
     {
         //tutorialRender.enabled = false;
+        if (!isNewGame)
+        {
+            licat.SetActive(true);
+            G_bed.SetActive(true);
+            G_begin.SetActive(false);
+            this.gameObject.SetActive(false);
+            Debug.Log("Skip openning ani.");
+        }
     }
 
     void Update()
