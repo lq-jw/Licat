@@ -34,8 +34,6 @@ public class Vcam_Begin_controller : MonoBehaviour
 
     void Update()
     {
-        // if (isNewGame)
-        // {
         bool stateInfo0 = beginAni.GetCurrentAnimatorStateInfo(0).IsName("jump_out_over");
         bool stateInfo1 = beginAni.GetCurrentAnimatorStateInfo(0).IsName("opening_4_over");
 
@@ -51,8 +49,6 @@ public class Vcam_Begin_controller : MonoBehaviour
             //this.GetComponent<CinemachineVirtualCamera>().enabled = false;
             //tutorialRender.enabled = true;
             this.gameObject.SetActive(false);
-            // GameManager.instance.SetIsNewGame(false);
         }
-        // }
     }
 }
