@@ -16,7 +16,7 @@ public class MainScenes_Controller : MonoBehaviour
 
     void Start()
     {
-        isFirstGame = false;        // 測試用，等資料的部分弄好後，就要刪掉
+        isFirstGame = GameManager.instance.GetIsFirstGame();
         GotoPage("open");
         // GotoPage("main");        // 測試用
         pre_menu = now_menu;
@@ -87,13 +87,15 @@ public class MainScenes_Controller : MonoBehaviour
     }
     private void NewGame()     // 開啟新遊戲
     {
-        isFirstGame = false;
+        GameManager.instance.SetIsFirstGame(false);
+        GameManager.instance.SetIsNewGame(true);
         Debug.Log("start new game");
         LoadGame("Level_0", true);
     }
 
     private void ContinueGame(string levelToLoad = "Level_0")     // 繼續遊戲
     {
+        GameManager.instance.SetIsNewGame(false);
         Debug.Log("continue game");
         // SceneManager.LoadScene("GameScene");
         LoadGame(levelToLoad, true);
@@ -224,7 +226,7 @@ public class MainScenes_Controller : MonoBehaviour
             case 0:
                 switch (btnIndex)
                 {
-                    case 5:
+                    case 4:
                         GoBack();
                         break;
                     default:
