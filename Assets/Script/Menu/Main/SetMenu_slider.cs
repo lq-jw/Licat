@@ -20,12 +20,9 @@ public class SetMenu_slider : Hoverable_item
         switch (thisIndex)
         {
             case 0:
-                type = "mainVolume";
-                break;
-            case 1:
                 type = "bgmVolume";
                 break;
-            case 2:
+            case 1:
                 type = "seVolume";
                 break;
             default:
@@ -33,6 +30,7 @@ public class SetMenu_slider : Hoverable_item
         }
         volume = GameManager.instance.GetVolume(type);
         slider.value = volume;
+        Debug.Log("init "+type+" = "+volume);
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [SerializeField] private float mainVolume, bgmVolume, seVolume;
+    [SerializeField] private float bgmVolume, seVolume;
     private bool isFirstGame, isNewGame;
     void Awake()
     {
@@ -18,12 +18,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        InitData();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        InitData();
         AudioManager.instance.UpdateVolume();
     }
 
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void InitData()
     {
-        mainVolume = bgmVolume = seVolume = 0.5f;
+        bgmVolume = seVolume = 0.5f;
         isFirstGame = true;
         isNewGame = false;
     }
@@ -44,11 +44,6 @@ public class GameManager : MonoBehaviour
     {
         switch (name)
         {
-            case "mainVolume":
-                mainVolume = fSet;
-                AudioManager.instance.UpdateVolume();
-                break;
-
             case "bgmVolume":
                 bgmVolume = fSet;
                 AudioManager.instance.UpdateVolume();
@@ -88,9 +83,6 @@ public class GameManager : MonoBehaviour
     {
         switch (name)
         {
-            case "mainVolume":
-                return mainVolume;
-
             case "bgmVolume":
                 return bgmVolume;
 
