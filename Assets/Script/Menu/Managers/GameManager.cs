@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] private float bgmVolume, seVolume;
     private bool isFirstGame, isNewGame;
+    
     void Awake()
     {
         if (!instance)
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
         isNewGame = false;
     }
 
+    // ↓ 設定 set menu 的內容用
     public void SetSettings(string name, float fSet = 0f, string type = "")
     {
         switch (name)
@@ -59,6 +61,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /////////////////////////////////
     public bool GetIsFirstGame()
     {
         return isFirstGame;
@@ -79,6 +82,7 @@ public class GameManager : MonoBehaviour
         isNewGame = set;
     }
 
+    /////////////////////////////////
     public float GetVolume(string name)
     {
         switch (name)
