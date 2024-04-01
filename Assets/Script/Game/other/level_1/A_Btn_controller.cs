@@ -5,6 +5,7 @@ using UnityEngine;
 public class A_Btn_controller : MonoBehaviour
 {
     //public Animator btn_ani;
+    public Animator door_light;
     public Animator btn_door_ani;
     public GameObject btn;
 
@@ -23,6 +24,7 @@ public class A_Btn_controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
             btn_door_ani.SetBool("is_open", true);
+            door_light.Play("open");
 
             btnNow_Y_pisition = btn.transform.position.y;
 
@@ -38,6 +40,7 @@ public class A_Btn_controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
             btn_door_ani.SetBool("is_open", false);
+            door_light.Play("close");
             UnPressBtn();
         }
     }

@@ -8,13 +8,14 @@ public class B_Door_controller : MonoBehaviour
     private bool btn_R = false;
 
     public Animator door;
+    public Animator door_light;
 
     public void SetSwitch1(bool activated)
     {
         btn_L = activated;
         CheckSwitches();
 
-        print("btn_L " + btn_L);
+        //print("btn_L " + btn_L);
     }
 
     public void SetSwitch2(bool activated)
@@ -22,7 +23,7 @@ public class B_Door_controller : MonoBehaviour
         btn_R = activated;
         CheckSwitches();
 
-        print("btn_R " + btn_R);
+       //print("btn_R " + btn_R);
     }
 
     private void CheckSwitches()
@@ -31,26 +32,30 @@ public class B_Door_controller : MonoBehaviour
         if (btn_L && btn_R)
         {
             OpenDoor();
-            print("open door");
+            //door_light.Play("open");
+            //print("open door");
         }
         else
         {
             CloseDoor();
-            print("close door");
+            //door_light.Play("close");
+            //print("close door");
         }
     }
 
     public void OpenDoor()
     {
         // 實現打開門的邏輯
-        Debug.Log("Door opened!");
+        //Debug.Log("Door opened!");
         door.SetBool("is_open", true);
+        door_light.Play("open");
     }
 
     public void CloseDoor()
     {
         // 實現關閉門的邏輯
-        Debug.Log("Door closed!");
+        //Debug.Log("Door closed!");
         door.SetBool("is_open", false);
+        door_light.Play("close");
     }
 }
