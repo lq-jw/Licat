@@ -22,7 +22,8 @@ public class MainMenu_btn : Menu_btn
     private void Update()
     {
         Update_menu_btn();
-        CheckIsClick();
+        if (scenes_controller != null) CheckIsClick();
+        // else Debug.Log("Find no MainScenes controller");
     }
 
     protected override void CheckIsClick()     // 呼叫 scenes_controller 處理按鈕事件

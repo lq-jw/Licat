@@ -63,6 +63,7 @@ public class SetMenu_slider : Hoverable_item
         {
             if (mode) SliderIncrease(); // +
             else SliderDecrease();      // -
+            AudioManager.instance.PlaySE("menu_slider");
         }
         if (volume < 0f) volume = 0f;
         if (volume > 1f) volume = 1f;

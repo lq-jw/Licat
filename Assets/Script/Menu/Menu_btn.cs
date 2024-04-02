@@ -49,11 +49,11 @@ public abstract class Menu_btn : Hoverable_item, IPointerClickHandler
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("LB"))
             {
-                MarkIsClick(-1);
+                // MarkIsClick(-1);
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetButtonDown("RB"))
             {
-                MarkIsClick(1);
+                // MarkIsClick(1);
             }
         }
     }
@@ -63,5 +63,6 @@ public abstract class Menu_btn : Hoverable_item, IPointerClickHandler
         Debug.Log("mode" + mode);
         isClick = true;
         clickMode = mode;
+        AudioManager.instance.PlaySE("menu_click");
     }
 }

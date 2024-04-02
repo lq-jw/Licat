@@ -16,11 +16,15 @@ public class PauseMenu_btn : Menu_btn
     // {
     //     Initial_menu_btn();
     // }
-    
+    // private void Awake()
+    // {
+    //     scenes_controller = GameObject.FindObjectOfType<PauseScenes_Controller>();
+    // }
     private void Update()
     {
         Update_menu_btn();
-        CheckIsClick();
+        if (scenes_controller != null) CheckIsClick();
+        // else Debug.Log("Find no PauseScenes controller");
     }
 
     protected override void CheckIsClick()     // 呼叫 scenes_controller 處理按鈕事件

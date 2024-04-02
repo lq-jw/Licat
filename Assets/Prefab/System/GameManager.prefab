@@ -180,6 +180,24 @@ MonoBehaviour:
   seSounds:
   - name: cat_jump
     clip: {fileID: 8300000, guid: 58aa5a19c06fa4b6f970676afd1b3f6b, type: 3}
+  - name: cat_meow_s
+    clip: {fileID: 8300000, guid: 55181779615334413aafd6828250e426, type: 3}
+  - name: cat_meow_l
+    clip: {fileID: 8300000, guid: c5667a877ca3344608f0ada0ec4a9426, type: 3}
+  - name: opWaterDrop_0
+    clip: {fileID: 8300000, guid: 8610292d7adb64d08819f9fb6fabf466, type: 3}
+  - name: opWaterDrop_1
+    clip: {fileID: 8300000, guid: 9dc6e40434fa14fd2ae7e45d40663508, type: 3}
+  - name: opWaterDrop_2
+    clip: {fileID: 8300000, guid: 788bddfdb8a3347bd9559580ef4ef585, type: 3}
+  - name: opWaterDrop_3
+    clip: {fileID: 8300000, guid: 4c240a9e8e85a4f7ba5e6780d4785d16, type: 3}
+  - name: menu_select
+    clip: {fileID: 8300000, guid: fece09edce19842a99f5831b7f9fa4e0, type: 3}
+  - name: menu_click
+    clip: {fileID: 8300000, guid: 9f7e52440086449e1b3f6553c0ba0c6f, type: 3}
+  - name: menu_slider
+    clip: {fileID: 8300000, guid: 7cd961e585f524c489f362e2fc609e0c, type: 3}
   bgmSource: {fileID: 5567943685468302077}
   seSource: {fileID: 5567943686655237077}
 --- !u!1 &5567943686655237079
@@ -357,3 +375,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmVolume: 0
   seVolume: 0
+  isFirstGame: 0
+  isNewGame: 0
