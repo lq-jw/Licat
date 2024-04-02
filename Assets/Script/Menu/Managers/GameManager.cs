@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private float bgmVolume, seVolume;
-    private bool isFirstGame, isNewGame;
+    [SerializeField] private bool isFirstGame, isNewGame;
     
     void Awake()
     {

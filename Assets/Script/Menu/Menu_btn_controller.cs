@@ -55,6 +55,7 @@ public class Menu_btn_controller : MonoBehaviour
                         index = maxIndex;
                     }
                 }
+                AudioManager.instance.PlaySE("menu_select");
             }
             else
             {

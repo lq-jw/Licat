@@ -1086,8 +1086,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu_btn_controller: {fileID: 2086137104852975307}
   btn_animator: {fileID: 2086137103934012616}
-  firstIndex: 3
-  lastIndex: 3
+  firstIndex: 2
+  lastIndex: 2
 --- !u!1 &2086137103994596328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,7 +2503,7 @@ MonoBehaviour:
   menu_btn_controller: {fileID: 2086137104852975307}
   btn_animator: {fileID: 2086137104204331993}
   firstIndex: 0
-  lastIndex: 2
+  lastIndex: 1
 --- !u!1 &2086137104251922178
 GameObject:
   m_ObjectHideFlags: 0
@@ -4135,8 +4135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu_btn_controller: {fileID: 2086137104852975307}
   btn_animator: {fileID: 2086137104938826861}
-  firstIndex: 4
-  lastIndex: 4
+  firstIndex: 3
+  lastIndex: 3
 --- !u!1 &2086137105063208544
 GameObject:
   m_ObjectHideFlags: 0

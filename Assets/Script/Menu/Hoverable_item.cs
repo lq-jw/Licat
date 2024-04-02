@@ -38,5 +38,6 @@ public class Hoverable_item : Selectable_item, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         menu_btn_controller.ChangeSelect(thisIndex);
+        AudioManager.instance.PlaySE("menu_select");
     }
 }

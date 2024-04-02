@@ -12,12 +12,14 @@ public class Licat_move_controller : MonoBehaviour
 
     float _inputH;                    //接左右輸入
     float _inputV;                    //接上下輸入
+    [SerializeField] float meowCouter = 0f;                // 貓叫偵測
+    [SerializeField] bool isMeow = false;
     private bool isMoving = false;
     private bool isMoving_R = false;
 
-    private bool _inputKbdSpace, _inputKbdW, _inputKbdA, _inputKbdS, _inputKbdD, _inputKbdC, _inputKbdQ, _inputKbdE, _inputKbdR, _inputKbdF;
+    private bool _inputKbdSpace, _inputKbdW, _inputKbdA, _inputKbdS, _inputKbdD, _inputLKbdC, _inputUKbdC, _inputKbdQ, _inputKbdE, _inputKbdR, _inputKbdF;
     // ^ 接鍵盤輸入（是KeyDown，只偵測按下去，沒有偵測長按）
-    private bool _inputHddX, _inputHddY, _inputHddA, _inputHddB, _inputHddLB;
+    private bool _inputHddX, _inputHddY, _inputHddA, _inputHddB, _inputLHddLB, _inputUHddLB;
 
     bool _inputJump;                                  //--跳躍相關
     bool _inputGetDownPlatform;                       //--
@@ -95,14 +97,16 @@ public class Licat_move_controller : MonoBehaviour
         _inputKbdE = Input.GetKeyDown(KeyCode.E);
         _inputKbdR = Input.GetKeyDown(KeyCode.R);
         _inputKbdF = Input.GetKeyDown(KeyCode.F);
-        _inputKbdC = Input.GetKeyDown(KeyCode.C);
+        _inputLKbdC = Input.GetKey(KeyCode.C);
+        _inputUKbdC = Input.GetKeyUp(KeyCode.C);
         _inputKbdSpace = Input.GetKeyDown(KeyCode.Space);
 
         _inputHddX = Input.GetButtonDown("X");
         _inputHddY = Input.GetButtonDown("Y");
         _inputHddA = Input.GetButtonDown("A");
         _inputHddB = Input.GetButtonDown("B");
-        _inputHddLB = Input.GetButtonDown("LB");
+        _inputLHddLB = Input.GetButton("LB");
+        _inputUHddLB = Input.GetButtonUp("LB");
     }
 
     private void CatMove()
@@ -214,6 +218,7 @@ public class Licat_move_controller : MonoBehaviour
         {
             if (catAni.GetBool("is_solid") == true)
             {
+                AudioManager.instance.PlaySE("cat_jump");
                 if (FaceRight == false)
                 {
                     catAni.SetTrigger("is_jump");
@@ -227,6 +232,30 @@ public class Licat_move_controller : MonoBehaviour
                     _inputJump = true;
                 }
 
+            }
+        }
+        if (_inputLKbdC || _inputLHddLB || _inputUKbdC || _inputUHddLB)
+        {
+            meowCouter += Time.deltaTime;
+            if (!isMeow && (_inputUKbdC || _inputUHddLB))
+            {
+                Debug.Log("meowS");
+                AudioManager.instance.PlaySE("cat_meow_s");
+                meowCouter = 0f;
+            }
+            else if (meowCouter > 0.25)
+            {
+                if (!isMeow)
+                {
+                    Debug.Log("meowL");
+                    AudioManager.instance.PlaySE("cat_meow_l");
+                    isMeow = true;
+                }
+                if (_inputUKbdC || _inputUHddLB)
+                {
+                    meowCouter = 0f;
+                    isMeow = false;
+                }
             }
         }
     }
