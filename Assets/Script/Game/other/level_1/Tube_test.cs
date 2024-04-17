@@ -53,8 +53,8 @@ public class Tube_test : MonoBehaviour
             {
                 Debug.Log("hit object " + hitR.collider.name);
 
-                Big_cat_ani.Play("_L_R_tubeThrough_0");
-                Big_cat_ani.SetBool("is_tubeThrough_R", true);
+                Big_cat_ani.Play("_L_L_tubeThrough_0");
+                Big_cat_ani.SetBool("is_tubeThrough", true);
                 tube_collider.enabled = false;
                 tube_collider_other.enabled = false;
 
@@ -189,8 +189,8 @@ public class Tube_test : MonoBehaviour
 
         while (X_distance > 0.5f || X_distance < -0.5f)
         {
-            Big_cat.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-            Big_cat.transform.Translate(Vector3.right * tubeSpeed * Time.deltaTime);
+            Big_cat.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Big_cat.transform.Translate(Vector3.left * tubeSpeed * Time.deltaTime);
             X_distance = (Big_cat.transform.position.x) - (Turn_4.transform.position.x);
             yield return null;
         }
@@ -219,8 +219,8 @@ public class Tube_test : MonoBehaviour
 
         while (X_distance > 0.5f || X_distance < -0.5f)
         {
-            Big_cat.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-            Big_cat.transform.Translate(Vector3.right * tubeSpeed * Time.deltaTime);
+            Big_cat.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Big_cat.transform.Translate(Vector3.left * tubeSpeed * Time.deltaTime);
             X_distance = (Big_cat.transform.position.x) - (Turn_2.transform.position.x);
             yield return null;
         }
@@ -238,14 +238,14 @@ public class Tube_test : MonoBehaviour
 
         while (X_distance > 0.5f || X_distance < -0.5f)
         {
-            Big_cat.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-            Big_cat.transform.Translate(Vector3.right * tubeSpeed * Time.deltaTime);
+            Big_cat.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Big_cat.transform.Translate(Vector3.left * tubeSpeed * Time.deltaTime);
             X_distance = (Big_cat.transform.position.x) - (Turn_0.transform.position.x);
             yield return null;
         }
 
         Big_cat.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        Big_cat_ani.SetBool("is_tubeThrough_R", false);
+        Big_cat_ani.SetBool("is_tubeThrough", false);
 
         yield return new WaitForSecondsRealtime(5);
         tube_collider.enabled = true;
