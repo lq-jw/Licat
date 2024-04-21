@@ -198,6 +198,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9f7e52440086449e1b3f6553c0ba0c6f, type: 3}
   - name: menu_slider
     clip: {fileID: 8300000, guid: 7cd961e585f524c489f362e2fc609e0c, type: 3}
+  - name: menu_close
+    clip: {fileID: 8300000, guid: 493b75f02644d4a2f8ac66f6549d7322, type: 3}
   bgmSource: {fileID: 5567943685468302077}
   seSource: {fileID: 5567943686655237077}
 --- !u!1 &5567943686655237079

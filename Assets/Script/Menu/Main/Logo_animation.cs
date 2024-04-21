@@ -15,6 +15,7 @@ public class Logo_animation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.instance.PlayBGM("lv1_water");
         PlaySound(0);
     }
 
@@ -33,11 +34,11 @@ public class Logo_animation : MonoBehaviour
         // 检查是否播放到最后一帧
         if (stateInfo.normalizedTime >= 1f)
         {
-            isRunning=true;
+            isRunning = true;
             isEnd = true;
             // Debug.Log("play is end.");
-            // GetNextAnimation();
-            StartCoroutine(Wait());
+            GetNextAnimation();
+            // StartCoroutine(Wait());
         }
         else
         {
@@ -65,9 +66,9 @@ public class Logo_animation : MonoBehaviour
     {
         // if (!isPlaySound)
         // {
-            // isPlaySound = true;
-            // AudioManager.instance.PlaySE("opWaterDrop_" + i);
-            // Debug.Log("Play opWaterDrop_" + i);
+        // isPlaySound = true;
+        // AudioManager.instance.PlaySE("opWaterDrop_" + i);
+        // Debug.Log("Play opWaterDrop_" + i);
         // }
     }
 

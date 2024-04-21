@@ -88,9 +88,11 @@ public class PauseScenes_Controller : MonoBehaviour
             switch (now_menu)
             {
                 case "game":
+                    AudioManager.instance.PlaySE("menu_close");     // 音效
                     GotoPage("pause");
                     break;
                 case "pause":
+                    AudioManager.instance.PlaySE("menu_close");     // 音效
                     GotoPage("game");
                     break;
                 case "set":
