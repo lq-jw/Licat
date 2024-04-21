@@ -59,7 +59,7 @@ public class HandleState_passer : MonoBehaviour
         isUseHandle = set;
     }
 
-    
+
 
     private bool CheckIsSceneLoaded(string sceneName)
     {
@@ -114,6 +114,11 @@ public class HandleState_passer : MonoBehaviour
             // if (!(!(Input.GetAxisRaw("Horizontal") == 0) &&
             //     (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
             //         ) SetIsHandle(true);
+        }
+
+        if (Input.anyKeyDown)
+        {
+            GameManager.instance.SetIsAfterLoading(false);
         }
     }
 

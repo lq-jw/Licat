@@ -55,6 +55,7 @@ public class ASyncLoader : MonoBehaviour
         Loading_screen.SetActive(true);
         Debug.Log("open loading screen.");
         StartCoroutine(LoadLevelASync(levelToLoad, loadPause));
+        GameManager.instance.SetIsAfterLoading(true);
         // SceneManager.sceneLoaded += OnSceneLoaded;      // 讓他在下個場景載入完成後自動關掉的監聽
     }
 

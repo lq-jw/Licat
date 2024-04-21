@@ -377,5 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmVolume: 0
   seVolume: 0
-  isFirstGame: 0
+  isFirstGame: 1
   isNewGame: 0
+  isPlayAni: 0
+  isAfterLoading: 0

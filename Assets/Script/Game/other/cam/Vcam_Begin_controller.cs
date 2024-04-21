@@ -18,9 +18,11 @@ public class Vcam_Begin_controller : MonoBehaviour
     private void Awake()
     {
         isNewGame = GameManager.instance.GetIsNewGame();
+        Debug.Log(isNewGame);
     }
     private void Start()
     {
+        Debug.Log(isNewGame);
         //tutorialRender.enabled = false;
         if (!isNewGame)
         {
@@ -29,6 +31,10 @@ public class Vcam_Begin_controller : MonoBehaviour
             G_begin.SetActive(false);
             this.gameObject.SetActive(false);
             Debug.Log("Skip openning ani.");
+        }
+        else
+        {
+            SetGameManagerFlag(true);
         }
     }
 
@@ -49,6 +55,13 @@ public class Vcam_Begin_controller : MonoBehaviour
             //this.GetComponent<CinemachineVirtualCamera>().enabled = false;
             //tutorialRender.enabled = true;
             this.gameObject.SetActive(false);
+            SetGameManagerFlag(false);
         }
+    }
+
+    private void SetGameManagerFlag(bool set)    // 用於判斷是否要播放黑邊
+    {
+        GameManager.instance.SetIsAfterLoading(set);
+        GameManager.instance.SetIsPlayAni(set);
     }
 }

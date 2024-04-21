@@ -6,9 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private float bgmVolume, seVolume;
-    [SerializeField] private bool isFirstGame, isNewGame;
-    
-    void Awake()
+    [SerializeField] private bool isFirstGame, isNewGame, isPlayAni, isAfterLoading;
+
+    void Awake()    // 建立實例、不要被刪掉、檢查是否重複並刪掉
     {
         if (!instance)
         {
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Start()    // 開場先更新一下音量
     {
         AudioManager.instance.UpdateVolume();
     }
@@ -37,8 +37,9 @@ public class GameManager : MonoBehaviour
     private void InitData()
     {
         bgmVolume = seVolume = 0.5f;
-        isFirstGame = true;
-        isNewGame = false;
+        // isFirstGame = true;
+        // isNewGame = false;
+        isPlayAni = isAfterLoading = false;
     }
 
     // ↓ 設定 set menu 的內容用
@@ -81,6 +82,27 @@ public class GameManager : MonoBehaviour
     {
         isNewGame = set;
     }
+
+    public bool GetIsPlayAni()
+    {
+        return isPlayAni;
+    }
+
+    public void SetIsPlayAni(bool set)
+    {
+        isPlayAni = set;
+    }
+
+    public bool GetIsAfterLoading()
+    {
+        return isAfterLoading;
+    }
+
+    public void SetIsAfterLoading(bool set)     //  由動畫那邊指定
+    {
+        isAfterLoading = set;
+    }
+
 
     /////////////////////////////////
     public float GetVolume(string name)
