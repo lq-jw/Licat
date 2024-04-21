@@ -34,7 +34,7 @@ public class Vcam_Begin_controller : MonoBehaviour
         }
         else
         {
-            SetGameManagerFlag(true);
+            GameManager.instance.GotoAniMode(true);      // 淡入，打開動畫黑邊
         }
     }
 
@@ -55,13 +55,7 @@ public class Vcam_Begin_controller : MonoBehaviour
             //this.GetComponent<CinemachineVirtualCamera>().enabled = false;
             //tutorialRender.enabled = true;
             this.gameObject.SetActive(false);
-            SetGameManagerFlag(false);
+            GameManager.instance.LeaveAniMode(false);      // 關掉動畫黑邊
         }
-    }
-
-    private void SetGameManagerFlag(bool set)    // 用於判斷是否要播放黑邊
-    {
-        GameManager.instance.SetIsAfterLoading(set);
-        GameManager.instance.SetIsPlayAni(set);
     }
 }

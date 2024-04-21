@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         bgmVolume = seVolume = 0.5f;
         // isFirstGame = true;
         // isNewGame = false;
-        isPlayAni = isAfterLoading = isGoingToLoad = false;
+        LeaveAniMode(false);
     }
 
     // ↓ 設定 set menu 的內容用
@@ -85,13 +85,15 @@ public class GameManager : MonoBehaviour
     }
 
 
-    // ↓ 動畫用
+    // ↓ 動畫用，無法由外部設定值（但可取得）
+    //   要進入動畫黑邊、淡入淡出，請用 Goto/LeaveAniMode 跟 FadeOut
+    //   Loader 會重置（LeaveAniMode(false)）
     public bool GetIsPlayAni()
     {
         return isPlayAni;
     }
 
-    public void SetIsPlayAni(bool set)
+    private void SetIsPlayAni(bool set)
     {
         isPlayAni = set;
     }
@@ -101,7 +103,7 @@ public class GameManager : MonoBehaviour
         return isAfterLoading;
     }
 
-    public void SetIsAfterLoading(bool set)     //  由動畫那邊指定，loader和handlecheck也有
+    private void SetIsAfterLoading(bool set)
     {
         isAfterLoading = set;
     }
@@ -111,11 +113,59 @@ public class GameManager : MonoBehaviour
         return isGoingToLoad;
     }
 
-    public void SetIsGoingToLoad(bool set)
+    private void SetIsGoingToLoad(bool set)
     {
         isGoingToLoad = set;
     }
 
+    public void GotoAniMode(bool mode = false)      // true 淡入，用於關卡開頭的動畫
+    {
+        Debug.Log("Go to ani mode.");
+        switch (mode)
+        {
+            case false:         // in game
+                SetIsAfterLoading(false);
+                SetIsGoingToLoad(false);
+                break;
+            case true:         // fade in
+                SetIsAfterLoading(true);
+                SetIsGoingToLoad(false);
+                break;
+            default:        // in game
+                SetIsAfterLoading(false);
+                SetIsGoingToLoad(false);
+                break;
+        }
+        SetIsPlayAni(true);
+    }
+
+    public void LeaveAniMode(bool mode = false)     // true 淡出，用於關卡最尾的動畫
+    {
+        Debug.Log("Leave ani mode.");
+        switch (mode)
+        {
+            case false:         // in game，也可以用於重置所有設定或無黑帶 Fade out
+                SetIsAfterLoading(false);
+                SetIsGoingToLoad(false);
+                break;
+            case true:         // fade out
+                SetIsAfterLoading(false);
+                SetIsGoingToLoad(true);
+                break;
+            default:        // in game，也可以用於重置所有設定或無黑帶 Fade out
+                SetIsAfterLoading(false);
+                SetIsGoingToLoad(false);
+                break;
+        }
+        SetIsPlayAni(false);
+    }
+
+    public void FadeOut()       // 淡出至黑色且無黑帶，要做到 Fade in（但所有關卡開始都會淡入，很少有需要的場合），請在觸發淡出後用 LeaveAniMode(false)
+    {
+        SetIsGoingToLoad(false);
+        SetIsPlayAni(false);
+        SetIsAfterLoading(true);
+    }
     /////////////////////////////////
     public float GetVolume(string name)
     {

@@ -51,11 +51,10 @@ public class ASyncLoader : MonoBehaviour
     // Update is called once per frame
     public void LoadScene(string levelToLoad, bool loadPause = false)
     {
+        // GameManager.instance.FadeOut();
         Debug.Log("start loading.");
         Loading_screen.SetActive(true);
-        GameManager.instance.SetIsAfterLoading(true);
-        GameManager.instance.SetIsPlayAni(false);
-        GameManager.instance.SetIsGoingToLoad(false);       // 重置動畫黑邊過場設定
+        GameManager.instance.LeaveAniMode(false);       // 重置動畫黑邊過場設定
         Debug.Log("open loading screen.");
         StartCoroutine(LoadLevelASync(levelToLoad, loadPause));
         // SceneManager.sceneLoaded += OnSceneLoaded;      // 讓他在下個場景載入完成後自動關掉的監聽

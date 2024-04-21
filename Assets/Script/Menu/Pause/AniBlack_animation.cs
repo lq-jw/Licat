@@ -1,15 +1,15 @@
 // pause menu 的 aniblack 的 animator
-// loader 會自動把 isPlayAni isGoingToLoad 設 false，isAfterLoading 設 true
 
-// 換關卡後，如果沒有要播動畫，請把 isAfterLoading 設 false
+// GotoAniMode：進入動畫模式，有上下兩個黑帶，接收一個 bool
+// ＾true > 開頭有淡入，用在關卡開頭的動畫，請放在播放動畫前
+//   false（預設） > 無淡入，用在關卡中間
 
-// 黑色淡入＋黑帶，isAfterLoading 設 true（loader會自動設定），接著 isPlayAni 設 true
-// ＾離開劇情並進遊戲時兩個都設 false（最好三個都false）
-
-// 單純黑帶：isPlayAni 設 true，isAfterLoading 設 false
+// LeaveAniMode：離開動畫模式，上下兩個黑帶移開，接收一個 bool
+// ＾true > 結尾有淡出，用在關卡結尾的動畫，時機請看下面
+//   false（預設） > 無淡出，用在關卡中間
 
 // 如果要黑色淡出離開並載入的話，進入動畫後把 isGoingToLoad 設 true
-// ＾接著抓播放進度到 0.75f（自己決定，1是播完）時 isPlayAni 設 false
+// ＾接著抓播放進度到 0.75f（可自己決定，1是播完）時 isPlayAni 設 false
 // ＾因為載入會讓一切都卡住...
 
 using System.Collections;

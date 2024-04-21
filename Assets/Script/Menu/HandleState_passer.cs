@@ -115,11 +115,6 @@ public class HandleState_passer : MonoBehaviour
             //     (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
             //         ) SetIsHandle(true);
         }
-
-        if (Input.anyKeyDown)
-        {
-            GameManager.instance.SetIsAfterLoading(false);
-        }
     }
 
 }
