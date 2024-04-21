@@ -6,8 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private float bgmVolume, seVolume;
-    [SerializeField] private bool isFirstGame, isNewGame, isPlayAni, isAfterLoading;
-
+    [SerializeField] private bool isFirstGame, isNewGame;
+    // ↓ 動畫用
+    [SerializeField] private bool isPlayAni, isAfterLoading, isGoingToLoad;
     void Awake()    // 建立實例、不要被刪掉、檢查是否重複並刪掉
     {
         if (!instance)
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
         bgmVolume = seVolume = 0.5f;
         // isFirstGame = true;
         // isNewGame = false;
-        isPlayAni = isAfterLoading = false;
+        isPlayAni = isAfterLoading = isGoingToLoad = false;
     }
 
     // ↓ 設定 set menu 的內容用
@@ -83,6 +84,8 @@ public class GameManager : MonoBehaviour
         isNewGame = set;
     }
 
+
+    // ↓ 動畫用
     public bool GetIsPlayAni()
     {
         return isPlayAni;
@@ -98,11 +101,20 @@ public class GameManager : MonoBehaviour
         return isAfterLoading;
     }
 
-    public void SetIsAfterLoading(bool set)     //  由動畫那邊指定
+    public void SetIsAfterLoading(bool set)     //  由動畫那邊指定，loader和handlecheck也有
     {
         isAfterLoading = set;
     }
 
+    public bool GetIsGoingToLoad()
+    {
+        return isGoingToLoad;
+    }
+
+    public void SetIsGoingToLoad(bool set)
+    {
+        isGoingToLoad = set;
+    }
 
     /////////////////////////////////
     public float GetVolume(string name)

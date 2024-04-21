@@ -64,12 +64,12 @@ public class Logo_animation : MonoBehaviour
     }
     private void PlaySound(int i)
     {
-        // if (!isPlaySound)
-        // {
+        if (!isPlaySound)
+        {
         // isPlaySound = true;
         // AudioManager.instance.PlaySE("opWaterDrop_" + i);
         // Debug.Log("Play opWaterDrop_" + i);
-        // }
+        }
     }
 
     IEnumerator Wait()

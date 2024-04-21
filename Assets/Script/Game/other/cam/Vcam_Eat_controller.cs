@@ -15,6 +15,7 @@ public class Vcam_Eat_controller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("X"))
         {
+            GameManager.instance.SetIsPlayAni(true);    // 叫出動畫黑邊
             EatCamSwitch();
         }
     }

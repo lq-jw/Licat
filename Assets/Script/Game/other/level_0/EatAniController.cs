@@ -40,6 +40,7 @@ public class EatAniController : MonoBehaviour
 
         if (stateInfo0 && isEatAni_2_finish == false && isPressF)  //播放吃怪東西、鏡頭的動畫
         {
+            GameManager.instance.SetIsGoingToLoad(true);       // 動畫黑邊過場設定
             G_eatAni_2.SetActive(true);
             isEatAni_2_finish = true;
             Vcam_flowOut_ani.enabled = true;
@@ -53,6 +54,7 @@ public class EatAniController : MonoBehaviour
             G_floor.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.6f);
             isEatAni_3_finish = true;
         }
+        CheckAnimation3IsEnd();
 
         if (stateInfo3)   //換關卡
         {
@@ -70,6 +72,20 @@ public class EatAniController : MonoBehaviour
                 SceneManager.LoadScene("Level_1");
                 SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
             }
+        }
+    }
+
+    private void CheckAnimation3IsEnd()
+    {
+        // ?取?前??上的????信息
+        AnimatorStateInfo stateInfo = eatAni_3.GetCurrentAnimatorStateInfo(0);
+
+        Debug.Log(stateInfo.normalizedTime);
+        // ?查是否播放到最后一?
+        if (stateInfo.normalizedTime >= 0.75f)
+        {
+            GameManager.instance.SetIsPlayAni(false);
+            Debug.Log("Animation3 is going to end.");
         }
     }
 }
