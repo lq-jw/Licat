@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HandleState_passer : MonoBehaviour
+public class HandleState_checker : MonoBehaviour
 {
 
     [SerializeField] private bool isUseHandle;
@@ -20,42 +20,37 @@ public class HandleState_passer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isUseHandle = false;
-        // gameObject.tag = "handle_passer";
+        isUseHandle = GameManager.instance.GetIsUseHandle();
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckUserInput();
-        // CheckIsShouldDestroy();
-        // ＾不想讓他自刪的話就不要這行函式
     }
 
 
     void Awake()
     {
         // GameObject[] objs = GameObject.FindGameObjectsWithTag("handle_passer");
-        HandleState_passer[] objs = GameObject.FindObjectsOfType<HandleState_passer>();
-        passerCounter = objs.Length;
-        if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
 
-        DontDestroyOnLoad(this.gameObject);
+
+        // HandleState_passer[] objs = GameObject.FindObjectsOfType<HandleState_passer>();
+        // passerCounter = objs.Length;
+        // if (objs.Length > 1)
+        // {
+        //     Destroy(this.gameObject);
+        // }
+
+        // DontDestroyOnLoad(this.gameObject);
     }
 
 
     // //////////
 
-    public bool GetIsHandle()
+    private void SetIsHandle(bool set)
     {
-        return isUseHandle;
-    }
-
-    public void SetIsHandle(bool set)
-    {
+        GameManager.instance.SetIsUseHandle(set);
         isUseHandle = set;
     }
 

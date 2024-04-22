@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private float bgmVolume, seVolume;
-    [SerializeField] private bool isFirstGame, isNewGame;
+    [SerializeField] private bool isFirstGame, isNewGame, isUseHandle;
     // ↓ 動畫用
     [SerializeField] private bool isPlayAni, isAfterLoading, isGoingToLoad;
     void Awake()    // 建立實例、不要被刪掉、檢查是否重複並刪掉
@@ -82,6 +82,16 @@ public class GameManager : MonoBehaviour
     public void SetIsNewGame(bool set)
     {
         isNewGame = set;
+    }
+
+    public bool GetIsUseHandle()
+    {
+        return isUseHandle;
+    }
+
+    public void SetIsUseHandle(bool set)
+    {
+        isUseHandle = set;
     }
 
 

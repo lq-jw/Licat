@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 
 public class PauseScenes_Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject Pause_menu, Set_menu, Quit_check, BG, EventSystem;
+    [SerializeField] private GameObject Pause_menu, Set_menu, Quit_check, BG, EventSystem, imgHint_keyboard, imgHint_handle;
     [SerializeField] private ASyncLoader Loader;
 
     [SerializeField] private string now_menu;
-    [SerializeField] private bool isPause;
+    [SerializeField] private bool isPause, isUseHandle;
 
 
 
@@ -254,6 +254,10 @@ public class PauseScenes_Controller : MonoBehaviour
         {
             SceneManager.LoadScene("MainScene");
         }
+    }
+
+    private void UpdateHintImg(){       // 用於根據 handle 顯示對應教學圖片
+
     }
 
 }
