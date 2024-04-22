@@ -26,6 +26,7 @@ public class HandleState_checker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateManagerIsUseHandle();
         CheckUserInput();
     }
 
@@ -50,8 +51,8 @@ public class HandleState_checker : MonoBehaviour
 
     private void SetIsHandle(bool set)
     {
-        GameManager.instance.SetIsUseHandle(set);
         isUseHandle = set;
+        UpdateManagerIsUseHandle();
     }
 
 
@@ -93,7 +94,9 @@ public class HandleState_checker : MonoBehaviour
                 Input.GetKeyDown(KeyCode.C) ||
                 Input.GetKeyDown(KeyCode.LeftArrow) ||
                 Input.GetKeyDown(KeyCode.RightArrow) ||
-                Input.GetKeyDown(KeyCode.DownArrow)
+                Input.GetKeyDown(KeyCode.DownArrow) ||
+                Input.GetKeyDown(KeyCode.Escape) ||
+                Input.GetKeyDown(KeyCode.Space)
                     ) SetIsHandle(false);
         }
         else
@@ -112,4 +115,11 @@ public class HandleState_checker : MonoBehaviour
         }
     }
 
+    private void UpdateManagerIsUseHandle()
+    {
+        if (isUseHandle != GameManager.instance.GetIsUseHandle())
+        {
+            GameManager.instance.SetIsUseHandle(isUseHandle);
+        }
+    }
 }

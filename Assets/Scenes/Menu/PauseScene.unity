@@ -3025,12 +3025,12 @@ MonoBehaviour:
   Quit_check: {fileID: 190372195}
   BG: {fileID: 1579407151}
   EventSystem: {fileID: 146071821}
-  imgHint_keyboard: {fileID: 0}
-  imgHint_handle: {fileID: 0}
+  imgHint_keyboard: {fileID: 1952636215}
+  imgHint_handle: {fileID: 1578949464}
   Loader: {fileID: 1353887562}
   now_menu: 
   isPause: 0
-  isHandle: 0
+  isUseHandle: 0
 --- !u!1 &1544282697
 GameObject:
   m_ObjectHideFlags: 0

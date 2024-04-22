@@ -21,6 +21,7 @@ public class PauseScenes_Controller : MonoBehaviour
     void Start()
     {
         GotoPage("game");
+        UpdateHintImg();
         // ASyncLoader Loader = GameObject.FindObjectOfType<ASyncLoader>();
     }
 
@@ -85,6 +86,7 @@ public class PauseScenes_Controller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Xbox_menu"))
         {
+            UpdateHintImg();
             switch (now_menu)
             {
                 case "game":
@@ -256,8 +258,24 @@ public class PauseScenes_Controller : MonoBehaviour
         }
     }
 
-    private void UpdateHintImg(){       // 用於根據 handle 顯示對應教學圖片
-
+    private void UpdateHintImg()
+    {       // 用於根據 handle 顯示對應教學圖片，以 game manager 為主
+        if (isUseHandle != GameManager.instance.GetIsUseHandle())
+        {
+            isUseHandle = GameManager.instance.GetIsUseHandle();
+        }
+        if (isUseHandle)
+        {
+            // 用手把
+            imgHint_handle.SetActive(true);
+            imgHint_keyboard.SetActive(false);
+        }
+        else
+        {
+            // 用鍵盤
+            imgHint_handle.SetActive(false);
+            imgHint_keyboard.SetActive(true);
+        }
     }
 
 }
