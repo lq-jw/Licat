@@ -25,9 +25,10 @@ public class A_elevator : MonoBehaviour
 
         elevatorVertex_Y_pisition = G_elevator.transform.position.y + 8;
         elevatorLowest_Y_pisition = G_elevator.transform.position.y;
+        //------確認按鈕、電梯位置
     }
 
-    private void OnCollisionStay2D(Collision2D collision) //開門
+    private void OnCollisionStay2D(Collision2D collision) //壓
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
@@ -41,7 +42,7 @@ public class A_elevator : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)  //關門
+    private void OnCollisionExit2D(Collision2D collision)  //放開
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
@@ -50,7 +51,7 @@ public class A_elevator : MonoBehaviour
         }
     }
 
-    private void UnPressBtn()
+    private void UnPressBtn() //按鈕位移
     {
         if (btnNow_Y_pisition <= btnUnpress_Y_pisition)
         {
@@ -59,7 +60,7 @@ public class A_elevator : MonoBehaviour
         }
     }
 
-    private void MoveElevator()
+    private void MoveElevator() //電梯移動
     {
         elevatorNow_Y_pisition = G_elevator.transform.position.y;
         if (elevatorNow_Y_pisition >= elevatorVertex_Y_pisition)

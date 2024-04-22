@@ -65,7 +65,7 @@ public class A_dropBox : MonoBehaviour
 
     private void CheckSwitch_L()
     {
-        if (btn_L0 && btn_L1 && btn_L2 && btn_L3)
+        if (!btn_L0 && !btn_L1 && btn_L2 && !btn_L3)
         {
             btn_L_Set = true;
             CheckSwitches();
@@ -75,7 +75,7 @@ public class A_dropBox : MonoBehaviour
 
     private void CheckSwitch_R()
     {
-        if (btn_R0 && btn_R1 && btn_R2 && btn_R3)
+        if (!btn_R0 && btn_R1 && btn_R2 && !btn_R3)
         {
             btn_R_Set = true;
             CheckSwitches();
