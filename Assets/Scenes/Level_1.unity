@@ -1228,7 +1228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 69603192}
   m_Layer: 0
-  m_Name: T_Split (1)
+  m_Name: T_Split
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1246,11 +1246,11 @@ Transform:
   m_LocalScale: {x: 0.7692308, y: 0.7692308, z: 0.7692308}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 706145966}
+  - {fileID: 1327988701}
+  - {fileID: 633321129}
   - {fileID: 1551169704}
   - {fileID: 676965360}
-  - {fileID: 706145966}
-  - {fileID: 633321129}
-  - {fileID: 1327988701}
   - {fileID: 770045214}
   m_Father: {fileID: 425257689}
   m_RootOrder: 0
@@ -3204,7 +3204,7 @@ GameObject:
   - component: {fileID: 124863024}
   - component: {fileID: 124863025}
   m_Layer: 0
-  m_Name: tutorial_cat_liquid (1)
+  m_Name: tutorial_cat_liquid_after
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6719,7 +6719,7 @@ GameObject:
   - component: {fileID: 288164095}
   - component: {fileID: 288164096}
   m_Layer: 0
-  m_Name: tutorial_pointer
+  m_Name: tutorial_pointer_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6738,7 +6738,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 787753561}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &288164096
 SpriteRenderer:
@@ -7294,7 +7294,7 @@ GameObject:
   - component: {fileID: 309569148}
   - component: {fileID: 309569149}
   m_Layer: 0
-  m_Name: tutorial_cat_liquid (2)
+  m_Name: tutorial_cat_liquid_big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7801,7 +7801,7 @@ GameObject:
   - component: {fileID: 333332435}
   - component: {fileID: 333332436}
   m_Layer: 0
-  m_Name: tutorial_cat_solid
+  m_Name: tutorial_cat_solid_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7820,7 +7820,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 787753561}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &333332436
 SpriteRenderer:
@@ -8027,7 +8027,7 @@ GameObject:
   - component: {fileID: 361348875}
   - component: {fileID: 361348876}
   m_Layer: 0
-  m_Name: tutorial_arrow_skew (1)
+  m_Name: tutorial_arrow_skew_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9213,6 +9213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 425257689}
   - component: {fileID: 425257690}
+  - component: {fileID: 425257691}
   m_Layer: 0
   m_Name: "\u6559\u5B78\u677F 1"
   m_TagString: Untagged
@@ -9290,6 +9291,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &425257691
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425257688}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09b0ceaa859654492a9eb893f7889e39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &425814192
 GameObject:
   m_ObjectHideFlags: 0
@@ -10188,118 +10210,118 @@ MonoBehaviour:
   - position: {x: -0.030243482, y: 0.14157541, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: -0.4413, y: -0.1495, z: 0}
+  - position: {x: -0.5385, y: 0.1252, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.3801, y: -0.2258, z: 0}
+  - position: {x: -0.5295, y: 0.0278, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.3052, y: -0.2888, z: 0}
+  - position: {x: -0.5018, y: -0.0661, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.2195, y: -0.336, z: 0}
+  - position: {x: -0.4563, y: -0.1527, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.1262, y: -0.3656, z: 0}
+  - position: {x: -0.3948, y: -0.2288, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.029, y: -0.3765, z: 0}
+  - position: {x: -0.3196, y: -0.2915, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.0273, y: -0.374, z: 0}
+  - position: {x: -0.2337, y: -0.3383, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.1625, y: -0.3605, z: 0}
+  - position: {x: -0.1403, y: -0.3675, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.2584, y: -0.3413, z: 0}
+  - position: {x: -0.0246, y: -0.3778, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.3488, y: -0.3038, z: 0}
+  - position: {x: 0.1224, y: -0.3737, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.4302, y: -0.2494, z: 0}
+  - position: {x: 0.2195, y: -0.3614, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.4993, y: -0.1802, z: 0}
+  - position: {x: 0.3124, y: -0.3305, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5537, y: -0.0988, z: 0}
+  - position: {x: 0.3974, y: -0.282, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5912, y: -0.0084, z: 0}
+  - position: {x: 0.4713, y: -0.2179, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.6104, y: 0.0876, z: 0}
+  - position: {x: 0.5314, y: -0.1406, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.6104, y: 0.1854, z: 0}
+  - position: {x: 0.5753, y: -0.0532, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5915, y: 0.2814, z: 0}
+  - position: {x: 0.6012, y: 0.0412, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5406, y: 0.3959, z: 0}
+  - position: {x: 0.6083, y: 0.1135, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.536, y: 0.4035, z: 0}
+  - position: {x: 0.6087, y: 0.1294, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.4773, y: 0.4819, z: 0}
+  - position: {x: 0.6016, y: 0.227, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.4046, y: 0.5473, z: 0}
+  - position: {x: 0.5756, y: 0.3214, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.3204, y: 0.5973, z: 0}
+  - position: {x: 0.5317, y: 0.4088, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.2282, y: 0.63, z: 0}
+  - position: {x: 0.4717, y: 0.4861, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.1116, y: 0.6446, z: 0}
+  - position: {x: 0.3977, y: 0.5502, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.0334, y: 0.6456, z: 0}
+  - position: {x: 0.3127, y: 0.5986, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.1308, y: 0.6367, z: 0}
+  - position: {x: 0.2198, y: 0.6295, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.2247, y: 0.609, z: 0}
+  - position: {x: 0.0936, y: 0.6418, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.3113, y: 0.5635, z: 0}
+  - position: {x: -0.0537, y: 0.6373, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.3875, y: 0.502, z: 0}
+  - position: {x: -0.1507, y: 0.6247, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.4502, y: 0.4269, z: 0}
+  - position: {x: -0.2435, y: 0.5935, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.497, y: 0.341, z: 0}
+  - position: {x: -0.3284, y: 0.5448, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5263, y: 0.2476, z: 0}
+  - position: {x: -0.4022, y: 0.4805, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5368, y: 0.1503, z: 0}
+  - position: {x: -0.462, y: 0.4031, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5281, y: 0.0528, z: 0}
+  - position: {x: -0.5056, y: 0.3155, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5006, y: -0.0411, z: 0}
+  - position: {x: -0.5314, y: 0.2211, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.4557, y: -0.1274, z: 0}
+  - position: {x: -0.5384, y: 0.1407, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  m_Triangles: 000002000100000003000200040008000800040008000900040009000a0004000a000b0004000b000c0004000c000d0004000d000e00040005000f0004000e000f0005000f001000050010001100050011001200050012001300050013001400050014001500050015001600050016001700050017001800050018001900050006001a00050019001a0006001a001b0006001b001c0006001c001d0006001d001e0006001e001f0006000700200006001f002000070020002100070021002200070022002300070023002400070024002500070025002600070026002700070027002800070028002900070029002a0007002a002b0008000400070008002b000700
+  m_Triangles: 000002000100000003000200040008000800040008000900040009000a0004000a000b0004000b000c0004000c000d0004000d000e0004000e000f0004000f001000040005001100040010001100050011001200050012001300050013001400050014001500050015001600050016001700050017001800050018001900050006001a00050019001a0006001a001b0006001b001c0006001c001d0006001d001e0006001e001f0006001f002000060020002100060021002200060007002300060022002300070023002400070024002500070025002600070026002700070027002800070028002900070029002a0007002a002b0008000400070008002b000700
   m_LocalBounds:
-    m_Center: {x: 0.036799997, y: 0.13455, z: 0}
-    m_Extent: {x: 0.57360005, y: 0.51105, z: 0}
+    m_Center: {x: 0.035099983, y: 0.132, z: 0}
+    m_Extent: {x: 0.5736, y: 0.50979996, z: 0}
   m_PointLightInnerAngle: 178.91986
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10831,7 +10853,7 @@ GameObject:
   - component: {fileID: 477735983}
   - component: {fileID: 477735984}
   m_Layer: 0
-  m_Name: tutorial_arrow_round (1)
+  m_Name: tutorial_arrow_round_nTl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12621,7 +12643,7 @@ GameObject:
   - component: {fileID: 563364036}
   - component: {fileID: 563364037}
   m_Layer: 0
-  m_Name: tutorial_cat_solid (1)
+  m_Name: tutorial_cat_solid_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12640,7 +12662,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 787753561}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &563364037
 SpriteRenderer:
@@ -13764,7 +13786,7 @@ GameObject:
   - component: {fileID: 633321129}
   - component: {fileID: 633321130}
   m_Layer: 0
-  m_Name: tutorial_arrow_skew
+  m_Name: tutorial_arrow_skew_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13783,7 +13805,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 69603192}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &633321130
 SpriteRenderer:
@@ -15120,7 +15142,7 @@ GameObject:
   - component: {fileID: 676531020}
   - component: {fileID: 676531021}
   m_Layer: 0
-  m_Name: tutorial_cat_liquid
+  m_Name: tutorial_cat_liquid_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15204,7 +15226,7 @@ GameObject:
   - component: {fileID: 676965360}
   - component: {fileID: 676965361}
   m_Layer: 0
-  m_Name: tutorial_cat_liquid (1)
+  m_Name: tutorial_cat_liquid_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15223,7 +15245,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 69603192}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &676965361
 SpriteRenderer:
@@ -15589,7 +15611,7 @@ GameObject:
   - component: {fileID: 684278865}
   - component: {fileID: 684278866}
   m_Layer: 0
-  m_Name: tutorial_icon_R_hold
+  m_Name: tutorial_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16514,7 +16536,7 @@ GameObject:
   - component: {fileID: 706145966}
   - component: {fileID: 706145967}
   m_Layer: 0
-  m_Name: tutorial_cat_liquid (2)
+  m_Name: tutorial_cat_liquid_big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16533,7 +16555,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 69603192}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &706145967
 SpriteRenderer:
@@ -17376,7 +17398,7 @@ GameObject:
   - component: {fileID: 770045214}
   - component: {fileID: 770045215}
   m_Layer: 0
-  m_Name: tutorial_icon_R
+  m_Name: tutorial_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17721,7 +17743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 787753561}
   m_Layer: 0
-  m_Name: T_Switch (1)
+  m_Name: T_Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17739,11 +17761,11 @@ Transform:
   m_LocalScale: {x: 0.7692308, y: 0.7692308, z: 0.7692308}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1466413747}
   - {fileID: 333332435}
   - {fileID: 563364036}
   - {fileID: 288164095}
   - {fileID: 892222058}
+  - {fileID: 1466413747}
   m_Father: {fileID: 425257689}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17758,7 +17780,7 @@ GameObject:
   - component: {fileID: 789496455}
   - component: {fileID: 789496456}
   m_Layer: 0
-  m_Name: tutorial_arrow_round
+  m_Name: tutorial_arrow_round_lTn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18143,118 +18165,121 @@ MonoBehaviour:
   - position: {x: -0.030243482, y: 0.14157541, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5291, y: 0.2234, z: 0}
+  - position: {x: -0.5314, y: 0.1732, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5394, y: 0.1261, z: 0}
+  - position: {x: -0.5303, y: 0.0753, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5306, y: 0.0286, z: 0}
+  - position: {x: -0.5101, y: -0.0204, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5029, y: -0.0652, z: 0}
+  - position: {x: -0.4717, y: -0.1104, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.4575, y: -0.1519, z: 0}
+  - position: {x: -0.4165, y: -0.1912, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.3961, y: -0.2281, z: 0}
+  - position: {x: -0.3466, y: -0.2597, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.321, y: -0.2909, z: 0}
+  - position: {x: -0.2647, y: -0.3133, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.2351, y: -0.3378, z: 0}
+  - position: {x: -0.1739, y: -0.3498, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.1417, y: -0.3671, z: 0}
+  - position: {x: -0.0777, y: -0.368, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.0435, y: -0.3777, z: 0}
+  - position: {x: -0.0163, y: -0.3697, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.1017, y: -0.3789, z: 0}
+  - position: {x: 0.1332, y: -0.3646, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.1991, y: -0.3701, z: 0}
+  - position: {x: 0.2303, y: -0.3517, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.293, y: -0.3425, z: 0}
+  - position: {x: 0.3229, y: -0.3202, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.3797, y: -0.2972, z: 0}
+  - position: {x: 0.4076, y: -0.2712, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.456, y: -0.2358, z: 0}
+  - position: {x: 0.4812, y: -0.2066, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5188, y: -0.1608, z: 0}
+  - position: {x: 0.5408, y: -0.129, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5658, y: -0.0749, z: 0}
+  - position: {x: 0.5841, y: -0.0413, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5945, y: 0.0152, z: 0}
+  - position: {x: 0.6043, y: 0.0266, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5989, y: 0.0355, z: 0}
+  - position: {x: 0.6057, y: 0.0329, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.6101, y: 0.1327, z: 0}
+  - position: {x: 0.6175, y: 0.1301, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.6022, y: 0.2302, z: 0}
+  - position: {x: 0.6101, y: 0.2277, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.5755, y: 0.3244, z: 0}
+  - position: {x: 0.5839, y: 0.3219, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.531, y: 0.4115, z: 0}
+  - position: {x: 0.5398, y: 0.4093, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.4703, y: 0.4883, z: 0}
+  - position: {x: 0.4795, y: 0.4864, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.3958, y: 0.5518, z: 0}
+  - position: {x: 0.4054, y: 0.5503, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.3104, y: 0.5996, z: 0}
+  - position: {x: 0.3202, y: 0.5985, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.2173, y: 0.6298, z: 0}
+  - position: {x: 0.2273, y: 0.6292, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 0.0768, y: 0.6403, z: 0}
+  - position: {x: 0.1373, y: 0.641, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.0709, y: 0.6304, z: 0}
+  - position: {x: -0.0121, y: 0.6469, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.1675, y: 0.6143, z: 0}
+  - position: {x: -0.1098, y: 0.6412, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.259, y: 0.5797, z: 0}
+  - position: {x: -0.2045, y: 0.6165, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.3421, y: 0.528, z: 0}
+  - position: {x: -0.2926, y: 0.5739, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.4135, y: 0.4611, z: 0}
+  - position: {x: -0.3707, y: 0.515, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.4705, y: 0.3815, z: 0}
+  - position: {x: -0.4358, y: 0.4419, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5109, y: 0.2924, z: 0}
+  - position: {x: -0.4854, y: 0.3576, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -0.5272, y: 0.2326, z: 0}
+  - position: {x: -0.5177, y: 0.2652, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  m_Triangles: 000002000100000003000200040008000800040008000900040009000a0004000a000b0004000b000c0004000c000d0004000d000e0004000e000f0004000f001000040010001100040005001200040011001200050012001300050013001400050014001500050015001600050016001700050017001800050018001900050006001a00050019001a0006001a001b0006001b001c0006001c001d0006001d001e0006001e001f0006001f002000060020002100060021002200060022002300060007002400060023002400070024002500070025002600070026002700070027002800070028002900070029002a0007002a002b0008000400070008002b000700
+  - position: {x: -0.5299, y: 0.1905, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  m_Triangles: 000002000100000003000200040008000800040008000900040009000a0004000a000b0004000b000c0004000c000d0004000d000e0004000e000f0004000f001000040010001100040005001200040011001200050012001300050013001400050014001500050015001600050016001700050017001800050018001900050006001a00050019001a0006001a001b0006001b001c0006001c001d0006001d001e0006001e001f0006001f002000060020002100060021002200060022002300060007002400060023002400070024002500070025002600070026002700070027002800070028002900070029002a0007002a002b0007002b002c0008000400070008002c000700
   m_LocalBounds:
-    m_Center: {x: 0.035349995, y: 0.13069999, z: 0}
-    m_Extent: {x: 0.57474995, y: 0.5096, z: 0}
+    m_Center: {x: 0.04304999, y: 0.13859999, z: 0}
+    m_Extent: {x: 0.57445, y: 0.5083, z: 0}
   m_PointLightInnerAngle: 178.91986
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -19340,7 +19365,7 @@ GameObject:
   - component: {fileID: 831246674}
   - component: {fileID: 831246675}
   m_Layer: 0
-  m_Name: tutorial1_board_boardAndRope
+  m_Name: tutorial1_board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20211,8 +20236,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 863186348}
+  - component: {fileID: 863186349}
   m_Layer: 0
-  m_Name: T_ThroughPipe (1)
+  m_Name: T_ThroughPipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20239,6 +20265,27 @@ Transform:
   m_Father: {fileID: 627014768}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &863186349
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863186347}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5ee6f096d52e4a4297da889e8ffb51f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &864774026
 GameObject:
   m_ObjectHideFlags: 0
@@ -21052,7 +21099,7 @@ GameObject:
   - component: {fileID: 892222058}
   - component: {fileID: 892222059}
   m_Layer: 0
-  m_Name: tutorial_pointer (1)
+  m_Name: tutorial_pointer_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21071,7 +21118,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 787753561}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &892222059
 SpriteRenderer:
@@ -23207,12 +23254,12 @@ GameObject:
   m_Component:
   - component: {fileID: 979436321}
   m_Layer: 0
-  m_Name: T_Merge (1)
+  m_Name: T_Merge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &979436321
 Transform:
   m_ObjectHideFlags: 0
@@ -25131,7 +25178,7 @@ GameObject:
   - component: {fileID: 1078611277}
   - component: {fileID: 1078611278}
   m_Layer: 0
-  m_Name: tutorial_arrow_skew
+  m_Name: tutorial_arrow_skew_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27851,7 +27898,7 @@ GameObject:
   - component: {fileID: 1219501731}
   - component: {fileID: 1219501732}
   m_Layer: 0
-  m_Name: tutorial_cat_liquid
+  m_Name: tutorial_cat_liquid_before
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30492,7 +30539,7 @@ GameObject:
   - component: {fileID: 1327988701}
   - component: {fileID: 1327988702}
   m_Layer: 0
-  m_Name: tutorial_arrow_skew (1)
+  m_Name: tutorial_arrow_skew_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30506,12 +30553,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327988700}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.2356131, y: -0.26917577, z: -1.9471855}
+  m_LocalPosition: {x: 0.23561464, y: -0.26917812, z: -1.9471856}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 69603192}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &1327988702
 SpriteRenderer:
@@ -32100,7 +32147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389098411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.19, y: -0.010000266, z: 0}
+  m_LocalPosition: {x: 0.16999924, y: 0.119998746, z: 0}
   m_LocalScale: {x: 0.02, y: 1.85, z: 0.82}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33958,7 +34005,7 @@ GameObject:
   - component: {fileID: 1466413747}
   - component: {fileID: 1466413748}
   m_Layer: 0
-  m_Name: tutorial_icon_E
+  m_Name: tutorial_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33977,7 +34024,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 787753561}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1466413748
 SpriteRenderer:
@@ -34320,7 +34367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474362978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.24, y: -0.32, z: 0}
+  m_LocalPosition: {x: -1.2600008, y: -0.19000098, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -35395,7 +35442,7 @@ GameObject:
   - component: {fileID: 1551169704}
   - component: {fileID: 1551169705}
   m_Layer: 0
-  m_Name: tutorial_cat_liquid
+  m_Name: tutorial_cat_liquid_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35414,7 +35461,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 69603192}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &1551169705
 SpriteRenderer:
@@ -36549,7 +36596,7 @@ GameObject:
   - component: {fileID: 1614944684}
   - component: {fileID: 1614944685}
   m_Layer: 0
-  m_Name: tutorial_cat_liquid (2)
+  m_Name: tutorial_cat_liquid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39301,7 +39348,7 @@ GameObject:
   - component: {fileID: 1749561109}
   - component: {fileID: 1749561110}
   m_Layer: 0
-  m_Name: T_Transform (1)
+  m_Name: T_Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41906,7 +41953,7 @@ GameObject:
   - component: {fileID: 1887083426}
   - component: {fileID: 1887083427}
   m_Layer: 0
-  m_Name: tutorial_cat_liquid (1)
+  m_Name: tutorial_cat_liquid_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43520,7 +43567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963514254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0.22, y: 0.1, z: 0}
   m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -44412,7 +44459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028150164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.21, y: 0.76, z: 0}
+  m_LocalPosition: {x: 1.1899992, y: 0.88999903, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -45463,7 +45510,7 @@ GameObject:
   - component: {fileID: 2081821062}
   - component: {fileID: 2081821063}
   m_Layer: 0
-  m_Name: tutorial_icon_Q
+  m_Name: tutorial_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46254,7 +46301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111080966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.94, y: 0.78, z: 0}
+  m_LocalPosition: {x: -0.96000075, y: 0.909999, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 1
   m_Children: []
