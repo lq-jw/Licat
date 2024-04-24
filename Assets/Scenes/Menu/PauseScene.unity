@@ -3025,9 +3025,12 @@ MonoBehaviour:
   Quit_check: {fileID: 190372195}
   BG: {fileID: 1579407151}
   EventSystem: {fileID: 146071821}
+  imgHint_keyboard: {fileID: 1952636215}
+  imgHint_handle: {fileID: 1578949464}
   Loader: {fileID: 1353887562}
   now_menu: 
   isPause: 0
+  isUseHandle: 0
 --- !u!1 &1544282697
 GameObject:
   m_ObjectHideFlags: 0
@@ -4070,63 +4073,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654983113}
   m_CullTransparentMesh: 1
---- !u!1001 &1667491152
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1598.5383
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1087.9149
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -37.91772
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476660, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 53752648179476662, guid: 838d0075afe47484584d429d81ce6168, type: 3}
-      propertyPath: m_Name
-      value: HandleStatePasser
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 838d0075afe47484584d429d81ce6168, type: 3}
 --- !u!1 &1710544895
 GameObject:
   m_ObjectHideFlags: 0

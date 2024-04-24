@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 
 public class PauseScenes_Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject Pause_menu, Set_menu, Quit_check, BG, EventSystem;
+    [SerializeField] private GameObject Pause_menu, Set_menu, Quit_check, BG, EventSystem, imgHint_keyboard, imgHint_handle;
     [SerializeField] private ASyncLoader Loader;
 
     [SerializeField] private string now_menu;
-    [SerializeField] private bool isPause;
+    [SerializeField] private bool isPause, isUseHandle;
 
 
 
@@ -21,6 +21,7 @@ public class PauseScenes_Controller : MonoBehaviour
     void Start()
     {
         GotoPage("game");
+        UpdateHintImg();
         // ASyncLoader Loader = GameObject.FindObjectOfType<ASyncLoader>();
     }
 
@@ -85,6 +86,7 @@ public class PauseScenes_Controller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Xbox_menu"))
         {
+            UpdateHintImg();
             switch (now_menu)
             {
                 case "game":
@@ -253,6 +255,26 @@ public class PauseScenes_Controller : MonoBehaviour
         else
         {
             SceneManager.LoadScene("MainScene");
+        }
+    }
+
+    private void UpdateHintImg()
+    {       // 用於根據 handle 顯示對應教學圖片，以 game manager 為主
+        if (isUseHandle != GameManager.instance.GetIsUseHandle())
+        {
+            isUseHandle = GameManager.instance.GetIsUseHandle();
+        }
+        if (isUseHandle)
+        {
+            // 用手把
+            imgHint_handle.SetActive(true);
+            imgHint_keyboard.SetActive(false);
+        }
+        else
+        {
+            // 用鍵盤
+            imgHint_handle.SetActive(false);
+            imgHint_keyboard.SetActive(true);
         }
     }
 

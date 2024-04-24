@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HandleState_passer : MonoBehaviour
+public class HandleState_checker : MonoBehaviour
 {
 
     [SerializeField] private bool isUseHandle;
@@ -20,43 +20,39 @@ public class HandleState_passer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isUseHandle = false;
-        // gameObject.tag = "handle_passer";
+        isUseHandle = GameManager.instance.GetIsUseHandle();
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateManagerIsUseHandle();
         CheckUserInput();
-        // CheckIsShouldDestroy();
-        // ＾不想讓他自刪的話就不要這行函式
     }
 
 
     void Awake()
     {
         // GameObject[] objs = GameObject.FindGameObjectsWithTag("handle_passer");
-        HandleState_passer[] objs = GameObject.FindObjectsOfType<HandleState_passer>();
-        passerCounter = objs.Length;
-        if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
 
-        DontDestroyOnLoad(this.gameObject);
+
+        // HandleState_passer[] objs = GameObject.FindObjectsOfType<HandleState_passer>();
+        // passerCounter = objs.Length;
+        // if (objs.Length > 1)
+        // {
+        //     Destroy(this.gameObject);
+        // }
+
+        // DontDestroyOnLoad(this.gameObject);
     }
 
 
     // //////////
 
-    public bool GetIsHandle()
-    {
-        return isUseHandle;
-    }
-
-    public void SetIsHandle(bool set)
+    private void SetIsHandle(bool set)
     {
         isUseHandle = set;
+        UpdateManagerIsUseHandle();
     }
 
 
@@ -98,7 +94,9 @@ public class HandleState_passer : MonoBehaviour
                 Input.GetKeyDown(KeyCode.C) ||
                 Input.GetKeyDown(KeyCode.LeftArrow) ||
                 Input.GetKeyDown(KeyCode.RightArrow) ||
-                Input.GetKeyDown(KeyCode.DownArrow)
+                Input.GetKeyDown(KeyCode.DownArrow) ||
+                Input.GetKeyDown(KeyCode.Escape) ||
+                Input.GetKeyDown(KeyCode.Space)
                     ) SetIsHandle(false);
         }
         else
@@ -117,4 +115,11 @@ public class HandleState_passer : MonoBehaviour
         }
     }
 
+    private void UpdateManagerIsUseHandle()
+    {
+        if (isUseHandle != GameManager.instance.GetIsUseHandle())
+        {
+            GameManager.instance.SetIsUseHandle(isUseHandle);
+        }
+    }
 }
