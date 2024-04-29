@@ -74,11 +74,11 @@ public class A_elevator : MonoBehaviour
 
         if (is_Rising)
         {
-            G_elevator.transform.Translate(Vector3.up * 1f * Time.deltaTime);
+            G_elevator.transform.Translate(Vector3.up * 1.2f * Time.deltaTime);
         }
         else if (!is_Rising)
         {
-            G_elevator.transform.Translate(Vector3.down * 1f * Time.deltaTime);
+            G_elevator.transform.Translate(Vector3.down * 1.2f * Time.deltaTime);
         }
     }
 }
