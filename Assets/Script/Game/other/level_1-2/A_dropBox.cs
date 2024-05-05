@@ -7,79 +7,53 @@ public class A_dropBox : MonoBehaviour
     private bool btn_L_Set = false;
     private bool btn_R_Set = false;
 
-    private bool btn_L0 = false;
-    private bool btn_L1 = false;
-    private bool btn_L2 = false;
-    private bool btn_L3 = false;
-    private bool btn_R0 = false;
-    private bool btn_R1 = false;
-    private bool btn_R2 = false;
-    private bool btn_R3 = false;
+    private bool[] btn_L;
+    private bool[] btn_R;
 
+    public SpriteRenderer[] dropBoxLight;
     public Animator box;
 
+    private Color tempColor;
+
+    public void Start()
+    {
+        btn_L = new bool[4];
+        btn_R = new bool[4];
+        for (int i = 0; i < 4; i++)
+        {
+            btn_L[i] = false;
+            btn_R[i] = false;
+        }
+    }
     public void SetSwitchL(bool activated, int number)
     {
-        switch (number)
-        {
-            case 0:
-                btn_L0 = activated;
-                break;
-            case 1:
-                btn_L1 = activated;
-                break;
-            case 2:
-                btn_L2 = activated;
-                break;
-            case 3:
-                btn_L3 = activated;
-                break;
-            default:
-                break;
-        }
+        btn_L[number] = activated;
         CheckSwitch_L();
-        
+        LightSwitch(number);
     }
 
     public void SetSwitchR(bool activated, int number)
     {
-        switch (number)
-        {
-            case 0:
-                btn_R0 = activated;
-                break;
-            case 1:
-                btn_R1 = activated;
-                break;
-            case 2:
-                btn_R2 = activated;
-                break;
-            case 3:
-                btn_R3 = activated;
-                break;
-            default:
-                break;
-        }
+        btn_R[number] = activated;
         CheckSwitch_R();
+        LightSwitch(number);
     }
 
     private void CheckSwitch_L()
     {
-        if (!btn_L0 && !btn_L1 && btn_L2 && !btn_L3)
+        if (!btn_L[0] && !btn_L[1] && btn_L[2] && !btn_L[3])
         {
             btn_L_Set = true;
             CheckSwitches();
-            print("SetSwitchL");
-        }
+        }    
     }
 
     private void CheckSwitch_R()
     {
-        if (!btn_R0 && btn_R1 && btn_R2 && !btn_R3)
+        if (!btn_R[0] && btn_R[1] && btn_R[2] && !btn_R[3])
         {
             btn_R_Set = true;
             CheckSwitches();
-            print("SetSwitchR");
         }
     }
 
@@ -91,9 +65,45 @@ public class A_dropBox : MonoBehaviour
         {
             DropBox();
         }
-
     }
 
+    private void LightSwitch(int number)
+    {
+
+        if (btn_R[number] && btn_L[number])
+        {
+            print("1,1");
+            tempColor = dropBoxLight[number].color;
+            tempColor.a = 1f;
+            dropBoxLight[number].color = tempColor;
+            dropBoxLight[number + 4].color = tempColor;
+        }
+        else if (btn_R[number] && !btn_L[number])
+        {
+            print("0,1");
+            tempColor = dropBoxLight[number].color;
+            tempColor.a = 0.6f;
+            dropBoxLight[number].color = tempColor;
+            dropBoxLight[number + 4].color = tempColor;
+        }
+        else if (!btn_R[number] && btn_L[number])
+        {
+            print("1,0");
+            tempColor = dropBoxLight[number].color;
+            tempColor.a = 0.6f;
+            dropBoxLight[number].color = tempColor;
+            dropBoxLight[number + 4].color = tempColor;
+        }
+        else if (!btn_R[number] && !btn_L[number])
+        {
+            print("0,0");
+            tempColor = dropBoxLight[number].color;
+            tempColor.a = 0f;
+            dropBoxLight[number].color = tempColor;
+            dropBoxLight[number + 4].color = tempColor;
+        }
+        
+    }
 
     private void DropBox()
     {

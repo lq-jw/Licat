@@ -11,6 +11,7 @@ TagManager:
   - Box
   - Player_blue
   - Player_yellow
+  - WaterDrop
   layers:
   - Default
   - TransparentFX

@@ -52,6 +52,9 @@ public class Licat_react_controller : MonoBehaviour
         else if (collision.CompareTag("DeathBorder"))  //∂W•X√‰¨…
         {
             Die();
+        }else if (collision.CompareTag("WaterDrop"))
+        {
+            print("WaterDrop");
         }
     }
 
