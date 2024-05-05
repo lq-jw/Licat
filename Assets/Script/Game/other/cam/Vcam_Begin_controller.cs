@@ -34,6 +34,9 @@ public class Vcam_Begin_controller : MonoBehaviour
         }
         else
         {
+            licat.SetActive(false);
+            G_bed.SetActive(false);
+            G_begin.SetActive(true);
             GameManager.instance.GotoAniMode(true);      // 淡入，打開動畫黑邊
         }
     }
