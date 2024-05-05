@@ -22,13 +22,13 @@ public class A_dropBox_btnL : MonoBehaviour
 
             if (hitD.collider != null && hitD.collider.CompareTag("Player") || hitD.collider.CompareTag("Player_yellow") || hitD.collider.CompareTag("Player_blue"))
             {
-                Debug.Log("hit object " + gameObject.name);
+                //Debug.Log("hit object " + gameObject.name);
                 PressBtn();
                 is_press = !is_press;
             }
             else 
             {
-                Debug.Log("hit nothing " + hitD.collider.name);
+                //Debug.Log("hit nothing " + hitD.collider.name);
             }
         }
     }

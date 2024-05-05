@@ -114,6 +114,7 @@ public class Tube_test : MonoBehaviour
 
     private IEnumerator CatTurn()
     {
+        yield return new WaitForSecondsRealtime(0.5f);
         X_distance = (Big_cat.transform.position.x) - (Turn_1.transform.position.x);
         Y_distance = (Big_cat.transform.position.y) - (Turn_2.transform.position.y);
         Turn23_distance = (Turn_2.transform.position.y) - (Turn_3.transform.position.y);
@@ -126,6 +127,8 @@ public class Tube_test : MonoBehaviour
             yield return null;
         }
 
+        Big_cat.transform.position = Turn_1.transform.position;
+
         while (Y_distance > 0.5f || Y_distance < -0.5f)
         {
             Big_cat.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
@@ -133,6 +136,8 @@ public class Tube_test : MonoBehaviour
             Y_distance = (Big_cat.transform.position.y) - (Turn_2.transform.position.y);
             yield return null;
         }
+
+        Big_cat.transform.position = Turn_2.transform.position;
 
         if (Turn23_distance > 0.5f || Turn23_distance < -0.5f)
         {
@@ -156,6 +161,8 @@ public class Tube_test : MonoBehaviour
             yield return null;
         }
 
+        Big_cat.transform.position = Turn_3.transform.position;
+
         Y_distance = (Big_cat.transform.position.y) - (Turn_4.transform.position.y);
         while (Y_distance > 0.5f || Y_distance < -0.5f)
         {
@@ -165,6 +172,7 @@ public class Tube_test : MonoBehaviour
             yield return null;
         }
 
+        Big_cat.transform.position = Turn_4.transform.position;
         X_distance = (Big_cat.transform.position.x) - (Turn_5.transform.position.x);
 
         while (X_distance > 0.5f || X_distance < -0.5f)
@@ -174,16 +182,18 @@ public class Tube_test : MonoBehaviour
             X_distance = (Big_cat.transform.position.x) - (Turn_5.transform.position.x);
             yield return null;
         }
-    
+
+        Big_cat.transform.position = Turn_5.transform.position;
         Big_cat_ani.SetBool("is_tubeThrough_R", false);
 
-        yield return 3f;
+        yield return new WaitForSecondsRealtime(5);
         tube_collider.enabled = true;
         tube_collider_other.enabled = true;
     }
 
     private IEnumerator CatTurnR()
     {
+        yield return new WaitForSecondsRealtime(0.3f);
         X_distance = (Big_cat.transform.position.x) - (Turn_4.transform.position.x);
         Y_distance = (Big_cat.transform.position.y) - (Turn_3.transform.position.y);
 
@@ -195,6 +205,8 @@ public class Tube_test : MonoBehaviour
             yield return null;
         }
 
+        Big_cat.transform.position = Turn_4.transform.position;
+
         while (Y_distance > 0.5f || Y_distance < -0.5f)
         {
             Big_cat.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
@@ -202,6 +214,8 @@ public class Tube_test : MonoBehaviour
             Y_distance = (Big_cat.transform.position.y) - (Turn_3.transform.position.y);
             yield return null;
         }
+
+        Big_cat.transform.position = Turn_3.transform.position;
 
         if (Turn23_distance > 0.5f || Turn23_distance < -0.5f)
         {
@@ -225,6 +239,8 @@ public class Tube_test : MonoBehaviour
             yield return null;
         }
 
+        Big_cat.transform.position = Turn_2.transform.position;
+
         Y_distance = (Big_cat.transform.position.y) - (Turn_1.transform.position.y);
         while (Y_distance > 0.5f || Y_distance < -0.5f)
         {
@@ -234,6 +250,7 @@ public class Tube_test : MonoBehaviour
             yield return null;
         }
 
+        Big_cat.transform.position = Turn_1.transform.position;
         X_distance = (Big_cat.transform.position.x) - (Turn_0.transform.position.x);
 
         while (X_distance > 0.5f || X_distance < -0.5f)
@@ -244,6 +261,7 @@ public class Tube_test : MonoBehaviour
             yield return null;
         }
 
+        Big_cat.transform.position = Turn_0.transform.position;
         Big_cat.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         Big_cat_ani.SetBool("is_tubeThrough", false);
 

@@ -13,34 +13,35 @@ public class A_openFloor_btn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("X"))
         {
-            //int layerMask = LayerMask.GetMask("Role_stage");
+            int layerMask = LayerMask.GetMask("Role_stage");
             //int layerMask = 1 << 3;
-            int layerMask = ~(1 << gameObject.layer);
+            //int layerMask = ~(1 << gameObject.layer);
 
             RaycastHit2D hitD = Physics2D.Raycast(transform.position, Vector2.down, 5f, layerMask);
-
-            if ( hitD.collider.CompareTag("Player") || hitD.collider.CompareTag("Player_yellow") || hitD.collider.CompareTag("Player_blue"))
+            Debug.Log("hit object " + gameObject.name);
+            if (hitD.collider != null && hitD.collider.CompareTag("Player") || hitD.collider.CompareTag("Player_yellow") || hitD.collider.CompareTag("Player_blue"))
             {
-                Debug.Log("hit object " + gameObject.name);
+                //Debug.Log("hit object " + gameObject.name);
                 closeDoor();
             }
             else
             {
-                Debug.Log("hit nothing " + hitD.collider.name);
+                //Debug.Log("hit nothing " + hitD.collider.name);
             }
         }
     }
 
     private void closeDoor()
     {
-        if (floor_btn_ani.GetBool("is_open"))
+        ani_state = floor_btn_ani.GetBool("is_open");
+        if (ani_state)
         {
-            print("string true");
+            //print("string true");
             ani_state = true;
         }
-        else 
+        else if(!ani_state)
         { 
-            print("string false");
+            //print("string false");
             ani_state = false;
         }
         

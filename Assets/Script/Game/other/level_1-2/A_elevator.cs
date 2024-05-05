@@ -16,7 +16,7 @@ public class A_elevator : MonoBehaviour
     private float elevatorVertex_Y_pisition;
     private float elevatorLowest_Y_pisition;
     private bool is_Rising = true;
-    
+
 
     private void Start()
     {
