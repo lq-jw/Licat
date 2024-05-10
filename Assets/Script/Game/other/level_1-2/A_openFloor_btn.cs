@@ -6,6 +6,7 @@ public class A_openFloor_btn : MonoBehaviour
 {
     public Animator floor_btn_ani;
     public Animator floor_door_ani;
+    public GameObject trigger;
 
     private bool ani_state;
 
@@ -55,5 +56,24 @@ public class A_openFloor_btn : MonoBehaviour
         Gizmos.color = Color.blue;
         //Gizmos.DrawRay(transform.position, transform.right * 2f);
         Gizmos.DrawRay(transform.position, transform.up * 5f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Show(trigger);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Hide(trigger);
+    }
+
+    public void Show(GameObject trigger)
+    {
+        trigger.SetActive(true);
+    }
+    public void Hide(GameObject trigger)
+    {
+        trigger.SetActive(false);
     }
 }

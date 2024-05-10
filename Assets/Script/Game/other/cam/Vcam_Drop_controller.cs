@@ -15,6 +15,7 @@ public class Vcam_Drop_controller : MonoBehaviour
     private void Start()
     {
         catAni.SetBool("is_solid", false);
+        GameManager.instance.GotoAniMode(true);      // 淡入，打開動畫黑邊
     }
 
     void Update()
@@ -36,6 +37,7 @@ public class Vcam_Drop_controller : MonoBehaviour
 
             G_begin.SetActive(false);
             this.gameObject.SetActive(false);
+            GameManager.instance.LeaveAniMode(false);      // 關掉動畫黑邊
         }
     }
 
