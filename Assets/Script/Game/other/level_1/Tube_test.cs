@@ -186,7 +186,7 @@ public class Tube_test : MonoBehaviour
         Big_cat.transform.position = Turn_5.transform.position;
         Big_cat_ani.SetBool("is_tubeThrough_R", false);
 
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(2);
         tube_collider.enabled = true;
         tube_collider_other.enabled = true;
     }
@@ -265,7 +265,7 @@ public class Tube_test : MonoBehaviour
         Big_cat.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         Big_cat_ani.SetBool("is_tubeThrough", false);
 
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(2);
         tube_collider.enabled = true;
         tube_collider_other.enabled = true;
     }
