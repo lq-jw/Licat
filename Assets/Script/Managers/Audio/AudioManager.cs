@@ -36,6 +36,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            StopBGM();
             bgmSource.clip = s.clip;
             bgmSource.Play();
         }
@@ -64,5 +65,10 @@ public class AudioManager : MonoBehaviour
 
         bgmSource.volume = bgmVolume;
         seSource.volume = seVolume;
+    }
+
+    public void StopBGM()
+    {
+        bgmSource.Stop();
     }
 }
