@@ -6,6 +6,7 @@ public class B_dropBox : MonoBehaviour
 {
     public Animator dropDoor_ani;
     public Animator btn_ani;
+    public GameObject trigger;
 
     private bool is_press = false;
 
@@ -41,11 +42,28 @@ public class B_dropBox : MonoBehaviour
         }
     }
 
-
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(transform.position, transform.up * -5f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Show(trigger);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Hide(trigger);
+    }
+
+    public void Show(GameObject trigger)
+    {
+        trigger.SetActive(true);
+    }
+    public void Hide(GameObject trigger)
+    {
+        trigger.SetActive(false);
     }
 }

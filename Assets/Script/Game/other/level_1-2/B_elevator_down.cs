@@ -67,6 +67,8 @@ public class B_elevator_down : MonoBehaviour
         }
     }
 
+
+
     private void MoveElevator() //¹q±è²¾°Ê
     {
         for (int i = 0; i < G_elevator.Length; i++)

@@ -7,6 +7,7 @@ public class A_dropBox_btnL : MonoBehaviour
     public GameObject connectedDoor; // 連接的門
     public Animator btn_ani;
     public int number;
+    public GameObject trigger;
 
     private bool is_press = true;
 
@@ -51,5 +52,24 @@ public class A_dropBox_btnL : MonoBehaviour
         Gizmos.color = Color.blue;
         //Gizmos.DrawRay(transform.position, transform.right * 2f);
         Gizmos.DrawRay(transform.position, transform.up * -5f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Show(trigger);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Hide(trigger);
+    }
+
+    public void Show(GameObject trigger)
+    {
+        trigger.SetActive(true);
+    }
+    public void Hide(GameObject trigger)
+    {
+        trigger.SetActive(false);
     }
 }

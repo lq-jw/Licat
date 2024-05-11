@@ -106,6 +106,8 @@ public class Licat_react_controller : MonoBehaviour
 
     IEnumerator Respawn(float duration)
     {
+        GameManager.instance.FadeOut();
+
         //print(virtualCamera.transform.rotation);
         Rigidbody.simulated = false;
         transform.localScale = new Vector3(0, 0, 0);
@@ -115,6 +117,9 @@ public class Licat_react_controller : MonoBehaviour
         transform.localScale = new Vector3(1, 1, 1);
         Rigidbody.simulated = true;
         //print(virtualCamera.transform.rotation);
+
+        yield return new WaitForSeconds(0.3f);
+        GameManager.instance.LeaveAniMode(false);
     }
 
     private void FixedUpdate()
