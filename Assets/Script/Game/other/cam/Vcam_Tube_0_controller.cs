@@ -33,6 +33,10 @@ public class Vcam_Tube_0_controller : MonoBehaviour
             G_begin_position = G_begin.transform.position;
             G_begin_position.x = (G_begin_position.x) - 0.3f;
             G_begin_position.y = (G_begin_position.y) + 0.3f;
+
+            //print("G_begin_position  " + G_begin_position);
+            //print("licat.transform.position  " + licat.transform.position);
+
             licat.transform.position = G_begin_position;
 
             G_begin.SetActive(false);
