@@ -218,7 +218,6 @@ public class Licat_move_controller : MonoBehaviour
         {
             if (catAni.GetBool("is_solid") == true)
             {
-                AudioManager.instance.PlaySE("cat_jump");
                 if (FaceRight == false)
                 {
                     catAni.SetTrigger("is_jump");
