@@ -71,6 +71,7 @@ public class C_Btn_R_controller : MonoBehaviour
     {
         if (btnNow_Y_pisition <= btnUnpress_Y_pisition)
         {
+            AudioManager.instance.PlaySE("obj_btnPress");
             btn.transform.Translate(Vector3.up * 0.08f);
             btnNow_Y_pisition = btn.transform.position.y;
         }
