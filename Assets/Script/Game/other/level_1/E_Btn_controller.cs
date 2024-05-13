@@ -7,8 +7,10 @@ public class E_Btn_controller : MonoBehaviour
     public Animator floor_btn_ani;
     public Animator floor_door_R_ani;
     public Animator floor_door_L_ani;
+    public Animator licat_ani;
     public GameObject trigger;
 
+    private bool isdoorOpen = true;
 
     void Update()
     {
@@ -33,10 +35,16 @@ public class E_Btn_controller : MonoBehaviour
 
     private void closeDoor()
     {
-        floor_btn_ani.SetBool("is_open", false);
-        floor_door_R_ani.SetBool("is_open", false);
-        floor_door_L_ani.SetBool("is_open", false);
-        print("close");
+        if (isdoorOpen)
+        {
+            floor_btn_ani.SetBool("is_open", false);
+            floor_door_R_ani.SetBool("is_open", false);
+            floor_door_L_ani.SetBool("is_open", false);
+            licat_ani.Play("pull_pole_L");
+            isdoorOpen = !isdoorOpen;
+        }
+
+        //print("close");
     }
 
     private void OnDrawGizmos()

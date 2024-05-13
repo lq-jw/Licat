@@ -99,12 +99,20 @@ public class Licat_react_controller : MonoBehaviour
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.CompareTag("WaterDrop"))
+        {
+            print("WaterDrop   OnParticleCollision");
+        }
+    }
+
     public void UpdateCheckPoint(Vector3 pos)
     {
         checkPoint = pos;
     }
 
-    void Die()
+    public void Die()
     {
         StartCoroutine(Respawn(0.5f));
     }
@@ -112,7 +120,7 @@ public class Licat_react_controller : MonoBehaviour
     IEnumerator Respawn(float duration)
     {
         GameManager.instance.FadeOut();
-
+        yield return new WaitForSeconds(duration);
         //print(virtualCamera.transform.rotation);
         Rigidbody.simulated = false;
         transform.localScale = new Vector3(0, 0, 0);

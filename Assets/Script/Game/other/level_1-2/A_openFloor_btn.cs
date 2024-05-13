@@ -7,6 +7,7 @@ public class A_openFloor_btn : MonoBehaviour
     public Animator floor_btn_ani;
     public Animator floor_door_ani;
     public GameObject trigger;
+    public Animator licat_ani;
 
     private bool ani_state;
 
@@ -39,11 +40,13 @@ public class A_openFloor_btn : MonoBehaviour
         {
             //print("string true");
             ani_state = true;
+            licat_ani.Play("pull_pole_L");
         }
         else if(!ani_state)
         { 
             //print("string false");
             ani_state = false;
+            licat_ani.Play("push_pole_L");
         }
         
         floor_btn_ani.SetBool("is_open", !ani_state);
