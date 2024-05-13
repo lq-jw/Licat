@@ -45,7 +45,7 @@ public class Tutorial_controller : MonoBehaviour
         if (!b_Move_check) b_Move_check = BigCatAni.GetBool("is_move") || BigCatAni.GetBool("is_move_R");
         if (!b_Jump_check) b_Jump_check = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A");
         if (!b_JumpDown_check) b_JumpDown_check = Input.GetKeyDown(KeyCode.S) || Input.GetAxisRaw("Vertical") == -1;
-        if (!b_Meow_check) b_Meow_check = Input.GetKeyDown(KeyCode.C);
+        if (!b_Meow_check) b_Meow_check = Input.GetKeyDown(KeyCode.C) || Input.GetButtonDown("LB");
 
 
         if (Tutorial_count == 3 && b_Meow_check)

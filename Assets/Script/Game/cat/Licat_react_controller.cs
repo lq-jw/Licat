@@ -92,6 +92,11 @@ public class Licat_react_controller : MonoBehaviour
                 print("null");
             }
         }
+
+        if (collision.gameObject.CompareTag("WaterDrop"))
+        {
+            print("WaterDrop");
+        }
     }
 
     public void UpdateCheckPoint(Vector3 pos)

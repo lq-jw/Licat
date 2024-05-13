@@ -11,6 +11,9 @@ public class GearingPlatform : MonoBehaviour
     public GameObject platformMain;
     public GameObject platformSub;
 
+    public GameObject thisLight;
+    public GameObject otherLight;
+
     public GameObject otherSide;
     public GameObject otherCat = null;
 
@@ -22,16 +25,13 @@ public class GearingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //licat = GetComponent<Licat_move_controller>();
         moveSpeedLicat = licat.moveSpeed;
         thisSide = platformMain.transform.position;
-        //platformMain = this.gameObject.GetComponent<GameObject>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -39,13 +39,21 @@ public class GearingPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
             catOnPlatform = collision.gameObject;
+            thisLight.SetActive(true);
+            otherLight.SetActive(true);
             movePlatform();
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        thisLight.SetActive(false);
+        otherLight.SetActive(false);
+    }
+
     private void movePlatform()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetAxisRaw("Horizontal") > 0 )
         {
             if (otherSide.transform.position.x >= platformMain.transform.position.x)
             {
@@ -60,7 +68,7 @@ public class GearingPlatform : MonoBehaviour
                 platformSub.transform.Translate(Vector3.right * 10f * Time.deltaTime);
                 otherCat.transform.Translate(Vector3.right * 10f * Time.deltaTime);
             }
-        }else if (Input.GetKey(KeyCode.A))
+        }else if (Input.GetKey(KeyCode.A) || Input.GetAxisRaw("Horizontal") < 0)
         {
             if (thisSide.x <= platformMain.transform.position.x)
             {
