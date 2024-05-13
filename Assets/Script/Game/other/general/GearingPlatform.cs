@@ -15,7 +15,7 @@ public class GearingPlatform : MonoBehaviour
     public GameObject otherLight;
 
     public GameObject otherSide;
-    public GameObject otherCat = null;
+    private GameObject otherCat;
 
     private float moveSpeedLicat;
     private GameObject catOnPlatform;

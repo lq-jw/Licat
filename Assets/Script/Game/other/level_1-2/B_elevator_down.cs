@@ -26,6 +26,7 @@ public class B_elevator_down : MonoBehaviour
 
     private float distanceToOtherSide;
     private float distanceAll;
+    private GameObject otherCatOnPlatform = null;
 
     // Start is called before the first frame update
     void Start()
@@ -98,10 +99,12 @@ public class B_elevator_down : MonoBehaviour
                     if (is_Rising_H[i])
                     {
                         G_elevator[i].transform.Translate(Vector3.right * 20f * Time.deltaTime);
+                        //otherCatOnPlatform.transform.Translate(Vector3.right * 20f * Time.deltaTime);
                     }
                     else if (!is_Rising_H[i])
                     {
                         G_elevator[i].transform.Translate(Vector3.left * 20f * Time.deltaTime);
+                        //otherCatOnPlatform.transform.Translate(Vector3.left * 20f * Time.deltaTime);
                     }
                 }
             }
@@ -153,6 +156,7 @@ public class B_elevator_down : MonoBehaviour
                     while (is_reachOtherSide[i] == true)
                     {
                         G_elevator[i].transform.Translate(Vector3.right * 1f * Time.deltaTime);
+                        //otherCatOnPlatform.transform.Translate(Vector3.right * 1f * Time.deltaTime);
                         elevatorNow_position[i] = G_elevator[i].transform.position; //更新電梯現在位置
 
                         distanceToOtherSide = Mathf.Abs(elevatorOtherSide_position[i].x - elevatorNow_position[i].x);
@@ -171,6 +175,7 @@ public class B_elevator_down : MonoBehaviour
                     while (is_reachOtherSide[i] == true)
                     {
                         G_elevator[i].transform.Translate(Vector3.left * 1f * Time.deltaTime);
+                        //otherCatOnPlatform.transform.Translate(Vector3.left * 1f * Time.deltaTime);
                         elevatorNow_position[i] = G_elevator[i].transform.position; //更新電梯現在位置
 
                         distanceToOtherSide = Mathf.Abs(elevatorOtherSide_position[i].x - elevatorNow_position[i].x);
@@ -287,5 +292,10 @@ public class B_elevator_down : MonoBehaviour
                 is_reachOtherSide[i] = false;
             }
         }
+    }
+
+    public void GetPlatformCat(GameObject othercat)
+    {
+        otherCatOnPlatform = othercat;
     }
 }

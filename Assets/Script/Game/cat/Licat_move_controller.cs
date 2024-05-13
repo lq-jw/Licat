@@ -323,8 +323,8 @@ public class Licat_move_controller : MonoBehaviour
 
         //licat_blue_prefab.GetComponent<PolygonCollider2D>().enabled = true;
         //licat_blue_prefab.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        licat_yallow_prefab.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        licat_yallow_prefab.GetComponent<PolygonCollider2D>().enabled = false;
+        //licat_yallow_prefab.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        //licat_yallow_prefab.GetComponent<PolygonCollider2D>().enabled = false;
     }
 
     void PointCheck()

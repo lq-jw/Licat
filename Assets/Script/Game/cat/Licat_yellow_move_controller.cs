@@ -143,8 +143,8 @@ public class Licat_yellow_move_controller : MonoBehaviour
         if (_inputH != 0)
         {
             Rigidbody.velocity = new Vector2(_inputH * moveSpeed, Rigidbody.velocity.y);
-            if (moveSpeed <= 5) moveSpeed = moveSpeed + 0.1f;
-            else if (moveSpeed <= 12)
+            if (moveSpeed <= 5) moveSpeed = moveSpeed + 0.5f;
+            else if (moveSpeed <= 8)
             {
                 moveSpeed = moveSpeed + 0.3f;
             }

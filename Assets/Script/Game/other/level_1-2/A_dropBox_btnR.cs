@@ -6,6 +6,7 @@ public class A_dropBox_btnR : MonoBehaviour
 {
     public GameObject connectedDoor; // 連接的門
     public Animator btn_ani;
+    public Animator licat_ani;
     public int number;
     public GameObject trigger;
 
@@ -25,7 +26,7 @@ public class A_dropBox_btnR : MonoBehaviour
             {
                 //Debug.Log("hit object " + gameObject.name);
                 PressBtn();
-                is_press = !is_press;
+                //is_press = !is_press;
             }
             else 
             {
@@ -36,15 +37,18 @@ public class A_dropBox_btnR : MonoBehaviour
 
     private void PressBtn()
     {
+        is_press = btn_ani.GetBool("is_press");
         if (is_press)
         {
             connectedDoor.GetComponent<A_dropBox>().SetSwitchR(true, number);
             btn_ani.SetBool("is_press", false);
+            licat_ani.Play("push_pole_S");
         }
         else if (!is_press)
         {
             connectedDoor.GetComponent<A_dropBox>().SetSwitchR(false, number);
             btn_ani.SetBool("is_press", true);
+            licat_ani.Play("pull_pole_S");
         }
     }
 

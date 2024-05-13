@@ -6,6 +6,7 @@ public class B_dropBox : MonoBehaviour
 {
     public Animator dropDoor_ani;
     public Animator btn_ani;
+    public Animator licat_ani;
     public GameObject trigger;
 
     private bool is_press = false;
@@ -37,8 +38,10 @@ public class B_dropBox : MonoBehaviour
     {
         if (!is_press)
         {
-            btn_ani.SetBool("is_press", true);
+            btn_ani.SetBool("is_open", false);
             dropDoor_ani.SetTrigger("is_drop");
+            licat_ani.Play("pull_pole_L");
+            is_press = !is_press;
         }
     }
 

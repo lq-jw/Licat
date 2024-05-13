@@ -49,10 +49,10 @@ public class Split_controller : MonoBehaviour
                 catAni.SetBool("is_solid", false);
                 catAni.SetBool("is_faceRight", true);
 
-                Blue_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                Blue_licat.GetComponent<PolygonCollider2D>().enabled = true;
-                Yallow_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                Yallow_licat.GetComponent<PolygonCollider2D>().enabled = true;
+                //Blue_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                //Blue_licat.GetComponent<PolygonCollider2D>().enabled = true;
+                //Yallow_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                //Yallow_licat.GetComponent<PolygonCollider2D>().enabled = true;
 
                 //catSr.enabled = true;
                 //polygonCollider2D.enabled = true;
@@ -76,10 +76,10 @@ public class Split_controller : MonoBehaviour
                 yallow_triangle.SetActive(false);
                 //print("blue on");
 
-                Blue_licat.GetComponent<PolygonCollider2D>().enabled = true;
-                Blue_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                Yallow_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                Yallow_licat.GetComponent<PolygonCollider2D>().enabled = false;
+                //Blue_licat.GetComponent<PolygonCollider2D>().enabled = true;
+                //Blue_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                //Yallow_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                //Yallow_licat.GetComponent<PolygonCollider2D>().enabled = false;
             }
             else if(Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled == false) //¶À¦â On
             {
@@ -89,11 +89,11 @@ public class Split_controller : MonoBehaviour
                 yallow_triangle.SetActive(true);
                 //print("blue off");
 
-                Blue_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                Blue_licat.GetComponent<PolygonCollider2D>().enabled = false;
+                //Blue_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                //Blue_licat.GetComponent<PolygonCollider2D>().enabled = false;
                 
-                Yallow_licat.GetComponent<PolygonCollider2D>().enabled = true;
-                Yallow_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                //Yallow_licat.GetComponent<PolygonCollider2D>().enabled = true;
+                //Yallow_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             }
         }
 
