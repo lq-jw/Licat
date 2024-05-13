@@ -59,7 +59,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 0.85490197
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -68,7 +68,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.06666667
-        value: 0
+        value: 0.85490197
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -207,7 +207,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 0.85490197
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -216,7 +216,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.06666667
-        value: 0
+        value: 0.85490197
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -317,6 +317,8 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: fb4475ff13465ae4db7314308f1f6cae, type: 3}
+    - time: 0.06666667
+      value: {fileID: 21300000, guid: fb4475ff13465ae4db7314308f1f6cae, type: 3}
     - time: 0.083333336
       value: {fileID: 21300000, guid: 486e4b9a4d77a28458fd23add9989a0f, type: 3}
     attribute: m_Sprite
@@ -332,7 +334,21 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 1049609621
+      attribute: 4215373228
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1049609621
       attribute: 304273561
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1452467944
+      attribute: 4215373228
       script: {fileID: 0}
       typeID: 212
       customType: 0
@@ -360,13 +376,6 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 1049609621
-      attribute: 4215373228
-      script: {fileID: 0}
-      typeID: 212
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 1049609621
       attribute: 2334886179
       script: {fileID: 0}
       typeID: 212
@@ -381,19 +390,13 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 1452467944
-      attribute: 4215373228
-      script: {fileID: 0}
-      typeID: 212
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 1452467944
       attribute: 2334886179
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
+    - {fileID: 21300000, guid: fb4475ff13465ae4db7314308f1f6cae, type: 3}
     - {fileID: 21300000, guid: fb4475ff13465ae4db7314308f1f6cae, type: 3}
     - {fileID: 21300000, guid: 486e4b9a4d77a28458fd23add9989a0f, type: 3}
   m_AnimationClipSettings:
@@ -459,7 +462,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 0.85490197
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -468,7 +471,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.06666667
-        value: 0
+        value: 0.85490197
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -607,7 +610,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 0.85490197
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -616,7 +619,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.06666667
-        value: 0
+        value: 0.85490197
         inSlope: 0
         outSlope: 0
         tangentMode: 136
