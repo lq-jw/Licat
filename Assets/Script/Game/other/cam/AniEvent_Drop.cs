@@ -6,6 +6,6 @@ public class AniEvent_Drop : MonoBehaviour
 {
     public void Drop()
     {
-        AudioManager.instance.PlaySE("lv1_drop_drop");
+        AudioManager.instance.PlaySE("cat_convert_landing");
     }
 }

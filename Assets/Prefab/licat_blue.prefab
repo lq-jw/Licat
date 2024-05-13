@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7295077448080096665}
   - component: {fileID: 7295077448080096659}
   - component: {fileID: 118553836}
+  - component: {fileID: 6347656824830924681}
   m_Layer: 0
   m_Name: licat_blue
   m_TagString: Player_blue
@@ -109,7 +110,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1625954571
-  m_SortingLayer: 7
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e916505dd33a8074d9ad0465d024b0bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -331,6 +332,18 @@ MonoBehaviour:
   virtualCamera: {fileID: 0}
   hp_bar: {fileID: 0}
   img_hp_bar: {fileID: 0}
+--- !u!114 &6347656824830924681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295077448080096664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803f920e219bd41ad8d39438b27e508f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7295077448239368115
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +415,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1625954571
-  m_SortingLayer: 7
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -10309,6 +10309,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7947932044878464917, guid: effaa106fb0dd43919080cc9334c3a7f, type: 3}
+      propertyPath: BgmName
+      value: white_noise
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947932044878464917, guid: effaa106fb0dd43919080cc9334c3a7f, type: 3}
       propertyPath: isStopBGM
       value: 1
       objectReference: {fileID: 0}
