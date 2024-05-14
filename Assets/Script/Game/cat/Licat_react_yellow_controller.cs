@@ -91,6 +91,15 @@ public class Licat_react_yellow_controller : MonoBehaviour
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.CompareTag("WaterDrop"))
+        {
+            //print("WaterDrop   OnParticleCollision");
+            Die();
+        }
+    }
+
     public void UpdateCheckPoint(Vector3 pos)
     {
         checkPoint = pos;

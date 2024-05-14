@@ -36,6 +36,15 @@ public class MovingElevator : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
+        {
+            //CatOnPlatform = collision.gameObject;
+            isCatOnPlatform = false;
+        }
+    }
+
     private void MoveElevator() //¹q±è²¾°Ê
     {
         if (!isCatOnPlatform)

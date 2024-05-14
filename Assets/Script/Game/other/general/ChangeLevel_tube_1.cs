@@ -122,6 +122,7 @@ public class ChangeLevel_tube_1 : MonoBehaviour
         {
             //先把某個鏡頭打開，然後把後面的關卡打開，順便把前面的關卡關掉節省效能
             //lv1_2middle.transform.Find("1-Lv.1-2-2");
+            Big_cat.SetActive(false);
             G_Lv1_2middle.SetActive(true);
         }
     }

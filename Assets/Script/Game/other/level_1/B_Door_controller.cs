@@ -47,7 +47,7 @@ public class B_Door_controller : MonoBehaviour
     {
         // 實現打開門的邏輯
         //Debug.Log("Door opened!");
-        door.SetBool("is_open", false);
+        door.SetBool("is_open", true);
         door_light.Play("open");
     }
 
@@ -55,7 +55,7 @@ public class B_Door_controller : MonoBehaviour
     {
         // 實現關閉門的邏輯
         //Debug.Log("Door closed!");
-        door.SetBool("is_open", true);
+        door.SetBool("is_open", false);
         door_light.Play("close");
     }
 }

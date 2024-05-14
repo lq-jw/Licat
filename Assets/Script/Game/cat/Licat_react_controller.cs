@@ -25,10 +25,10 @@ public class Licat_react_controller : MonoBehaviour
         licat = GetComponent<Licat_move_controller>();
         Rigidbody = GetComponent<Rigidbody2D>();
 
-        max_hp = 10f;
-        hp = max_hp;
-        img_hp_bar.enabled = false;
-        hp_bar.SetActive(false);
+        //max_hp = 10f;
+        //hp = max_hp;
+        //img_hp_bar.enabled = false;
+        //hp_bar.SetActive(false);
 
         moveSpeed = licat.moveSpeed;
 
@@ -72,9 +72,9 @@ public class Licat_react_controller : MonoBehaviour
         }
         else if (!collision.gameObject.CompareTag("WaterProof"))
         {
-            hp = max_hp;
-            img_hp_bar.enabled = false;
-            hp_bar.SetActive(false);
+            //hp = max_hp;
+            //img_hp_bar.enabled = false;
+            //hp_bar.SetActive(false);
         }
 
         if (collision.gameObject.CompareTag("Hydrophobic") && catAni.GetBool("is_solid") == false) //²¨¤ô§÷½è(­°³t)
@@ -103,7 +103,8 @@ public class Licat_react_controller : MonoBehaviour
     {
         if (other.CompareTag("WaterDrop"))
         {
-            print("WaterDrop   OnParticleCollision");
+            //print("WaterDrop   OnParticleCollision");
+            Die();
         }
     }
 
@@ -137,6 +138,6 @@ public class Licat_react_controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        hp_bar.transform.localScale = new Vector3(hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
+        //hp_bar.transform.localScale = new Vector3(hp / max_hp, hp_bar.transform.localScale.y, hp_bar.transform.localScale.z);
     }
 }
