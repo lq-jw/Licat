@@ -3,16 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ditch
+  - WaterProof
+  - Hydrophobic
+  - DeathBorder
+  - Box
+  - Player_blue
+  - Player_yellow
+  - WaterDrop
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Background
+  - Role_stage
   - Water
   - UI
-  - 
-  - 
+  - Ground & Wall
+  - Platform
   - 
   - 
   - 
@@ -40,4 +48,31 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: wall
+    uniqueID: 1799269121
+    locked: 0
+  - name: b_bg
+    uniqueID: 2121034061
+    locked: 0
+  - name: m_bg
+    uniqueID: 2151218633
+    locked: 0
+  - name: f_bg
+    uniqueID: 2845313789
+    locked: 0
+  - name: ff_bg
+    uniqueID: 3772698373
+    locked: 0
+  - name: stage
+    uniqueID: 2669012725
+    locked: 0
+  - name: floor
+    uniqueID: 988376877
+    locked: 0
+  - name: front
+    uniqueID: 4051450009
+    locked: 0
+  - name: ui
+    uniqueID: 1292811967
     locked: 0
