@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class A_dropBox_btnL : MonoBehaviour
+public abstract class PullBtn_controller : MonoBehaviour
 {
-    public GameObject connectedDoor; // 連接的門
-    public GameObject btn;
-    public Animator btn_ani;
-    public Animator licat_ani;
-    public int number;
+    public Animator floor_btn_ani;
+    public Animator floor_door_ani;
     public GameObject trigger;
+    public Animator licat_ani;
 
-    private Vector3 btn_position;
-    private bool is_press = true;
+    private bool ani_state;
+    //protected abstract void SwitchDoor();
+    protected abstract void SwitchDoor();
 
-    private void Update()
+
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("X"))
         {
@@ -23,42 +23,22 @@ public class A_dropBox_btnL : MonoBehaviour
             int layerMask = ~(1 << gameObject.layer);
 
             RaycastHit2D hitD = Physics2D.Raycast(transform.position, Vector2.down, 5f, layerMask);
-
+            Debug.Log("hit object " + gameObject.name);
             if (hitD.collider != null && hitD.collider.CompareTag("Player") || hitD.collider.CompareTag("Player_yellow") || hitD.collider.CompareTag("Player_blue"))
             {
-                btn_position = btn.transform.position;
-                btn_position.x = hitD.collider.gameObject.transform.position.x;
                 //Debug.Log("hit object " + gameObject.name);
-                PressBtn();
-                //is_press = !is_press;
+                SwitchDoor();
             }
-            else 
+            else
             {
                 //Debug.Log("hit nothing " + hitD.collider.name);
             }
         }
     }
 
-    private void PressBtn()
-    {
-        is_press = btn_ani.GetBool("is_press");
-        if (is_press)
-        {
-            connectedDoor.GetComponent<A_dropBox>().SetSwitchL(true, number);
-            btn_ani.SetBool("is_press",false);
-            licat_ani.Play("push_pole_S");
-        }else if (!is_press)
-        {
-            connectedDoor.GetComponent<A_dropBox>().SetSwitchL(false, number);
-            btn_ani.SetBool("is_press", true);
-            licat_ani.Play("pull_pole_S");
-        }
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        //Gizmos.DrawRay(transform.position, transform.right * 2f);
         Gizmos.DrawRay(transform.position, transform.up * -5f);
     }
 

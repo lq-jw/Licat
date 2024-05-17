@@ -24,6 +24,7 @@ public class B_elevator_down : MonoBehaviour
     private int count = 0;
     private int countRight = 0;
 
+    private bool isMoveElevator = false;
     private float distanceToOtherSide;
     private float distanceAll;
     private GameObject otherCatOnPlatform = null;
@@ -37,11 +38,24 @@ public class B_elevator_down : MonoBehaviour
         Init();
     }
 
+    public void Update()
+    {
+        if (isMoveElevator)
+        {
+            MoveElevator();
+        }
+        else if (!isMoveElevator)
+        {
+            BackToPosition();
+        }
+    }
+
     private void OnCollisionStay2D(Collision2D collision) //壓
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
-            MoveElevator();
+            //MoveElevator();
+            isMoveElevator = true;
             btnNow_Y_pisition = G_btn.transform.position.y;
             if (btnNow_Y_pisition >= btnPress_Y_pisition)
             {
@@ -55,7 +69,8 @@ public class B_elevator_down : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
             UnPressBtn();
-            BackToPosition();
+            isMoveElevator = false;
+            //BackToPosition();
         }
     }
 
@@ -67,8 +82,6 @@ public class B_elevator_down : MonoBehaviour
             btnNow_Y_pisition = G_btn.transform.position.y;
         }
     }
-
-
 
     private void MoveElevator() //電梯移動
     {
@@ -156,13 +169,18 @@ public class B_elevator_down : MonoBehaviour
                     while (is_reachOtherSide[i] == true)
                     {
                         G_elevator[i].transform.Translate(Vector3.right * 1f * Time.deltaTime);
-                        //otherCatOnPlatform.transform.Translate(Vector3.right * 1f * Time.deltaTime);
+
+                        if (otherCatOnPlatform != null)
+                        {
+                            otherCatOnPlatform.transform.Translate(Vector3.right * 1f * Time.deltaTime);
+                        }
+                        
                         elevatorNow_position[i] = G_elevator[i].transform.position; //更新電梯現在位置
 
                         distanceToOtherSide = Mathf.Abs(elevatorOtherSide_position[i].x - elevatorNow_position[i].x);
                         distanceAll = Mathf.Abs(elevatorVertex_position[i].x - elevatorLowest_position[i].x);
 
-                        countRight++;
+                        //countRight++;
 
                         if (distanceToOtherSide >= distanceAll)
                         {
@@ -174,14 +192,15 @@ public class B_elevator_down : MonoBehaviour
                 {
                     while (is_reachOtherSide[i] == true)
                     {
-                        G_elevator[i].transform.Translate(Vector3.left * 1f * Time.deltaTime);
-                        //otherCatOnPlatform.transform.Translate(Vector3.left * 1f * Time.deltaTime);
+                        G_elevator[i].transform.Translate(Vector3.left * 0.1f * Time.deltaTime);
+                        if (otherCatOnPlatform != null)
+                            otherCatOnPlatform.transform.Translate(Vector3.left * 1f * Time.deltaTime);
                         elevatorNow_position[i] = G_elevator[i].transform.position; //更新電梯現在位置
 
                         distanceToOtherSide = Mathf.Abs(elevatorOtherSide_position[i].x - elevatorNow_position[i].x);
                         distanceAll = Mathf.Abs(elevatorVertex_position[i].x - elevatorLowest_position[i].x);
 
-                        count++;
+                        //count++;
 
                         if (distanceToOtherSide >= distanceAll)
                         {
@@ -198,12 +217,14 @@ public class B_elevator_down : MonoBehaviour
                     while (is_reachOtherSide[i] == true)
                     {
                         G_elevator[i].transform.Translate(Vector3.up * 1f * Time.deltaTime);
+                        if (otherCatOnPlatform != null)
+                            otherCatOnPlatform.transform.Translate(Vector3.up * 1f * Time.deltaTime);
                         elevatorNow_position[i] = G_elevator[i].transform.position; //更新電梯現在位置
 
                         distanceToOtherSide = Mathf.Abs(elevatorOtherSide_position[i].y - elevatorNow_position[i].y);
                         distanceAll = Mathf.Abs(elevatorVertex_position[i].y - elevatorLowest_position[i].y);
 
-                        countRight++;
+                        //countRight++;
 
                         if (distanceToOtherSide >= distanceAll)
                         {
@@ -216,12 +237,14 @@ public class B_elevator_down : MonoBehaviour
                     while (is_reachOtherSide[i] == true)
                     {
                         G_elevator[i].transform.Translate(Vector3.down * 1f * Time.deltaTime);
+                        if (otherCatOnPlatform != null)
+                            otherCatOnPlatform.transform.Translate(Vector3.down * 1f * Time.deltaTime);
                         elevatorNow_position[i] = G_elevator[i].transform.position; //更新電梯現在位置
 
                         distanceToOtherSide = Mathf.Abs(elevatorOtherSide_position[i].y - elevatorNow_position[i].y);
                         distanceAll = Mathf.Abs(elevatorVertex_position[i].y - elevatorLowest_position[i].y);
 
-                        count++;
+                        //count++;
 
                         if (distanceToOtherSide >= distanceAll)
                         {
@@ -297,5 +320,6 @@ public class B_elevator_down : MonoBehaviour
     public void GetPlatformCat(GameObject othercat)
     {
         otherCatOnPlatform = othercat;
+        print("otherCatOnPlatform " + otherCatOnPlatform);
     }
 }

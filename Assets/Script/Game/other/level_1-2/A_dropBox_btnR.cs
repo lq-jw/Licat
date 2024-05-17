@@ -5,11 +5,13 @@ using UnityEngine;
 public class A_dropBox_btnR : MonoBehaviour
 {
     public GameObject connectedDoor; // 連接的門
+    public GameObject btn;
     public Animator btn_ani;
     public Animator licat_ani;
     public int number;
     public GameObject trigger;
 
+    private Vector3 btn_position;
     private bool is_press = true;
 
     private void Update()
@@ -24,6 +26,8 @@ public class A_dropBox_btnR : MonoBehaviour
 
             if (hitD.collider != null && hitD.collider.CompareTag("Player") || hitD.collider.CompareTag("Player_yellow") || hitD.collider.CompareTag("Player_blue"))
             {
+                btn_position = btn.transform.position;
+                btn_position.x = hitD.collider.transform.position.x;
                 //Debug.Log("hit object " + gameObject.name);
                 PressBtn();
                 //is_press = !is_press;
