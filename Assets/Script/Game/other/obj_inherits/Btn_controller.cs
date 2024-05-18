@@ -14,6 +14,8 @@ public abstract class Btn_controller : MonoBehaviour
         btnPress_Y_pisition = btnUnpress_Y_pisition - 0.05f;
     }
 
+    protected abstract void OnBtnEnter();        // 須完成
+
     protected abstract void OnBtnStay();        // 須完成
     protected abstract void OnBtnExit();        // 須完成
 
@@ -22,9 +24,11 @@ public abstract class Btn_controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
             PlaySE();
+            OnBtnEnter();
         }
     }
-    private void OnCollisionStay2D(Collision2D collision) //開門
+
+    private void OnCollisionStay2D(Collision2D collision) // 正在踩
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
@@ -60,6 +64,5 @@ public abstract class Btn_controller : MonoBehaviour
     private void PlaySE()
     {
         AudioManager.instance.PlaySE("obj_btnPress");       // 播放音效
-
     }
 }
