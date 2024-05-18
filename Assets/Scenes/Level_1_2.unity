@@ -14377,8 +14377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedc055a69047494d838e3193d0ef544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedDoor: {fileID: 1579014463}
   btn: {fileID: 343583564}
+  connectedDoor: {fileID: 1579014463}
 --- !u!1 &387318261
 GameObject:
   m_ObjectHideFlags: 0
@@ -20611,8 +20611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcaa7ffce561a354587cfb05d207b5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedDoor: {fileID: 2017656082}
   btn: {fileID: 45468044}
+  connectedDoor: {fileID: 2017656082}
 --- !u!1 &449228127
 GameObject:
   m_ObjectHideFlags: 0
@@ -21213,8 +21213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42bf3cc5203750244b3b3fe17d58a973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openFloor_ani: {fileID: 1206986609}
   btn: {fileID: 1589400994}
+  openFloor_ani: {fileID: 1206986609}
 --- !u!1 &484821205
 GameObject:
   m_ObjectHideFlags: 0
@@ -21951,8 +21951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedc055a69047494d838e3193d0ef544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedDoor: {fileID: 100302277}
   btn: {fileID: 1712719659}
+  connectedDoor: {fileID: 100302277}
 --- !u!1 &524466660
 GameObject:
   m_ObjectHideFlags: 0
@@ -53146,8 +53146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2aa880f91ce7b49a504fe7c6f0fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedDoor: {fileID: 100302277}
   btn: {fileID: 1900769133}
+  connectedDoor: {fileID: 100302277}
 --- !u!1 &1311620546
 GameObject:
   m_ObjectHideFlags: 0
@@ -61487,8 +61487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de08b8f38f0ee844b33f332aafd2698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedDoor: {fileID: 2017656082}
   btn: {fileID: 684238858}
+  connectedDoor: {fileID: 2017656082}
 --- !u!1 &1423246485
 GameObject:
   m_ObjectHideFlags: 0
@@ -68339,8 +68339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc154104ac568ff4b93f48892df6f900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn: {fileID: 1384477639}
   G_elevator: {fileID: 209390595}
-  G_btn: {fileID: 1384477639}
 --- !u!1 &1789379071
 GameObject:
   m_ObjectHideFlags: 0
@@ -73417,8 +73417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2aa880f91ce7b49a504fe7c6f0fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedDoor: {fileID: 1579014463}
   btn: {fileID: 968870658}
+  connectedDoor: {fileID: 1579014463}
 --- !u!4 &2048533779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6425503518528265613, guid: 075030e1a7da945478e76c32610038d5, type: 3}

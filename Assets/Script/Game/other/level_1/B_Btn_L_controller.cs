@@ -11,11 +11,6 @@ public class B_Btn_L_controller : Btn_controller
         connectedDoor.GetComponent<B_Door_controller>().SetSwitch1(true);
     }
 
-    protected override void OnBtnStay()
-    {
-        // ªÅ
-    }
-
     protected override void OnBtnExit()
     {
         connectedDoor.GetComponent<B_Door_controller>().SetSwitch1(false);
