@@ -14,11 +14,18 @@ public class BringPlatformCat : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
             catOnPlatform = collision.gameObject;
-            print("catOnPlatform " + catOnPlatform.name);
+            //print("catOnPlatform " + catOnPlatform.name);
             //movePlatform();
             B_Elevator_Down.GetPlatformCat(catOnPlatform);
             //V3_cat = catOnPlatform.transform.position;
             //V3_cat.x = platform.transform.position.x;
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        catOnPlatform = null;
+        //print("catOnPlatform " + null);
+        B_Elevator_Down.GetPlatformCat(catOnPlatform);
     }
 }

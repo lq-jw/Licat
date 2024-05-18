@@ -23,7 +23,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: is_tube_through
+    m_ConditionEvent: is_tubeThrough
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4148438485737253892}
@@ -437,7 +437,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: is_tube_through
+  - m_Name: is_tubeThrough
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -736,7 +736,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: is_tube_through
+    m_ConditionEvent: is_tubeThrough
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6247717376266004036}
