@@ -207,7 +207,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedDoor: {fileID: 0}
+  btn: {fileID: 6041317948947339602}
   btn_ani: {fileID: -1196001966449399989}
+  licat_ani: {fileID: 5452990571666520432, guid: 7681addb9710dff4b9097e89d76971aa, type: 3}
   number: 0
   trigger: {fileID: 8135087672049320488}
 --- !u!61 &8064949204974451957
@@ -223,7 +225,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010042392, y: -1.4565723}
+  m_Offset: {x: -0.008595116, y: -1.4565723}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -234,7 +236,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48006052, y: 3.5431447}
+  m_Size: {x: 0.405505, y: 3.5431447}
   m_EdgeRadius: 0
 --- !u!1 &8135087672049320488
 GameObject:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BringPlatformCat : MonoBehaviour
 {
-    //public B_elevator_down B_Elevator_Down;
+    public B_elevator_down B_Elevator_Down;
     private GameObject catOnPlatform;
     public GameObject platform;
     private Vector3 V3_cat;
@@ -14,10 +14,18 @@ public class BringPlatformCat : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
             catOnPlatform = collision.gameObject;
+            //print("catOnPlatform " + catOnPlatform.name);
             //movePlatform();
-            //B_Elevator_Down.GetPlatformCat(catOnPlatform);
-            V3_cat = catOnPlatform.transform.position;
-            V3_cat.x = platform.transform.position.x;
+            B_Elevator_Down.GetPlatformCat(catOnPlatform);
+            //V3_cat = catOnPlatform.transform.position;
+            //V3_cat.x = platform.transform.position.x;
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        catOnPlatform = null;
+        //print("catOnPlatform " + null);
+        B_Elevator_Down.GetPlatformCat(catOnPlatform);
     }
 }

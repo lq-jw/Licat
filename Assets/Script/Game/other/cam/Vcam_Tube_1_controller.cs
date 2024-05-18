@@ -16,7 +16,7 @@ public class Vcam_Tube_1_controller : MonoBehaviour
 
     private void Start()
     {
-        //catAni.SetBool("is_solid", false);
+        catAni.SetBool("is_solid", false);
         GameManager.instance.GotoAniMode(true);      // 淡入，打開動畫黑邊
         G_lv_1_2_2.SetActive(true);
     }
@@ -31,7 +31,7 @@ public class Vcam_Tube_1_controller : MonoBehaviour
             Invoke("closeCam", 2.3f);
 
             licat.SetActive(true);
-            catAni.SetBool("is_solid", false);
+            
             catAni.SetBool("is_faceRight", true);
         }
         else if (stateInfo1)

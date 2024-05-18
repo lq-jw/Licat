@@ -12,6 +12,7 @@ public class A_dropBox : MonoBehaviour
 
     public SpriteRenderer[] dropBoxLight;
     public Animator box;
+    public GameObject[] BoxLight; 
 
     private Color tempColor;
 
@@ -29,19 +30,21 @@ public class A_dropBox : MonoBehaviour
     {
         btn_L[number] = activated;
         CheckSwitch_L();
-        LightSwitch(number);
+        //LightSwitch(number);
+        StartCoroutine(LightSwitch(number));
     }
 
     public void SetSwitchR(bool activated, int number)
     {
         btn_R[number] = activated;
         CheckSwitch_R();
-        LightSwitch(number);
+        //LightSwitch(number);
+        StartCoroutine(LightSwitch(number));
     }
 
     private void CheckSwitch_L()
     {
-        if (!btn_L[0] && !btn_L[1] && btn_L[2] && !btn_L[3])
+        if (btn_L[0] == false && btn_L[1] == false && btn_L[2] == true && btn_L[3] == false)
         {
             btn_L_Set = true;
             CheckSwitches();
@@ -50,7 +53,7 @@ public class A_dropBox : MonoBehaviour
 
     private void CheckSwitch_R()
     {
-        if (!btn_R[0] && btn_R[1] && btn_R[2] && !btn_R[3])
+        if (btn_R[0] == false && btn_R[1] == true && btn_R[2] == true && btn_R[3] == false)
         {
             btn_R_Set = true;
             CheckSwitches();
@@ -67,12 +70,13 @@ public class A_dropBox : MonoBehaviour
         }
     }
 
-    private void LightSwitch(int number)
+    IEnumerator LightSwitch(int number)
     {
 
         if (btn_R[number] && btn_L[number])
         {
-            print("1,1");
+            yield return new WaitForSeconds(0.5f);
+            //print("1,1");
             tempColor = dropBoxLight[number].color;
             tempColor.a = 1f;
             dropBoxLight[number].color = tempColor;
@@ -80,7 +84,8 @@ public class A_dropBox : MonoBehaviour
         }
         else if (btn_R[number] && !btn_L[number])
         {
-            print("0,1");
+            yield return new WaitForSeconds(0.5f);
+            //print("0,1");
             tempColor = dropBoxLight[number].color;
             tempColor.a = 0.6f;
             dropBoxLight[number].color = tempColor;
@@ -88,7 +93,8 @@ public class A_dropBox : MonoBehaviour
         }
         else if (!btn_R[number] && btn_L[number])
         {
-            print("1,0");
+            yield return new WaitForSeconds(0.5f);
+            //print("1,0");
             tempColor = dropBoxLight[number].color;
             tempColor.a = 0.6f;
             dropBoxLight[number].color = tempColor;
@@ -96,7 +102,8 @@ public class A_dropBox : MonoBehaviour
         }
         else if (!btn_R[number] && !btn_L[number])
         {
-            print("0,0");
+            yield return new WaitForSeconds(0.5f);
+            //print("0,0");
             tempColor = dropBoxLight[number].color;
             tempColor.a = 0f;
             dropBoxLight[number].color = tempColor;
@@ -108,5 +115,9 @@ public class A_dropBox : MonoBehaviour
     private void DropBox()
     {
         box.SetTrigger("is_drop");
+        for (int i = 0; i < BoxLight.Length; i++)
+        {
+            BoxLight[i].SetActive(true);
+        }
     }
 }
