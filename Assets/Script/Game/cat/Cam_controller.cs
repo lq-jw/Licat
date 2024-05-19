@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+// 管理三隻貓切換時的鏡頭
 public class Cam_controller : MonoBehaviour
 {
     public CinemachineVirtualCamera vCam_licat;

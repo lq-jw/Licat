@@ -17,11 +17,18 @@ public class Check_point_update : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Player_blue") || collision.CompareTag("Player_yellow"))
+        if (collision.CompareTag("Player"))
         {
             Licat_react_controller.UpdateCheckPoint(transform.position);
-            Licat_react_yellow_controller.UpdateCheckPoint(transform.position);
+            //Licat_react_yellow_controller.UpdateCheckPoint(transform.position);
+            //Licat_react_blue_controller.UpdateCheckPoint(transform.position);
+        }else if (collision.CompareTag("Player_blue"))
+        {
             Licat_react_blue_controller.UpdateCheckPoint(transform.position);
+        }
+        else if (collision.CompareTag("Player_yellow"))
+        {
+            Licat_react_yellow_controller.UpdateCheckPoint(transform.position);
         }
     }
 }

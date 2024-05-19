@@ -7,6 +7,7 @@ public class GearingPlatform : MonoBehaviour
     public Licat_move_controller licat;
     public Licat_blue_move_controller blueLicat;
     public Licat_yellow_move_controller yellowLicat;
+    public Split_controller Split_controller;
 
     public GameObject platformMain;
     public GameObject platformSub;
@@ -36,13 +37,41 @@ public class GearingPlatform : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             catOnPlatform = collision.gameObject;
             thisLight.SetActive(true);
             otherLight.SetActive(true);
             movePlatform();
+        }else if (collision.gameObject.CompareTag("Player_blue"))
+        {
+            catOnPlatform = collision.gameObject;
+            thisLight.SetActive(true);
+            otherLight.SetActive(true);
+            //Split_controller.catNumber
+            
+            if (Split_controller.catNumber == 1)
+            {
+                print("Split_controller.catNumber " + Split_controller.catNumber);
+                movePlatform();
+            }
+
         }
+        else if (collision.gameObject.CompareTag("Player_yellow"))
+        {
+            catOnPlatform = collision.gameObject;
+            thisLight.SetActive(true);
+            otherLight.SetActive(true);
+            
+            if (Split_controller.catNumber == 2)
+            {
+                print("Split_controller.catNumber " + Split_controller.catNumber);
+                movePlatform();
+            }
+            
+        }
+
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -58,6 +87,7 @@ public class GearingPlatform : MonoBehaviour
             if (otherSide.transform.position.x >= platformMain.transform.position.x)
             {
                 moveSpeedLicat = 0f;
+
                 licat.setMoveSpeed(moveSpeedLicat);
                 blueLicat.setMoveSpeed(moveSpeedLicat);
                 yellowLicat.setMoveSpeed(moveSpeedLicat);
@@ -66,7 +96,8 @@ public class GearingPlatform : MonoBehaviour
                 catOnPlatform.transform.Translate(Vector3.right * 10f * Time.deltaTime);
 
                 platformSub.transform.Translate(Vector3.right * 10f * Time.deltaTime);
-                otherCat.transform.Translate(Vector3.right * 10f * Time.deltaTime);
+                if (otherCat != null)
+                    otherCat.transform.Translate(Vector3.right * 10f * Time.deltaTime);
             }
         }else if (Input.GetKey(KeyCode.A) || Input.GetAxisRaw("Horizontal") < 0)
         {
@@ -81,7 +112,8 @@ public class GearingPlatform : MonoBehaviour
                 catOnPlatform.transform.Translate(Vector3.left * 10f * Time.deltaTime);
 
                 platformSub.transform.Translate(Vector3.left * 10f * Time.deltaTime);
-                otherCat.transform.Translate(Vector3.left * 10f * Time.deltaTime);
+                if (otherCat != null) 
+                    otherCat.transform.Translate(Vector3.left * 10f * Time.deltaTime);
             }
         }
     }

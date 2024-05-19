@@ -320,6 +320,7 @@ public class Licat_move_controller : MonoBehaviour
 
         splitController.SetActive(true);
         splitController.GetComponent<Split_controller>().enabled = true;
+        splitController.GetComponent<Split_controller>().catNumber = 1;
 
         //licat_blue_prefab.GetComponent<PolygonCollider2D>().enabled = true;
         //licat_blue_prefab.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
