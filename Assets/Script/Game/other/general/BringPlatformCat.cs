@@ -9,6 +9,8 @@ public class BringPlatformCat : MonoBehaviour
     public GameObject platform;
     private Vector3 V3_cat;
 
+    [SerializeField] private int thisIndex;
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
@@ -16,7 +18,7 @@ public class BringPlatformCat : MonoBehaviour
             catOnPlatform = collision.gameObject;
             //print("catOnPlatform " + catOnPlatform.name);
             //movePlatform();
-            B_Elevator_Down.GetPlatformCat(catOnPlatform);
+            B_Elevator_Down.GetPlatformCat(catOnPlatform, thisIndex+1);
             //V3_cat = catOnPlatform.transform.position;
             //V3_cat.x = platform.transform.position.x;
         }
@@ -26,6 +28,6 @@ public class BringPlatformCat : MonoBehaviour
     {
         catOnPlatform = null;
         //print("catOnPlatform " + null);
-        B_Elevator_Down.GetPlatformCat(catOnPlatform);
+        B_Elevator_Down.GetPlatformCat(catOnPlatform, 0);
     }
 }
