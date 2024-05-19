@@ -20,6 +20,8 @@ public class Split_controller : MonoBehaviour
     public GameObject blue_triangle;
     public GameObject yallow_triangle;
 
+    public int catNumber = 0;
+
     private float pressTime = 0f;
     private float requiredPressTime = 1f; // 長按所需的時間
     private bool B_check_merge;
@@ -35,6 +37,7 @@ public class Split_controller : MonoBehaviour
             if(pressTime >= requiredPressTime && catblueAni.GetBool("is_solid") == false && catyallowAni.GetBool("is_solid") == false && B_check_merge)
             {
                 Merge();
+                catNumber = 0;
                 print("stoppppppp");
             }
         }
@@ -48,10 +51,12 @@ public class Split_controller : MonoBehaviour
             if (Blue_licat.GetComponent<Licat_blue_move_controller>().enabled == false)   //藍色 On
             {
                 OpenBlue();
+                catNumber = 1;
             }
             else if(Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled == false) //黃色 On
             {
                 OpenYellow();
+                catNumber = 2;
             }
         }
     }
