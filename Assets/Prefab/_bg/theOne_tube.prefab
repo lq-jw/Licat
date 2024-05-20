@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4115755735947062145}
   - component: {fileID: 4115755735947062146}
   - component: {fileID: 4115755735947062147}
-  - component: {fileID: 4115755735947062144}
+  - component: {fileID: 6353291982957292019}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 4115755735947062174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.13863906}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4115755736552756564}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: -1625954571
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e7e082ecb1e057746968dca70b666c05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4acd430a1736c164b95d6436a77ea2dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4115755735947062174}
   m_CullTransparentMesh: 1
---- !u!114 &4115755735947062144
+--- !u!114 &6353291982957292019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,31 +108,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4115755735947062174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: ba49ae077b47e475c8cec3404c28c1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 125
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 125
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: F
+  keyboardIcon: {fileID: 21300000, guid: 4acd430a1736c164b95d6436a77ea2dd, type: 3}
+  HandleIcon: {fileID: 21300000, guid: bdd3bad340252481cad895d1ed099672, type: 3}
 --- !u!1 &4115755736552756565
 GameObject:
   m_ObjectHideFlags: 0
