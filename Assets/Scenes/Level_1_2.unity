@@ -49871,6 +49871,7 @@ GameObject:
   - component: {fileID: 1083032851}
   - component: {fileID: 1083032853}
   - component: {fileID: 1083032852}
+  - component: {fileID: 1083032854}
   m_Layer: 7
   m_Name: "\u5E73\u53F0"
   m_TagString: Untagged
@@ -49990,6 +49991,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.818676, y: 0.38770485}
   m_EdgeRadius: 0
+--- !u!114 &1083032854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083032849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0881f152c56fae54d9b87557d0d14589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  B_Elevator_Down: {fileID: 1789379074}
+  platform: {fileID: 1083032849}
+  thisIndex: 1
 --- !u!1 &1085427816
 GameObject:
   m_ObjectHideFlags: 0
@@ -50856,7 +50872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5567943686999220241, guid: dd65a43b55e8d44d383013db6b3d94c1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd65a43b55e8d44d383013db6b3d94c1, type: 3}
@@ -58937,9 +58953,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0881f152c56fae54d9b87557d0d14589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  B_Elevator_Down: {fileID: 0}
+  B_Elevator_Down: {fileID: 1721472835}
   platform: {fileID: 1279564669}
-  thisIndex: 0
+  thisIndex: 1
 --- !u!1 &1282157383
 GameObject:
   m_ObjectHideFlags: 0
@@ -60988,7 +61004,6 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
   - position: {x: -0.4629, y: -1.024, z: 0}
-    color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
   - position: {x: -0.4165, y: -1.1102, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
@@ -61087,12 +61102,6 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
   - position: {x: -0.5065, y: 0.5357, z: 0}
-    color: {r: 0, g: 0, b: 0, a: 0}
-    uv: {x: 0, y: 0}
-  m_Triangles: 000003000100010003000200040008000800040008000900040009000a0004000a000b0004000b000c0004000c000d0004000d000e0004000e000f0004000f001000040005001100040010001100050011001200050012001300050013001400050014001500050015001600050016001700050017001800050018001900050006001a00050019001a0006001a001b0006001b001c0006001c001d0006001d001e0006001e001f0006001f002000060020002100060021002200060022002300060007002400060023002400070024002500070025002600070026002700070027002800070028002900070029002a0007002a002b0008000400070008002b000700
-  m_LocalBounds:
-    m_Center: {x: 0.030849993, y: -0.13975, z: 0}
-    m_Extent: {x: 0.53735, y: 1.19425, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -74673,7 +74682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62cdd068788450469c4482181246133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn: {fileID: 0}
+  btn: {fileID: 393249702}
   G_elevator:
   - {fileID: 1999612493}
   - {fileID: 1279564669}
@@ -75776,7 +75785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62cdd068788450469c4482181246133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn: {fileID: 0}
+  btn: {fileID: 1024498400}
   G_elevator:
   - {fileID: 2099107466}
   - {fileID: 1083032849}
