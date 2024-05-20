@@ -16575,6 +16575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 684278865}
   - component: {fileID: 684278866}
+  - component: {fileID: 684278867}
   m_Layer: 0
   m_Name: tutorial_icon
   m_TagString: Untagged
@@ -16649,6 +16650,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &684278867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684278864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba49ae077b47e475c8cec3404c28c1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardIcon: {fileID: 21300000, guid: 9543c8f3fe0ba3146b32b1dea983609c, type: 3}
+  HandleIcon: {fileID: 21300000, guid: 7998ae09edb6a48a78e96d8e4e90e7a1, type: 3}
 --- !u!1 &687247553
 GameObject:
   m_ObjectHideFlags: 0
@@ -18362,6 +18377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 770045214}
   - component: {fileID: 770045215}
+  - component: {fileID: 770045216}
   m_Layer: 0
   m_Name: tutorial_icon
   m_TagString: Untagged
@@ -18436,6 +18452,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &770045216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770045213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba49ae077b47e475c8cec3404c28c1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardIcon: {fileID: 21300000, guid: 6d6ca85699f29af46842ac986d71eaed, type: 3}
+  HandleIcon: {fileID: 21300000, guid: ce9fb6cbe6aca104e830b47fd45b4e2e, type: 3}
 --- !u!1 &774055968
 GameObject:
   m_ObjectHideFlags: 0
@@ -35579,6 +35609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1466413747}
   - component: {fileID: 1466413748}
+  - component: {fileID: 1466413749}
   m_Layer: 0
   m_Name: tutorial_icon
   m_TagString: Untagged
@@ -35653,6 +35684,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1466413749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466413746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba49ae077b47e475c8cec3404c28c1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardIcon: {fileID: 21300000, guid: 0c1c944596a0e2947b8e1c08d7e491e7, type: 3}
+  HandleIcon: {fileID: 21300000, guid: fc230f546adf0214abaf34d6303f68eb, type: 3}
 --- !u!1001 &1467724080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36610,6 +36655,7 @@ MonoBehaviour:
   LeftBoxCollider2D: {fileID: 83736015}
   blue_triangle: {fileID: 2107406808}
   yallow_triangle: {fileID: 1075809390}
+  catNumber: 0
 --- !u!4 &1508719510
 Transform:
   m_ObjectHideFlags: 0
@@ -46619,6 +46665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2028150165}
   - component: {fileID: 2028150166}
+  - component: {fileID: 2028150167}
   m_Layer: 0
   m_Name: tutorial_icon_space_disable
   m_TagString: Untagged
@@ -46693,6 +46740,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2028150167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028150164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba49ae077b47e475c8cec3404c28c1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardIcon: {fileID: 21300000, guid: 8e6178a52d373164191f9a3f9e547282, type: 3}
+  HandleIcon: {fileID: 21300000, guid: b04cdcaec0fd54ef8a6864d1421b2582, type: 3}
 --- !u!1 &2032333515
 GameObject:
   m_ObjectHideFlags: 0
@@ -47732,6 +47793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2081821062}
   - component: {fileID: 2081821063}
+  - component: {fileID: 2081821064}
   m_Layer: 0
   m_Name: tutorial_icon
   m_TagString: Untagged
@@ -47806,6 +47868,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2081821064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081821061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba49ae077b47e475c8cec3404c28c1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardIcon: {fileID: 21300000, guid: 5123be71d500220418503fe03b7533ac, type: 3}
+  HandleIcon: {fileID: 21300000, guid: 3aabfb44afa80fc47acadb388effe910, type: 3}
 --- !u!1 &2084256975
 GameObject:
   m_ObjectHideFlags: 0
@@ -47816,6 +47892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084256976}
   - component: {fileID: 2084256977}
+  - component: {fileID: 2084256978}
   m_Layer: 0
   m_Name: tutorial_icon_F
   m_TagString: Untagged
@@ -47890,6 +47967,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2084256978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084256975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba49ae077b47e475c8cec3404c28c1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardIcon: {fileID: 21300000, guid: 0491ab18ac0009d438f6705f90f00417, type: 3}
+  HandleIcon: {fileID: 21300000, guid: 77daa5ddcb4dd8040adcac6a6752fb0c, type: 3}
 --- !u!1 &2087221459
 GameObject:
   m_ObjectHideFlags: 0
@@ -48582,6 +48673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2111080967}
   - component: {fileID: 2111080968}
+  - component: {fileID: 2111080969}
   m_Layer: 0
   m_Name: jump_key
   m_TagString: Untagged
@@ -48656,6 +48748,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2111080969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111080966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba49ae077b47e475c8cec3404c28c1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardIcon: {fileID: 21300000, guid: 0151db52e13774642bbec821d231a46f, type: 3}
+  HandleIcon: {fileID: 21300000, guid: d4c62cbd0f84a67469e89d81b39f5559, type: 3}
 --- !u!1 &2111971348
 GameObject:
   m_ObjectHideFlags: 0
