@@ -15,7 +15,7 @@ public class B_openFloor_btn1 : PullBtn_controller
 
     IEnumerator closeFloor()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         floor_btn_ani.SetBool("is_open", false);
     }
 }

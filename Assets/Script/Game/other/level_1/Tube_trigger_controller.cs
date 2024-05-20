@@ -6,6 +6,7 @@ public class Tube_trigger_controller : MonoBehaviour
 {
     public GameObject trigger;
     public Animator Big_cat_ani;
+    private int triggerCounter = 0;
 
     void Start()
     {
@@ -14,18 +15,23 @@ public class Tube_trigger_controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(Big_cat_ani.GetBool("is_solid") == false)
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
-            Show(trigger);
-            print("enter");
+            if (Big_cat_ani.GetBool("is_solid") == false)
+            {
+                Show(trigger);
+                print("enter");
+            }
         }
-
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        Hide(trigger);
-        print("exit");
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
+        {
+            Hide(trigger);
+            print("exit");
+        }
     }
 
     public void Show(GameObject trigger)
