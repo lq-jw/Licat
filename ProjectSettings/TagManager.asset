@@ -12,6 +12,9 @@ TagManager:
   - Player_blue
   - Player_yellow
   - WaterDrop
+  - Water
+  - Vcam_trigger
+  - Vcam_trigger_Lv1-1
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - UI
   - Ground & Wall
   - Platform
-  - 
+  - Vcam_trigger
   - 
   - 
   - 

@@ -51,6 +51,12 @@ public class Licat_react_yellow_controller : MonoBehaviour
         }
         else if (collision.CompareTag("DeathBorder"))  //∂W•X√‰¨…
         {
+            print("out of DeathBorder");
+            Die();
+        }
+        else if (collision.CompareTag("Water"))
+        {
+            print("touch water");
             Die();
         }
     }

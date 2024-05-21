@@ -53,6 +53,10 @@ public class Licat_react_blue_controller : MonoBehaviour
         {
             Die();
         }
+        else if (collision.CompareTag("Water"))
+        {
+            Die();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)   //¨¾¤ô§÷½è(¸I¨ì¦©¦å)

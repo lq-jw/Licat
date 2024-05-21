@@ -67,7 +67,7 @@ public class Tube_test : MonoBehaviour
         }
         else
         {
-            print("not in range");
+            //print("not in range");
         }
     }
 

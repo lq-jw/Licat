@@ -8,9 +8,16 @@ public class FallingPlatform : MonoBehaviour
     [SerializeField] private float destroyDelay = 2f;
     [SerializeField] private Rigidbody2D platformRB;
     public bool isCatFalling;
+    public Animator LicatAni;
 
     private bool isPlatformFalling = false;
     private GameObject CatStepOnPlatform;
+
+    public void Start()
+    {
+        LicatAni.SetBool("is_faceRight", true);
+        GameManager.instance.LeaveAniMode(false);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
