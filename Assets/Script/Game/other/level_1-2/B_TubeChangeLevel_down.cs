@@ -58,7 +58,7 @@ public class B_TubeChangeLevel_down : MonoBehaviour
             }
             else
             {
-                Debug.Log("hit nothing ");
+                //Debug.Log("hit nothing ");
             }
         }
     }
