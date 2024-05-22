@@ -9,7 +9,7 @@ public abstract class PullBtn_controller : MonoBehaviour
     public GameObject trigger;
     public Animator licat_ani;
 
-    private bool ani_state;
+    protected bool ani_state;
     //protected abstract void SwitchDoor();
     protected abstract void SwitchDoor();
 

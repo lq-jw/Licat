@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 4115755735947062174}
-  Big_cat_ani: {fileID: 0}
+  Big_cat_ani: {fileID: 5452990571666520432, guid: 7681addb9710dff4b9097e89d76971aa, type: 3}
 --- !u!1001 &4839185808589743223
 PrefabInstance:
   m_ObjectHideFlags: 0

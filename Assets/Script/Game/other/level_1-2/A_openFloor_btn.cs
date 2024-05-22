@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class A_openFloor_btn : PullBtn_controller
 {
-    private bool ani_state;
-
     protected override void SwitchDoor()
     {
         ani_state = floor_btn_ani.GetBool("is_open");
