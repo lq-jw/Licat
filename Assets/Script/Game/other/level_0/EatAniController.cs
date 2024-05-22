@@ -60,7 +60,8 @@ public class EatAniController : MonoBehaviour
             // 在動畫播放完畢後執行的操作
             Debug.Log("動畫播放完畢。");
             print("switch level");
-            GameManager.instance.LeaveAniMode(false); if (Loader != null)
+            GameManager.instance.LeaveAniMode(false);
+            if (Loader != null)
             {
                 Loader.LoadScene("Level_1", true);
             }

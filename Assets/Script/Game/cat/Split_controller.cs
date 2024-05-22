@@ -20,12 +20,12 @@ public class Split_controller : MonoBehaviour
     public GameObject blue_triangle;
     public GameObject yallow_triangle;
 
+    public int catNumber = 0;
+
     private float pressTime = 0f;
     private float requiredPressTime = 1f; // 長按所需的時間
     private bool B_check_merge;
 
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.R) || Input.GetButton("B"))    //融合
@@ -36,29 +36,9 @@ public class Split_controller : MonoBehaviour
 
             if(pressTime >= requiredPressTime && catblueAni.GetBool("is_solid") == false && catyallowAni.GetBool("is_solid") == false && B_check_merge)
             {
+                Merge();
+                catNumber = 0;
                 print("stoppppppp");
-
-                Big_licat.transform.position = new Vector3((Blue_licat.transform.position.x) - 2, Blue_licat.transform.position.y, 3);
-
-                Big_licat.SetActive(true);
-                Big_licat.GetComponent<Licat_move_controller>().enabled = true;
-
-                catAni.Play("_L_R_merge");
-
-                catAni.SetBool("is_split", false);
-                catAni.SetBool("is_solid", false);
-                catAni.SetBool("is_faceRight", true);
-
-                //Blue_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                //Blue_licat.GetComponent<PolygonCollider2D>().enabled = true;
-                //Yallow_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                //Yallow_licat.GetComponent<PolygonCollider2D>().enabled = true;
-
-                //catSr.enabled = true;
-                //polygonCollider2D.enabled = true;
-                //LeftBoxCollider2D.enabled = true;
-
-                StartCoroutine(CloseSplitController());
             }
         }
         else
@@ -70,47 +50,14 @@ public class Split_controller : MonoBehaviour
         {
             if (Blue_licat.GetComponent<Licat_blue_move_controller>().enabled == false)   //藍色 On
             {
-                Blue_licat.GetComponent<Licat_blue_move_controller>().enabled = true;
-                blue_triangle.SetActive(true);
-                Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled = false;
-                yallow_triangle.SetActive(false);
-                //print("blue on");
-
-                //Blue_licat.GetComponent<PolygonCollider2D>().enabled = true;
-                //Blue_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                //Yallow_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                //Yallow_licat.GetComponent<PolygonCollider2D>().enabled = false;
+                OpenBlue();
+                catNumber = 1;
             }
             else if(Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled == false) //黃色 On
             {
-                Blue_licat.GetComponent<Licat_blue_move_controller>().enabled = false;
-                blue_triangle.SetActive(false);
-                Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled = true;
-                yallow_triangle.SetActive(true);
-                //print("blue off");
-
-                //Blue_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                //Blue_licat.GetComponent<PolygonCollider2D>().enabled = false;
-                
-                //Yallow_licat.GetComponent<PolygonCollider2D>().enabled = true;
-                //Yallow_licat.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                OpenYellow();
+                catNumber = 2;
             }
-        }
-
-        IEnumerator CloseSplitController()
-        {
-            catAni.SetBool("is_split", false);
-
-            yield return new WaitForSeconds(0f);
-            Blue_licat.GetComponent<Licat_blue_move_controller>().enabled = false;
-            Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled = false;
-            blue_triangle.SetActive(true);
-            yallow_triangle.SetActive(false);
-            Yallow_licat.SetActive(false);
-            Blue_licat.SetActive(false);
-
-            charController.GetComponent<Split_controller>().enabled = false;
-            charController.SetActive(false);
         }
     }
 
@@ -128,5 +75,53 @@ public class Split_controller : MonoBehaviour
         }
         else B_check_merge =  false;
         
+    }
+
+    public void Merge()
+    {
+        Big_licat.transform.position = new Vector3((Blue_licat.transform.position.x) - 2, Blue_licat.transform.position.y, 3);
+
+        Big_licat.SetActive(true);
+        Big_licat.GetComponent<Licat_move_controller>().enabled = true;
+
+        catAni.Play("_L_R_merge");
+
+        catAni.SetBool("is_split", false);
+        catAni.SetBool("is_solid", false);
+        catAni.SetBool("is_faceRight", true);
+
+        StartCoroutine(CloseSplitController());
+    }
+
+    IEnumerator CloseSplitController()
+    {
+        catAni.SetBool("is_split", false);
+
+        yield return new WaitForSeconds(0f);
+        Blue_licat.GetComponent<Licat_blue_move_controller>().enabled = false;
+        Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled = false;
+        blue_triangle.SetActive(true);
+        yallow_triangle.SetActive(false);
+        Yallow_licat.SetActive(false);
+        Blue_licat.SetActive(false);
+
+        charController.GetComponent<Split_controller>().enabled = false;
+        charController.SetActive(false);
+    }
+
+    public void OpenBlue()
+    {
+        Blue_licat.GetComponent<Licat_blue_move_controller>().enabled = true;
+        blue_triangle.SetActive(true);
+        Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled = false;
+        yallow_triangle.SetActive(false);
+    }
+
+    public void OpenYellow()
+    {
+        Blue_licat.GetComponent<Licat_blue_move_controller>().enabled = false;
+        blue_triangle.SetActive(false);
+        Yallow_licat.GetComponent<Licat_yellow_move_controller>().enabled = true;
+        yallow_triangle.SetActive(true);
     }
 }

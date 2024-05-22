@@ -2,71 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class B_dropBox : MonoBehaviour
+//±¼¸¨½c¤l
+public class B_dropBox : PullBtn_controller
 {
-    public Animator dropDoor_ani;
-    public Animator btn_ani;
-    public Animator licat_ani;
-    public GameObject trigger;
-
     private bool is_press = false;
 
-    // Update is called once per frame
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("X"))
-        {
-            //int layerMask = LayerMask.GetMask("Role_stage");
-            //int layerMask = 1 << 3;
-            int layerMask = ~(1 << gameObject.layer);
-
-            RaycastHit2D hitD = Physics2D.Raycast(transform.position, Vector2.down, 5f, layerMask);
-
-            if (hitD.collider != null && hitD.collider.CompareTag("Player") || hitD.collider.CompareTag("Player_yellow") || hitD.collider.CompareTag("Player_blue"))
-            {
-                //Debug.Log("hit object " + gameObject.name);
-                PressBtn();
-            }
-            else
-            {
-                //Debug.Log("hit nothing " + hitD.collider.name);
-            }
-        }
-    }
-
-    private void PressBtn()
+    protected override void SwitchDoor()
     {
         if (!is_press)
         {
-            btn_ani.SetBool("is_open", false);
-            dropDoor_ani.SetTrigger("is_drop");
+            floor_btn_ani.SetBool("is_open", false);
+            floor_door_ani.SetTrigger("is_drop");
             licat_ani.Play("pull_pole_L");
             is_press = !is_press;
         }
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position, transform.up * -5f);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Show(trigger);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Hide(trigger);
-    }
-
-    public void Show(GameObject trigger)
-    {
-        trigger.SetActive(true);
-    }
-    public void Hide(GameObject trigger)
-    {
-        trigger.SetActive(false);
+        if (!is_press)
+        {
+            Show(trigger);
+        }
+        else Hide(trigger);
     }
 }

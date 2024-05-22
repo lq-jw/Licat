@@ -42,7 +42,7 @@ public class Tube_through_controller : MonoBehaviour
         }
         else
         {
-            print("not in range");
+            //print("not in range");
         }
     }
 

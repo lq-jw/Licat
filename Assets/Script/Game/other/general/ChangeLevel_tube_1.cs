@@ -57,7 +57,7 @@ public class ChangeLevel_tube_1 : MonoBehaviour
         }
         else
         {
-            print("not in range");
+            //print("not in range");
         }
     }
     private void MoveBigCat()
