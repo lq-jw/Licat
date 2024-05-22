@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeLevel_tube : MonoBehaviour
 {
+    [SerializeField] private ASyncLoader Loader;
+
     public GameObject Turn_1;
     public GameObject Turn_2;
     public GameObject Turn_3;
@@ -114,7 +116,11 @@ public class ChangeLevel_tube : MonoBehaviour
         if (SceneName == "Level_1")  //直接換關
         {
             //GameManager.instance.LeaveAniMode(false);
-            SceneManager.LoadScene("Level_1_2");  
+            //SceneManager.LoadScene("Level_1_2");
+            if (Loader != null)
+            {
+                Loader.LoadScene("Level_1_2", true);
+            }
         }
         else if (SceneName == "Level_1_2")   //播放下一段動畫，不換關
         {

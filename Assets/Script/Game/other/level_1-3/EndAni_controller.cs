@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EndAni_controller : MonoBehaviour
 {
+    [SerializeField] private ASyncLoader Loader;
+
     public GameObject CircleTrigger;
     public Animator doorAni;
     public GameObject Licat;
@@ -44,7 +46,16 @@ public class EndAni_controller : MonoBehaviour
         GameManager.instance.FadeOut();
 
         yield return new WaitForSecondsRealtime(1.5f);
-        SceneManager.LoadScene("Level_1_3");
+        if (Loader != null)
+        {
+            Loader.LoadScene("Level_1_3", true);
+        }
+        else
+        {
+            SceneManager.LoadScene("Level_1_3");
+            SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+        }
+        //SceneManager.LoadScene("Level_1_3");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

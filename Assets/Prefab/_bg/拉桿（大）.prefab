@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6756188592826804163}
   - component: {fileID: 3878288931297773619}
   - component: {fileID: 7540652453009877379}
-  - component: {fileID: 2217047700545617161}
   - component: {fileID: 7265774545990787646}
   m_Layer: 0
   m_Name: "\u62C9\u687F\u672C\u9AD4"
@@ -110,23 +109,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2217047700545617161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341723148196014724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0730c3daea87e9c458daa6eb22c19589, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floor_btn_ani: {fileID: 0}
-  floor_door_R_ani: {fileID: 0}
-  floor_door_L_ani: {fileID: 0}
-  licat_ani: {fileID: 0}
-  trigger: {fileID: 5726298132259766442}
 --- !u!61 &7265774545990787646
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -467,11 +449,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67e3e5a14dacf430fb49be55370a400f, type: 3}
---- !u!1 &5726298132259766442 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8806269910918156265, guid: 67e3e5a14dacf430fb49be55370a400f, type: 3}
-  m_PrefabInstance: {fileID: 3837561784876617539}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5726298132259766453 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8806269910918156278, guid: 67e3e5a14dacf430fb49be55370a400f, type: 3}

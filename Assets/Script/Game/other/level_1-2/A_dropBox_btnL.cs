@@ -8,10 +8,13 @@ public class A_dropBox_btnL : MonoBehaviour
     public GameObject btn;
     public Animator btn_ani;
     public Animator licat_ani;
+    public Animator licat_blue_ani;
+    public Animator licat_yellow_ani;
     public int number;
     public GameObject trigger;
 
     private Vector3 btn_position;
+    private Vector3 licat_position;
     private bool is_press = true;
 
     private void Update()
@@ -24,13 +27,34 @@ public class A_dropBox_btnL : MonoBehaviour
 
             RaycastHit2D hitD = Physics2D.Raycast(transform.position, Vector2.down, 5f, layerMask);
 
-            if (hitD.collider != null && hitD.collider.CompareTag("Player") || hitD.collider.CompareTag("Player_yellow") || hitD.collider.CompareTag("Player_blue"))
+            if (hitD.collider != null && hitD.collider.CompareTag("Player"))
             {
                 btn_position = btn.transform.position;
-                btn_position.x = hitD.collider.gameObject.transform.position.x;
+                licat_position = hitD.collider.transform.position;
+
+                licat_position.x = btn_position.x;
+                hitD.collider.transform.position = licat_position;
                 //Debug.Log("hit object " + gameObject.name);
-                PressBtn();
+                PressBtn(0);
                 //is_press = !is_press;
+            }
+            else if (hitD.collider != null && hitD.collider.CompareTag("Player_blue"))
+            {
+                btn_position = btn.transform.position;
+                licat_position = hitD.collider.transform.position;
+
+                licat_position.x = btn_position.x;
+                hitD.collider.transform.position = licat_position;
+                PressBtn(1);
+            }
+            else if (hitD.collider != null && hitD.collider.CompareTag("Player_yellow"))
+            {
+                btn_position = btn.transform.position;
+                licat_position = hitD.collider.transform.position;
+
+                licat_position.x = btn_position.x;
+                hitD.collider.transform.position = licat_position;
+                PressBtn(2);
             }
             else 
             {
@@ -39,19 +63,52 @@ public class A_dropBox_btnL : MonoBehaviour
         }
     }
 
-    private void PressBtn()
+    private void PressBtn(int licatNum)
     {
         is_press = btn_ani.GetBool("is_press");
         if (is_press)
         {
             connectedDoor.GetComponent<A_dropBox>().SetSwitchL(true, number);
             btn_ani.SetBool("is_press",false);
-            licat_ani.Play("push_pole_S");
-        }else if (!is_press)
+            //licat_ani.Play("push_pole_S");
+            switch (licatNum)
+            {
+                case 0:
+                    licat_ani.Play("push_pole_S");
+                    break;
+                case 1:
+                    print("push_pole_S_B");
+                    licat_blue_ani.Play("push_pole_S_B");
+                    break;
+                case 2:
+                    print("push_pole_S_Y");
+                    licat_yellow_ani.Play("push_pole_S_Y");
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if (!is_press)
         {
             connectedDoor.GetComponent<A_dropBox>().SetSwitchL(false, number);
             btn_ani.SetBool("is_press", true);
-            licat_ani.Play("pull_pole_S");
+            //licat_ani.Play("pull_pole_S");
+            switch (licatNum)
+            {
+                case 0:
+                    licat_ani.Play("pull_pole_S");
+                    break;
+                case 1:
+                    print("pull_pole_S_B");
+                    licat_blue_ani.Play("pull_pole_S_B");
+                    break;
+                case 2:
+                    print("pull_pole_S_Y");
+                    licat_yellow_ani.Play("pull_pole_S_Y");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

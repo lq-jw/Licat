@@ -46,17 +46,27 @@ public class A_dropBox : MonoBehaviour
     {
         if (btn_L[0] == false && btn_L[1] == false && btn_L[2] == true && btn_L[3] == false)
         {
+            print("CheckSwitch_L" + btn_L[0]  + btn_L[1] + btn_L[2] + btn_L[3]);
             btn_L_Set = true;
             CheckSwitches();
-        }    
+        }
+        else
+        {
+            btn_L_Set = false;
+        }
     }
 
     private void CheckSwitch_R()
     {
         if (btn_R[0] == false && btn_R[1] == true && btn_R[2] == true && btn_R[3] == false)
         {
+            print("CheckSwitch_R" + btn_R[0] + btn_R[1] + btn_R[2] + btn_R[3]);
             btn_R_Set = true;
             CheckSwitches();
+        }
+        else
+        {
+            btn_R_Set = false;
         }
     }
 
@@ -64,7 +74,7 @@ public class A_dropBox : MonoBehaviour
     private void CheckSwitches()
     {
         // 如果兩個開關都被觸發，打開門，否則關閉門
-        if (btn_L_Set && btn_R_Set)
+        if (btn_L_Set == true && btn_R_Set == true)
         {
             DropBox();
         }
