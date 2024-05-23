@@ -14,11 +14,12 @@ public class Licat_react_controller : MonoBehaviour
     public Animator catAni;
     public CinemachineVirtualCamera virtualCamera;
     private bool solid;
-
-    private float hp = 0f;
-    private float max_hp;
-    public GameObject hp_bar;
-    public Image img_hp_bar;
+    public ReLoad_1_3 ReLoad_1_3;
+    private bool water_die = false;
+    //private float hp = 0f;
+    //private float max_hp;
+    //public GameObject hp_bar;
+    //public Image img_hp_bar;
 
     void Start()
     {
@@ -32,7 +33,7 @@ public class Licat_react_controller : MonoBehaviour
 
         moveSpeed = licat.moveSpeed;
 
-        checkPoint = new Vector3(3, -3, 3);
+        checkPoint = new Vector3(3, -3, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,12 +55,9 @@ public class Licat_react_controller : MonoBehaviour
             //print("out of DeathBorder");
             Die();
         }
-        else if (collision.CompareTag("WaterDrop"))
+        if (collision.gameObject.CompareTag("Water"))
         {
-            //print("WaterDrop");
-        }
-        else if (collision.CompareTag("Water"))
-        {
+            water_die = true;
             //print("touch water");
             Die();
         }
@@ -67,15 +65,15 @@ public class Licat_react_controller : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)   //¨¾¤ô§÷½è(¸I¨ì¦©¦å)
     {
-        if (collision.gameObject.CompareTag("WaterProof") && catAni.GetBool("is_solid") == false && hp >= 0)
+        if (collision.gameObject.CompareTag("WaterProof") && catAni.GetBool("is_solid") == false )
         {
-            img_hp_bar.enabled = true;
-            hp_bar.SetActive(true);
-            hp -= 0.05f;
-            if (hp <= 0)
-            {
-                Die();
-            }
+            //img_hp_bar.enabled = true;
+            //hp_bar.SetActive(true);
+            //hp -= 0.05f;
+            //if (hp <= 0)
+            //{
+            //    Die();
+            //}
         }
         else if (!collision.gameObject.CompareTag("WaterProof"))
         {
@@ -98,11 +96,6 @@ public class Licat_react_controller : MonoBehaviour
             {
                 print("null");
             }
-        }
-
-        if (collision.gameObject.CompareTag("WaterDrop"))
-        {
-            print("WaterDrop");
         }
     }
 
@@ -133,6 +126,11 @@ public class Licat_react_controller : MonoBehaviour
         Rigidbody.simulated = false;
         transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(duration);
+        if (water_die)
+        {
+            ReLoad_1_3.reLoad_1_3();
+            water_die = false;
+        }
         transform.position = checkPoint;
         //virtualCamera.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         transform.localScale = new Vector3(1, 1, 1);

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FallingPlatform : MonoBehaviour
 {
+    [SerializeField] private ASyncLoader Loader;
     [SerializeField] private float fallDelay = 1f;
     [SerializeField] private float destroyDelay = 2f;
     [SerializeField] private Rigidbody2D platformRB;
@@ -45,6 +47,16 @@ public class FallingPlatform : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 CatStepOnPlatform.SetActive(false);
                 GameManager.instance.FadeOut();
+                yield return new WaitForSeconds(1.5f);
+                if (Loader != null)
+                {
+                    Loader.LoadScene("MainScene", true);
+                }
+                else
+                {
+                    SceneManager.LoadScene("MainScene");
+                    SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+                }
             }
             else
             {

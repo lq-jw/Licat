@@ -24,8 +24,8 @@ public class B_verticleDoor : MonoBehaviour
 
     private void CheckSwitch()
     {
-        print("btnL " + btnL);
-        print("btnR " + btnR);
+        //print("btnL " + btnL);
+        //print("btnR " + btnR);
         if (btnL == true && btnR == true)
         {
             doorAni.SetBool("is_open",false);

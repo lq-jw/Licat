@@ -19,6 +19,11 @@ public abstract class PullBtn_controller : MonoBehaviour
     //protected abstract void SwitchDoor();
     protected abstract void SwitchDoor(int licatNum);
 
+    private void Start()
+    {
+        trigger.SetActive(false);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("X"))

@@ -394,6 +394,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2345745953448404318, guid: 81b7ec5c42761c1449cb026faab67fb1, type: 3}
   m_PrefabInstance: {fileID: 90490880}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &90490885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1093209221, guid: 81b7ec5c42761c1449cb026faab67fb1, type: 3}
+  m_PrefabInstance: {fileID: 90490880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90490884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68f43484a9dc124dabc947df5243104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &91701820
 GameObject:
   m_ObjectHideFlags: 0
@@ -5994,6 +6005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c61e17f0f0cad4590537d0402508a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Loader: {fileID: 2095383107}
   fallDelay: 0
   destroyDelay: 2
   platformRB: {fileID: 423845502}
@@ -6622,6 +6634,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7295077448080096664, guid: debf099bb5d66f34c943db5c85330d68, type: 3}
   m_PrefabInstance: {fileID: 593792103}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &593792108 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 118553836, guid: debf099bb5d66f34c943db5c85330d68, type: 3}
+  m_PrefabInstance: {fileID: 593792103}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593792107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a10c7ef57b7c64f89f1542e611db61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &649346802
 GameObject:
   m_ObjectHideFlags: 0
@@ -11827,6 +11850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba1ed7f950aa3647b9987de93c280db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Licat_react_controller: {fileID: 1824631031}
+  Licat_react_yellow_controller: {fileID: 90490885}
+  Licat_react_blue_controller: {fileID: 593792108}
 --- !u!61 &934900064
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17913,11 +17939,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c61e17f0f0cad4590537d0402508a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Loader: {fileID: 2095383107}
   fallDelay: 0.5
   destroyDelay: 2
   platformRB: {fileID: 1560821289}
   isCatFalling: 0
-  LicatAni: {fileID: 0}
+  LicatAni: {fileID: 246777675}
 --- !u!50 &1560821289
 Rigidbody2D:
   serializedVersion: 4
@@ -18273,6 +18300,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1824631031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 928039505, guid: 7681addb9710dff4b9097e89d76971aa, type: 3}
+  m_PrefabInstance: {fileID: 246777670}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246777676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b7a73585d40eab4db7fea980597783f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1856368515
 GameObject:
   m_ObjectHideFlags: 0
@@ -18473,6 +18511,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2095383107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1085760390107917370, guid: be10f0703c5a84a6c9ccccc53afaa4f1, type: 3}
+  m_PrefabInstance: {fileID: 958172927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7e5ad93999e4cdb9d397edd22359de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2113117307
 GameObject:
   m_ObjectHideFlags: 0

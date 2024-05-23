@@ -220,6 +220,12 @@ namespace Bundos.WaterSystem
 
                 Ripple(contactPoint, false);
             }
+
+            //print("other.name  " + other.name);
+            //if (other.CompareTag("Player"))
+            //{
+            //    print("water hit cat");
+            //}
         }
 
         void OnTriggerExit2D(Collider2D other)

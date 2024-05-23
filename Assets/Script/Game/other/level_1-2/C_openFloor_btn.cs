@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class C_openFloor_btn : PullBtn_controller
 {
     public Animator water_ani;
+    public CinemachineVirtualCamera Vcam_1_3_1;
     private bool isFloorOpen = true;
+
+    private void Awake()
+    {
+        isFloorOpen = true;
+    }
 
     protected override void SwitchDoor(int licatNum)
     {
-        if (isFloorOpen)
-        {
+        //if (isFloorOpen)
+        //{
             //licat_ani.Play("pull_pole_L");
             switch (licatNum)
             {
@@ -31,14 +38,23 @@ public class C_openFloor_btn : PullBtn_controller
             isFloorOpen = false;
             Hide(trigger);
             water_ani.SetBool("isFloorOpen", true);
-        }
+            StartCoroutine(closeVcam());
+            //Vcam_1_3_1.enabled = false;
+        //}
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    IEnumerator closeVcam()
     {
-        if (isFloorOpen)
-        {
-            Show(trigger);
-        }
-        else Hide(trigger);
+        yield return new WaitForSeconds(3f);
+        Vcam_1_3_1.enabled = false;
     }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (isFloorOpen)
+    //    {
+    //        Show(trigger);
+    //    }
+    //    else Hide(trigger);
+    //}
 }
