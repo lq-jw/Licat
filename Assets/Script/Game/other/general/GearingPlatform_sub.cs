@@ -16,4 +16,14 @@ public class GearingPlatform_sub : MonoBehaviour
             gearingPlatform.GetOtherCat(catOnPlatform);
         }
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
+        {
+            catOnPlatform = null;
+            //movePlatform();
+            gearingPlatform.GetOtherCat(catOnPlatform);
+        }
+    }
 }

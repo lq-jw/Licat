@@ -6,7 +6,7 @@ public class TutorialIconSwitcher : MonoBehaviour
 {
     [SerializeField] private Sprite keyboardIcon, HandleIcon;
     private SpriteRenderer spriteRenderer;
-    private bool isUseHandle_now = false, isUseHandle_pre = false;
+    [SerializeField] private bool isUseHandle_now = false, isUseHandle_pre = false;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class TutorialIconSwitcher : MonoBehaviour
         UpdateIsUseHandlePre();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (spriteRenderer != null)
         {
@@ -36,7 +36,8 @@ public class TutorialIconSwitcher : MonoBehaviour
     private void UpdateIcon()
     {
         GetIsUseHandle();
-        if (isUseHandle_now != isUseHandle_pre) SwitchSpite();
+        SwitchSpite();
+        // if (isUseHandle_now != isUseHandle_pre) SwitchSpite();
         // 如果 spriteRenderer 存在 && isUseHandle 有更新過，就更新 Spite
         UpdateIsUseHandlePre();
     }

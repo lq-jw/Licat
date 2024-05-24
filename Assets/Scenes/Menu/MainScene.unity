@@ -6350,8 +6350,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6309 \u7A7A\u767D\u9375 \u958B\u59CB\u904A\u6232\npress space key to
-    play"
+  m_text: "\u6309 \u4EFB\u610F\u9375 \u958B\u59CB\u904A\u6232\npress any key to play"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b92b98acc128486ea80fcecda75c607, type: 2}
   m_sharedMaterial: {fileID: 8635842897002093813, guid: 8b92b98acc128486ea80fcecda75c607, type: 2}

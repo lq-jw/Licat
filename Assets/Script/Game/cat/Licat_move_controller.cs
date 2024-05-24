@@ -373,7 +373,7 @@ public class Licat_move_controller : MonoBehaviour
         LeftBoxCollider2D.enabled = false;
         RightBoxCollider2D.enabled = false;
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
 
         polygonCollider2D.enabled = true;
         LeftBoxCollider2D.enabled = true;
