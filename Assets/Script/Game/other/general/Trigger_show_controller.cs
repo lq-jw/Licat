@@ -25,7 +25,7 @@ public class Trigger_show_controller : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Player_blue") || collision.gameObject.CompareTag("Player_yellow"))
         {
-            Hide(obj);
+            // Hide(obj);
             print("exit");
         }
     }
