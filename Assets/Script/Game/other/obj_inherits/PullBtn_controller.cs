@@ -21,7 +21,7 @@ public abstract class PullBtn_controller : MonoBehaviour
 
     private void Start()
     {
-        trigger.SetActive(false);
+        Hide(trigger);
     }
 
     void Update()

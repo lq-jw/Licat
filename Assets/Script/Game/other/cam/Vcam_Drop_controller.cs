@@ -25,7 +25,7 @@ public class Vcam_Drop_controller : MonoBehaviour
 
         if (stateInfo0)
         {
-            Invoke("closeCam", 4.3f);
+            Invoke("closeCam", 6f);
             catAni.SetBool("is_faceRight", true);
         }
         else if (stateInfo1)

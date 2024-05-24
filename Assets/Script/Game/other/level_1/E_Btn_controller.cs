@@ -37,7 +37,7 @@ public class E_Btn_controller : PullBtn_controller
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isdoorOpen)
+        if (isdoorOpen)
         {
             Show(trigger);
         }

@@ -43,30 +43,11 @@ public class Vcam_blue_controller : MonoBehaviour
 
     private IEnumerator Vcam_LensSwitsh()
     {
-        print("isEnter " + isEnter);
-        print("Vcam_lenSize " + Vcam_lenSize);
-        if (isEnter == false)
+        for (float i = 6.5f; i <= 8.3f; i += 0.1f)
         {
-            yield return new WaitForSeconds(1f);
-            isEnter = true;
-            for (float i = 6.5f; i <= 8.3f; i += 0.1f)
-            {
-                this.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = i;
-            }
-                //Vcam_lenSize = this.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize;
-                //this.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 8.3f;
+            this.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = i;
+            yield return new WaitForSeconds(0f);
         }
-        else if(isEnter == true)
-        {
-            yield return new WaitForSeconds(1f);
-            isEnter = false;
-            for (float i = 8.3f; i >= 6.5f; i -= 0.1f)
-            {
-                this.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = i;
-            }
-            //this.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 6.5f;
-        }
-        //yield return new WaitForSeconds(2f);
     }
 
     private void OnDrawGizmos()

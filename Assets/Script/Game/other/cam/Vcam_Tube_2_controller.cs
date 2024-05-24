@@ -12,11 +12,16 @@ public class Vcam_Tube_2_controller : MonoBehaviour
     public GameObject licatPosition;
 
     public GameObject G_lv_1_2_2;
+    public GameObject Vcam_1;
+    public GameObject Vcam_2;
+
 
     private Vector3 G_begin_position;
 
     private void Start()
     {
+        Vcam_1.SetActive(false);
+        Vcam_2.SetActive(false);
         licat.transform.position = licatPosition.transform.position;
         catAni.SetBool("is_solid", false);
         GameManager.instance.GotoAniMode(true);      // 淡入，打開動畫黑邊

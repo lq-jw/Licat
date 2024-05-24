@@ -21,11 +21,11 @@ public static class FullscreenGameView
 
     static EditorWindow instance;
 
-    [MenuItem("Window/General/Game (Fullscreen) %P", priority = 2)]
+    [MenuItem("Window/General/Game (Fullscreen) %g", priority = 2)]
     [MenuItem("Window/LayoutShortcuts/Default %q", false, 2)]
     static void DefaultLayout()
     {
-        EditorApplication.ExecuteMenuItem("Window/Layouts/Default");
+        EditorApplication.ExecuteMenuItem("Window/Layouts/used");
     }
     public static void Toggle()
     {

@@ -7,11 +7,14 @@ public class ReLoad_1_3 : MonoBehaviour
     public GameObject scene_1_3;
     public GameObject LicatPosition;
     public GameObject licat;
+    
+    public GameObject box;
 
-
+    public GameObject box_position;
     // Start is called before the first frame update
     void Start()
     {
+        //box_position.transform.position = box.transform.position;
         //scene_1_3.SetActive(false);
         //LicatPosition.transform.position = licat.transform.position;
     }
@@ -28,10 +31,9 @@ public class ReLoad_1_3 : MonoBehaviour
     IEnumerator openScene()
     {
         //yield return new WaitForSeconds(2f);
-        print("LicatPosition.transform.position " + LicatPosition.transform.position);
-        print("licat.transform.position " + licat.transform.position);
         scene_1_3.SetActive(true);
         licat.transform.position = LicatPosition.transform.position;
+        box.transform.position = box_position.transform.position;
         yield return new WaitForSeconds(2f);
         
         GameManager.instance.LeaveAniMode(false);
