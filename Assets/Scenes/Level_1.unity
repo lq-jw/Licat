@@ -10528,7 +10528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443262594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 209.7, y: 0.17, z: 0}
+  m_LocalPosition: {x: 207.53, y: 0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11822,9 +11822,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -3.4103, y: 1.569951}
-  - {x: -3.401253, y: 2.1386774}
-  - {x: -3.3092995, y: 2.2344677}
+  - {x: -3.3146782, y: 1.5635741}
+  - {x: -3.3247554, y: 2.1386774}
+  - {x: -3.296552, y: 2.1898422}
   - {x: 0.014044926, y: 2.2260878}
   - {x: 0.146472, y: 2.0879164}
   - {x: 0.15518221, y: 1.9959791}
@@ -11920,7 +11920,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03994012, y: -0.39140117}
+  m_Offset: {x: 0.08214986, y: -0.39140117}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11931,7 +11931,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.9042706, y: 3.9171975}
+  m_Size: {x: 6.819851, y: 3.9171975}
   m_EdgeRadius: 0
 --- !u!1 &493709307
 GameObject:
@@ -34513,7 +34513,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.09613657}
+  m_Offset: {x: 0.014403343, y: -0.09613657}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -34524,7 +34524,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.17, y: 3.3977265}
+  m_Size: {x: 4.1411934, y: 3.3977265}
   m_EdgeRadius: 0
 --- !u!212 &1440883529
 SpriteRenderer:
@@ -34594,9 +34594,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.0849185, y: 1.5943881}
-  - {x: -2.0317183, y: 1.7318872}
-  - {x: -1.9529217, y: 1.7770482}
+  - {x: -2.0611758, y: 1.586474}
+  - {x: -2.0067549, y: 1.7119135}
+  - {x: -1.9450074, y: 1.7533082}
   - {x: 1.9641719, y: 1.7707565}
   - {x: 2.0678084, y: 1.5986124}
   m_AdjacentStartPoint: {x: 0, y: 0}

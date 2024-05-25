@@ -15,6 +15,7 @@ TagManager:
   - Water
   - Vcam_trigger
   - Vcam_trigger_Lv1-1
+  - Vcam_trigger_Lv1-2_end
   layers:
   - Default
   - TransparentFX

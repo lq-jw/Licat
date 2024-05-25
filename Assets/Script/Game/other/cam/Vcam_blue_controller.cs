@@ -25,9 +25,9 @@ public class Vcam_blue_controller : MonoBehaviour
         {
             StartCoroutine(Vcam_LensSwitsh());
         }
-        else
+        else if(hit.collider != null && hit.collider.CompareTag("Vcam_trigger_Lv1-2_end"))
         {
-            //Debug.Log("hit nothing ");
+            StartCoroutine(Vcam_LensSwitsh_1_2_end());
         }
         
     }
@@ -44,6 +44,16 @@ public class Vcam_blue_controller : MonoBehaviour
     private IEnumerator Vcam_LensSwitsh()
     {
         for (float i = 6.5f; i <= 8.3f; i += 0.1f)
+        {
+            this.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = i;
+            yield return new WaitForSeconds(0f);
+        }
+    }
+
+    private IEnumerator Vcam_LensSwitsh_1_2_end()
+    {
+        print("Vcam_trigger_Lv1-2_end");
+        for (float i = 14f; i >= 5f; i -= 0.1f)
         {
             this.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = i;
             yield return new WaitForSeconds(0f);
